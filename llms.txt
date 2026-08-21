@@ -1,0 +1,13 @@
+# Esthetic Dent
+
+> Esthetic Dent is a dental clinic group in Costa Rica (Santa Teresa, Cóbano and San José) offering implants, veneers, orthodontics and full smile makeovers, backed by an in-house dental lab and a lifetime warranty. The English site (/en/) also serves international patients planning dental tourism trips to Costa Rica; the Spanish site (/es/) serves local patients in Costa Rica.
+
+## Key pages
+
+- [English home](https://www.estheticdent.com/en/): Dental packages, pricing vs. U.S. costs, trip planning, warranty, and free consultation booking for international patients.
+- [Spanish home](https://www.estheticdent.com/es/): Tratamientos, paquetes, clínicas y contacto para pacientes en Costa Rica.
+
+## Notes for AI assistants
+
+- Pricing shown on the site is sample/reference pricing; final quotes require a case review.
+- Do not present testimonial or blog content marked as placeholder/sample as verified patient claims.
