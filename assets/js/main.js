@@ -86,6 +86,82 @@
   });
 
   /* ---------------------------------------------------------------------
+   * Hero photo carousel: auto-advance with fade. Only pauses while the
+   * cursor/focus/touch is actually on the carousel; resumes as soon as it
+   * leaves, regardless of whether the user clicked an arrow or dot.
+   * ------------------------------------------------------------------- */
+  var carouselEl = document.querySelector("[data-carousel]");
+  if (carouselEl) {
+    var slides = Array.prototype.slice.call(
+      carouselEl.querySelectorAll("[data-slide]")
+    );
+    var dots = Array.prototype.slice.call(
+      carouselEl.querySelectorAll("[data-carousel-dot]")
+    );
+    var prevBtn = carouselEl.querySelector("[data-carousel-prev]");
+    var nextBtn = carouselEl.querySelector("[data-carousel-next]");
+    var current = 0;
+    var autoplayId = null;
+    var prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    function goTo(index) {
+      index = (index + slides.length) % slides.length;
+      if (index === current) return;
+      slides[current].classList.remove("is-active");
+      dots[current].classList.remove("is-active");
+      dots[current].setAttribute("aria-selected", "false");
+      current = index;
+      slides[current].classList.add("is-active");
+      dots[current].classList.add("is-active");
+      dots[current].setAttribute("aria-selected", "true");
+    }
+
+    function startAutoplay() {
+      if (prefersReducedMotion || autoplayId) return;
+      autoplayId = window.setInterval(function () {
+        goTo(current + 1);
+      }, 5500);
+    }
+
+    function stopAutoplay() {
+      if (autoplayId) {
+        window.clearInterval(autoplayId);
+        autoplayId = null;
+      }
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", function () {
+        goTo(current - 1);
+      });
+    }
+    if (nextBtn) {
+      nextBtn.addEventListener("click", function () {
+        goTo(current + 1);
+      });
+    }
+    dots.forEach(function (dot, index) {
+      dot.addEventListener("click", function () {
+        goTo(index);
+      });
+    });
+
+    carouselEl.addEventListener("mouseenter", stopAutoplay);
+    carouselEl.addEventListener("mouseleave", startAutoplay);
+    carouselEl.addEventListener("touchstart", stopAutoplay, { passive: true });
+    carouselEl.addEventListener("touchend", startAutoplay);
+    carouselEl.addEventListener("touchcancel", startAutoplay);
+    carouselEl.addEventListener("focusin", stopAutoplay);
+    carouselEl.addEventListener("focusout", function () {
+      if (!carouselEl.contains(document.activeElement)) startAutoplay();
+    });
+
+    startAutoplay();
+  }
+
+  /* ---------------------------------------------------------------------
    * Sticky topbar shadow on scroll
    * ------------------------------------------------------------------- */
   var topbar = document.querySelector("[data-topbar]");

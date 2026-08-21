@@ -128,7 +128,7 @@
       <!-- 2 -->
       <div>
         <button class="flex w-full items-center justify-between px-3 py-4 text-left font-display font-semibold text-navy" data-accordion-trigger aria-expanded="false" aria-controls="m-about">
-          <span class="flex items-center gap-3"><svg viewBox="0 0 24 24" class="h-5 w-5 text-blue"><use href="#icon-building"/></svg>About Esthetic Dent</span>
+          <span class="flex items-center gap-3"><svg viewBox="0 0 24 24" class="h-5 w-5 text-blue"><use href="#icon-building"/></svg>About Us</span>
           <svg viewBox="0 0 24 24" class="h-4 w-4 transition-transform" data-chevron><use href="#icon-chevron"/></svg>
         </button>
         <div id="m-about" class="hidden pb-3 pl-11 pr-3">
@@ -177,7 +177,7 @@
       <!-- 6 -->
       <div>
         <button class="flex w-full items-center justify-between px-3 py-4 text-left font-display font-semibold text-navy" data-accordion-trigger aria-expanded="false" aria-controls="m-prices">
-          <span class="flex items-center gap-3"><svg viewBox="0 0 24 24" class="h-5 w-5 text-blue"><use href="#icon-coin"/></svg>Prices &amp; Financing</span>
+          <span class="flex items-center gap-3"><svg viewBox="0 0 24 24" class="h-5 w-5 text-blue"><use href="#icon-coin"/></svg>Prices</span>
           <svg viewBox="0 0 24 24" class="h-4 w-4 transition-transform" data-chevron><use href="#icon-chevron"/></svg>
         </button>
         <div id="m-prices" class="hidden pb-3 pl-11 pr-3">
@@ -275,7 +275,7 @@
 
         <div class="nav-item">
           <button type="button" class="nav-trigger" data-nav aria-expanded="false" aria-haspopup="true">
-            About
+            About Us
             <svg viewBox="0 0 24 24" class="h-3.5 w-3.5"><use href="#icon-chevron"/></svg>
           </button>
           <div class="dropdown" role="menu">
@@ -288,7 +288,7 @@
 
         <div class="nav-item">
           <button type="button" class="nav-trigger" data-nav aria-expanded="false" aria-haspopup="true">
-            Why Us
+            Why Esthetic Dent
             <svg viewBox="0 0 24 24" class="h-3.5 w-3.5"><use href="#icon-chevron"/></svg>
           </button>
           <div class="dropdown" role="menu">
@@ -317,7 +317,7 @@
 
         <div class="nav-item">
           <button type="button" class="nav-trigger" data-nav aria-expanded="false" aria-haspopup="true">
-            Warranty
+            Lifetime Warranty
             <svg viewBox="0 0 24 24" class="h-3.5 w-3.5"><use href="#icon-chevron"/></svg>
           </button>
           <div class="dropdown" role="menu">
@@ -388,26 +388,41 @@
     <section class="relative overflow-hidden bg-gradient-to-b from-[#F4FAFF] to-white">
       <div class="hero-grid mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 lg:px-8 lg:pb-24 lg:pt-16">
         <div class="hero-heading">
-          <span class="badge">Costa Rica Dental Vacations</span>
-          <h1 class="mt-4 text-4xl font-extrabold leading-[1.08] sm:text-5xl">
-            Your dream smile, <span class="text-blue">Costa Rica</span> prices.
+          <span class="badge">Dental Tourism in Costa Rica</span>
+          <h1 class="mt-4 text-3xl font-extrabold leading-[1.08] sm:text-5xl">
+            Your dream smile starts in Costa Rica <br>
+            <span class="text-blue">—with Esthetic Dent.</span>
           </h1>
         </div>
         <div class="hero-image relative mx-auto w-full max-w-lg lg:max-w-none">
-          <img src="../assets/img/playa-blanca.png" alt="White sand beach and turquoise water on the Costa Rica coastline" class="w-full rounded-3xl shadow-card" width="831" height="490" loading="eager">
+          <div class="hero-carousel" data-carousel role="region" aria-label="Esthetic Dent photo gallery" aria-roledescription="carousel">
+            <img src="../assets/img/playa-blanca.png" alt="White sand beach on the Nicoya Peninsula, Costa Rica" class="hero-carousel-slide hero-carousel-slide--destination is-active" data-slide loading="eager" width="831" height="490">
+            <img src="../assets/img/empty.png" alt="Modern dental clinic in Cóbano, Costa Rica" class="hero-carousel-slide hero-carousel-slide--clinic" data-slide loading="lazy" width="831" height="490">
+            <img src="../assets/img/empty.png" alt="Natural, elegant patient smile after treatment" class="hero-carousel-slide hero-carousel-slide--smile" data-slide loading="lazy" width="831" height="490">
+            <button type="button" class="hero-carousel-arrow hero-carousel-arrow--prev" data-carousel-prev aria-label="Previous photo">
+              <svg viewBox="0 0 24 24" class="h-4 w-4 rotate-90"><use href="#icon-chevron"/></svg>
+            </button>
+            <button type="button" class="hero-carousel-arrow hero-carousel-arrow--next" data-carousel-next aria-label="Next photo">
+              <svg viewBox="0 0 24 24" class="h-4 w-4 -rotate-90"><use href="#icon-chevron"/></svg>
+            </button>
+            <div class="hero-carousel-dots" role="tablist" aria-label="Choose photo">
+              <button type="button" class="hero-carousel-dot is-active" data-carousel-dot role="tab" aria-selected="true" aria-label="Show photo 1 of 3"></button>
+              <button type="button" class="hero-carousel-dot" data-carousel-dot role="tab" aria-selected="false" aria-label="Show photo 2 of 3"></button>
+              <button type="button" class="hero-carousel-dot" data-carousel-dot role="tab" aria-selected="false" aria-label="Show photo 3 of 3"></button>
+            </div>
+          </div>
         </div>
         <div class="hero-body">
           <p class="max-w-xl text-lg text-ink">
-            Board-certified specialists, an in-house digital lab and a lifetime warranty — all built into a stress-free dental vacation. Save up to 65% versus typical U.S. costs.
-          </p>
+Specialist-led dental care, an in-house digital lab, and a lifetime warranty—all built into a stress-free dental vacation on Costa Rica’s Pacific coast. Save up to 65% compared with typical U.S. prices.          </p>
           <div class="mt-8 flex flex-wrap gap-4">
             <a href="#" class="btn-primary">Get My Free Consultation</a>
-            <a href="#" class="btn-ghost">See Real Pricing</a>
+            <a href="#" class="btn-ghost">Compare Prices</a>
           </div>
           <div class="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm font-semibold text-navy">
             <span class="flex items-center gap-2"><svg viewBox="0 0 24 24" class="h-5 w-5 text-mint-dark"><use href="#icon-shield-check"/></svg>Lifetime Warranty</span>
             <span class="flex items-center gap-2"><svg viewBox="0 0 24 24" class="h-5 w-5 text-mint-dark"><use href="#icon-flask"/></svg>In-House Dental Lab</span>
-            <span class="flex items-center gap-2"><svg viewBox="0 0 24 24" class="h-5 w-5 text-mint-dark"><use href="#icon-star"/></svg>4.9/5 Patient Rated</span>
+            <span class="flex items-center gap-2"><svg viewBox="0 0 24 24" class="h-5 w-5 text-mint-dark"><use href="#icon-star"/></svg>4.9/5 Patient Rating</span>
           </div>
         </div>
       </div>
@@ -723,9 +738,6 @@
   </a>
   <span class="rounded-full bg-navy px-3 py-1 font-display text-[11px] font-semibold text-white shadow-card">Chat with us</span>
 </div>
-
-<!-- Fixed mobile CTA -->
-<a href="#" class="btn-primary fixed bottom-4 left-4 z-40 !shadow-none !px-4 !py-2.5 text-xs xl:hidden sm:bottom-5 sm:left-5 sm:!px-6 sm:!py-3 sm:text-sm">Start Free Consultation</a>
 
 <script src="../assets/js/main.js"></script>
 </body>

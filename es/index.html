@@ -342,7 +342,22 @@
           </h1>
         </div>
         <div class="hero-image relative mx-auto w-full max-w-lg lg:max-w-none">
-          <img src="../assets/img/playa-blanca.png" alt="Playa de arena blanca y aguas turquesa en la costa de Costa Rica" class="w-full rounded-3xl shadow-card" width="831" height="490" loading="eager">
+          <div class="hero-carousel" data-carousel role="region" aria-label="Galería de fotos de Esthetic Dent" aria-roledescription="carrusel">
+            <img src="../assets/img/playa-blanca.png" alt="Playa de arena blanca en la Península de Nicoya, Costa Rica" class="hero-carousel-slide hero-carousel-slide--destination is-active" data-slide loading="eager" width="831" height="490">
+            <img src="../assets/img/empty.png" alt="Consultorio dental moderno en Cóbano, Costa Rica" class="hero-carousel-slide hero-carousel-slide--clinic" data-slide loading="lazy" width="831" height="490">
+            <img src="../assets/img/empty.png" alt="Sonrisa natural y elegante después del tratamiento" class="hero-carousel-slide hero-carousel-slide--smile" data-slide loading="lazy" width="831" height="490">
+            <button type="button" class="hero-carousel-arrow hero-carousel-arrow--prev" data-carousel-prev aria-label="Foto anterior">
+              <svg viewBox="0 0 24 24" class="h-4 w-4 rotate-90"><use href="#icon-chevron"/></svg>
+            </button>
+            <button type="button" class="hero-carousel-arrow hero-carousel-arrow--next" data-carousel-next aria-label="Foto siguiente">
+              <svg viewBox="0 0 24 24" class="h-4 w-4 -rotate-90"><use href="#icon-chevron"/></svg>
+            </button>
+            <div class="hero-carousel-dots" role="tablist" aria-label="Elegir foto">
+              <button type="button" class="hero-carousel-dot is-active" data-carousel-dot role="tab" aria-selected="true" aria-label="Mostrar foto 1 de 3"></button>
+              <button type="button" class="hero-carousel-dot" data-carousel-dot role="tab" aria-selected="false" aria-label="Mostrar foto 2 de 3"></button>
+              <button type="button" class="hero-carousel-dot" data-carousel-dot role="tab" aria-selected="false" aria-label="Mostrar foto 3 de 3"></button>
+            </div>
+          </div>
         </div>
         <div class="hero-body">
           <p class="max-w-xl text-lg text-ink">
@@ -639,9 +654,6 @@
   </a>
   <span class="rounded-full bg-navy px-3 py-1 font-display text-[11px] font-semibold text-white shadow-card">Chatea con nosotros</span>
 </div>
-
-<!-- CTA fija para móvil -->
-<a href="#" class="btn-primary fixed bottom-4 left-4 z-40 !shadow-none !px-4 !py-2.5 text-xs xl:hidden sm:bottom-5 sm:left-5 sm:!px-6 sm:!py-3 sm:text-sm">Agende su Cita</a>
 
 <script src="../assets/js/main.js"></script>
 </body>
