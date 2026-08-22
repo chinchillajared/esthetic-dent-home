@@ -21,12 +21,23 @@
       btn.setAttribute("aria-expanded", isOpen ? "false" : "true");
       e.stopPropagation();
     });
-
-    btn.addEventListener("mouseenter", function () {
-      closeAllNav(btn);
-      btn.setAttribute("aria-expanded", "true");
-    });
   });
+
+  /* Hover is tracked on every nav item — including the ones that are plain
+     links with no dropdown — so moving the cursor onto a neighbour always
+     closes whatever was open, instead of leaving a stale menu behind. */
+  Array.prototype.slice
+    .call(document.querySelectorAll("[data-desktop-nav] .nav-item"))
+    .forEach(function (item) {
+      var trigger = item.querySelector(".nav-trigger[data-nav]");
+      item.addEventListener("mouseenter", function () {
+        closeAllNav(trigger);
+        if (trigger) trigger.setAttribute("aria-expanded", "true");
+      });
+      item.addEventListener("mouseleave", function () {
+        if (trigger) trigger.setAttribute("aria-expanded", "false");
+      });
+    });
 
   var desktopNav = document.querySelector("[data-desktop-nav]");
   if (desktopNav) {
@@ -160,6 +171,15 @@
 
     startAutoplay();
   }
+
+  /* ---------------------------------------------------------------------
+   * Footer copyright year — kept current without editing the markup
+   * ------------------------------------------------------------------- */
+  Array.prototype.slice
+    .call(document.querySelectorAll("[data-current-year]"))
+    .forEach(function (el) {
+      el.textContent = String(new Date().getFullYear());
+    });
 
   /* ---------------------------------------------------------------------
    * Sticky topbar shadow on scroll
