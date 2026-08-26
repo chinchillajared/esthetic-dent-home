@@ -173,6 +173,48 @@
   }
 
   /* ---------------------------------------------------------------------
+   * Step carousel (The Process...): one slide at a time, moved by arrows
+   * ------------------------------------------------------------------- */
+  var stepCarousel = document.querySelector("[data-process-carousel]");
+  if (stepCarousel) {
+    var stepTrack = stepCarousel.querySelector("[data-process-track]");
+    var stepSlides = stepCarousel.querySelectorAll("[data-process-slide]");
+    var stepPrev = stepCarousel.querySelector("[data-process-prev]");
+    var stepNext = stepCarousel.querySelector("[data-process-next]");
+    var stepCount = stepCarousel.querySelector("[data-process-count]");
+    var stepIndex = 0;
+
+    function updateStepCarousel() {
+      if (!stepTrack) return;
+      stepTrack.style.transform = "translateX(-" + stepIndex * 100 + "%)";
+      if (stepPrev) stepPrev.disabled = stepIndex === 0;
+      if (stepNext)
+        stepNext.disabled = stepIndex === stepSlides.length - 1;
+      if (stepCount)
+        stepCount.textContent = stepIndex + 1 + " / " + stepSlides.length;
+    }
+
+    if (stepPrev) {
+      stepPrev.addEventListener("click", function () {
+        if (stepIndex > 0) {
+          stepIndex--;
+          updateStepCarousel();
+        }
+      });
+    }
+    if (stepNext) {
+      stepNext.addEventListener("click", function () {
+        if (stepIndex < stepSlides.length - 1) {
+          stepIndex++;
+          updateStepCarousel();
+        }
+      });
+    }
+
+    updateStepCarousel();
+  }
+
+  /* ---------------------------------------------------------------------
    * Footer copyright year — kept current without editing the markup
    * ------------------------------------------------------------------- */
   Array.prototype.slice
