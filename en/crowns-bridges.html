@@ -79,6 +79,9 @@
     <g id="icon-flask" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
       <path d="M9 3h6M10 3v6.5L5.5 18a2 2 0 0 0 1.8 3h9.4a2 2 0 0 0 1.8-3L14 9.5V3"/><path d="M8 15h8"/>
     </g>
+    <g id="icon-calendar" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v3.5M16 3v3.5"/><path d="M8 13.5h.01M12 13.5h.01M16 13.5h.01M8 17h.01M12 17h.01"/>
+    </g>
     <g id="icon-users" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
       <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
     </g>
@@ -357,7 +360,11 @@
         <div class="mx-auto max-w-[760px] text-center">
           <span class="badge">Dental Crowns &amp; Bridges in Costa Rica</span>
           <h1 class="mt-4 text-3xl font-extrabold leading-[1.08] sm:text-5xl 2xl:text-6xl">Strong. Precise. Crafted In-House.</h1>
-          <p class="mt-6 text-base text-ink sm:text-lg 2xl:text-xl">Restore the strength, function, and natural appearance of your smile with custom zirconia and E.max crowns—digitally designed and crafted in our in-house dental lab for $450 per crown, compared with approximately $1,200–$1,500 in the U.S.</p>
+          <!-- Placeholder photo: swap empty.png for the image below the title. -->
+          <div class="mx-auto mt-8 max-w-2xl overflow-hidden rounded-2xl shadow-card">
+            <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Custom zirconia and E.max crowns crafted at Esthetic Dent in Costa Rica" class="aspect-[831/490] w-full object-cover">
+          </div>
+          <p class="mt-8 text-base text-ink sm:text-lg 2xl:text-xl">Restore the strength, function, and natural appearance of your smile with custom zirconia and E.max crowns—digitally designed and crafted in our in-house dental lab for $450 per crown, compared with approximately $1,200–$1,500 in the U.S.</p>
           <p class="mt-4 text-base text-ink sm:text-lg 2xl:text-xl">Dental bridges and implant-supported crowns are created with the same precision, premium materials, and direct collaboration between your dentist and our laboratory team.</p>
           <div class="mt-8 flex flex-wrap justify-center gap-2 sm:gap-4">
             <a href="#contact" class="btn-primary">Start Your Free Virtual Consultation</a>
@@ -376,7 +383,22 @@
         <div class="text-center">
           <span class="badge">In-House Lab</span>
           <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Zirconia and E.max, Crafted In-House</h2>
-          <p class="mx-auto mt-3 max-w-[760px] text-ink">Your crown is digitally scanned with Medit, designed in Exocad, and precision-milled in our own lab—giving us complete control over its fit, bite, shade, and natural appearance.</p>
+          <!-- Placeholder photos: swap empty.png for a sequence of four medium photos. -->
+          <div class="mx-auto mt-8 grid max-w-3xl grid-cols-2 gap-4 sm:grid-cols-4">
+            <div class="min-w-0 overflow-hidden rounded-xl shadow-card">
+              <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Digital scan of a tooth at Esthetic Dent's in-house dental lab" class="aspect-[831/490] w-full object-cover">
+            </div>
+            <div class="min-w-0 overflow-hidden rounded-xl shadow-card">
+              <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Digital crown design at Esthetic Dent's in-house dental lab" class="aspect-[831/490] w-full object-cover">
+            </div>
+            <div class="min-w-0 overflow-hidden rounded-xl shadow-card">
+              <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Precision milling of a crown at Esthetic Dent's in-house dental lab" class="aspect-[831/490] w-full object-cover">
+            </div>
+            <div class="min-w-0 overflow-hidden rounded-xl shadow-card">
+              <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Finished zirconia crown at Esthetic Dent's in-house dental lab" class="aspect-[831/490] w-full object-cover">
+            </div>
+          </div>
+          <p class="mx-auto mt-8 max-w-[760px] text-ink">Your crown is digitally scanned, designed, and precision-milled in our own lab—giving us complete control over its fit, bite, shade, and natural appearance.</p>
           <p class="mx-auto mt-4 max-w-[760px] text-ink">Missing a tooth? We will tell you honestly whether a fixed bridge or an implant-supported crown is the better long-term solution for you.</p>
         </div>
         <div class="mt-8 flex justify-center">
@@ -483,21 +505,47 @@
               Do I need a crown, bridge, or dental implant?
               <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-navy/25 transition-transform" data-chevron><use href="#icon-chevron"/></svg>
             </button>
-            <div id="faq-1" class="hidden px-5 pt-5 pb-8 text-sm text-ink">A dental crown restores and protects a damaged tooth when the root can still be preserved. If a tooth is missing, a dental bridge fills the space using neighboring teeth for support, while a dental implant replaces the missing root and helps preserve the surrounding bone. Our dentist will recommend the right treatment based on your examination, digital scans, and long-term oral health—not simply on price.</div>
+            <div id="faq-1" class="hidden px-5 pt-5 pb-8 text-sm text-ink">
+              <p>A dental crown restores and protects a damaged tooth when the root can still be preserved. If a tooth is missing, a dental bridge fills the space using neighboring teeth for support, while a dental implant replaces the missing root and helps preserve the surrounding bone. Our dentist will recommend the right treatment based on your examination, digital scans, and long-term oral health—not simply on price.</p>
+              <!-- Placeholder photo: swap empty.png for the image below this answer. -->
+              <div class="mx-auto mt-4 max-w-xs overflow-hidden rounded-xl shadow-card">
+                <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Comparing crowns, bridges, and dental implants at Esthetic Dent" class="aspect-[831/490] w-full object-cover">
+              </div>
+            </div>
           </div>
           <div class="overflow-hidden rounded-2xl border border-navy/10 shadow-card">
             <button class="flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-display font-semibold text-navy" data-accordion-trigger aria-expanded="false" aria-controls="faq-2">
               How long does it take to get a dental crown in Costa Rica?
               <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-navy/25 transition-transform" data-chevron><use href="#icon-chevron"/></svg>
             </button>
-            <div id="faq-2" class="hidden px-5 pt-5 pb-8 text-sm text-ink">Because your crown is digitally designed and milled in our in-house dental lab, treatment can usually be completed within a few days. Many international patients receive their final crown during the same trip as their clinical evaluation, depending on their individual case.</div>
+            <div id="faq-2" class="hidden px-5 pt-5 pb-8 text-sm text-ink">
+              <p>Because your crown is digitally designed and milled in our in-house dental lab, treatment can usually be completed within a few days. Many international patients receive their final crown during the same trip as their clinical evaluation, depending on their individual case.</p>
+              <div class="mt-4 inline-flex items-center gap-2 rounded-full bg-mint/15 px-4 py-2 font-display text-sm font-semibold text-mint-dark">
+                <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0"><use href="#icon-calendar"/></svg>
+                Typically completed within a few days
+              </div>
+            </div>
           </div>
           <div class="overflow-hidden rounded-2xl border border-navy/10 shadow-card">
             <button class="flex w-full items-center justify-between gap-4 px-5 py-4 text-left font-display font-semibold text-navy" data-accordion-trigger aria-expanded="false" aria-controls="faq-3">
               How long do zirconia crowns last?
               <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-navy/25 transition-transform" data-chevron><use href="#icon-chevron"/></svg>
             </button>
-            <div id="faq-3" class="hidden px-5 pt-5 pb-8 text-sm text-ink">With proper care, zirconia crowns commonly last 10 to 15 years and may last significantly longer. Their lifespan depends on oral hygiene, bite forces, regular dental checkups, and habits such as teeth grinding. Although the crown protects the tooth, the surrounding gums, bone, and natural tooth structure still require daily brushing and flossing.</div>
+            <div id="faq-3" class="hidden px-5 pt-5 pb-8 text-sm text-ink">
+              <p>With proper care, zirconia crowns commonly last 10 to 15 years and may last significantly longer. Their lifespan depends on oral hygiene, bite forces, regular dental checkups, and habits such as teeth grinding. Although the crown protects the tooth, the surrounding gums, bone, and natural tooth structure still require daily brushing and flossing.</p>
+              <!-- Placeholder photos: swap empty.png for three small images. -->
+              <div class="mt-4 grid grid-cols-3 gap-3">
+                <div class="min-w-0 overflow-hidden rounded-lg shadow-card">
+                  <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Zirconia crown longevity photo 1 at Esthetic Dent" class="aspect-[831/490] w-full object-cover">
+                </div>
+                <div class="min-w-0 overflow-hidden rounded-lg shadow-card">
+                  <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Zirconia crown longevity photo 2 at Esthetic Dent" class="aspect-[831/490] w-full object-cover">
+                </div>
+                <div class="min-w-0 overflow-hidden rounded-lg shadow-card">
+                  <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Zirconia crown longevity photo 3 at Esthetic Dent" class="aspect-[831/490] w-full object-cover">
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
