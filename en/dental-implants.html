@@ -67,6 +67,9 @@
     <g id="icon-pin" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
       <path d="M12 21s7-6.6 7-11.5A7 7 0 0 0 5 9.5C5 14.4 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/>
     </g>
+    <g id="icon-home" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3.5 10.5 12 3.5l8.5 7"/><path d="M5.5 9.2V20h13V9.2"/><path d="M9.75 20v-5.5h4.5V20"/>
+    </g>
     <g id="icon-menu" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
       <path d="M4 7h16M4 12h16M4 17h16"/>
     </g>
@@ -118,6 +121,11 @@
       </button>
     </div>
     <div class="divide-y divide-sky-pale/50 px-2">
+      <div>
+        <a href="index.html" class="flex w-full items-center gap-3 px-3 py-4 text-left font-display font-semibold text-navy">
+          <svg viewBox="0 0 24 24" class="h-5 w-5 text-blue"><use href="#icon-home"/></svg>Home
+        </a>
+      </div>
       <!-- 1 -->
       <div>
         <button class="flex w-full items-center justify-between px-3 py-4 text-left font-display font-semibold text-navy" data-accordion-trigger aria-expanded="false" aria-controls="m-packages">
@@ -260,6 +268,10 @@
     <nav class="hidden border-t border-navy/10 xl:block" aria-label="Primary" data-desktop-nav>
       <div class="nav-row flex items-center justify-center gap-1 px-4 py-1.5 sm:px-6 lg:px-8">
         <div class="nav-item">
+          <a href="index.html" class="nav-trigger">Home</a>
+        </div>
+
+        <div class="nav-item">
           <button type="button" class="nav-trigger" data-nav aria-expanded="false" aria-haspopup="true">
             Packages
             <svg viewBox="0 0 24 24" class="h-3.5 w-3.5"><use href="#icon-chevron"/></svg>
@@ -327,7 +339,7 @@
             Blog
             <svg viewBox="0 0 24 24" class="h-3.5 w-3.5"><use href="#icon-chevron"/></svg>
           </button>
-          <div class="dropdown" role="menu">
+          <div class="dropdown dropdown--right" role="menu">
             <a href="/en/blog/" class="dropdown-link" role="menuitem">All articles</a>
             <a href="/en/blog/?category=dental-care-guides" class="dropdown-link" role="menuitem">Dental Care Guides</a>
             <a href="/en/blog/?category=dental-tourism-guides" class="dropdown-link" role="menuitem">Dental Tourism Guides</a>
@@ -352,20 +364,29 @@
     <!-- ============================================================ -->
     <!-- Page hero                                                     -->
     <!-- ============================================================ -->
-    <section class="py-16 2xl:py-24">
-      <div class="mx-auto max-w-[1920px] px-4 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-[760px] text-center">
+    <section class="hero-stage">
+      <div class="hero-stage-heading">
+        <div class="mx-auto max-w-xl text-center lg:mx-0 lg:text-left 2xl:max-w-2xl">
           <span class="badge">Dental Implants in Costa Rica</span>
-          <h1 class="mt-4 text-3xl font-extrabold leading-[1.08] sm:text-5xl 2xl:text-6xl">Permanent Teeth, Crafted In-House</h1>
-          <!-- Placeholder photo: swap empty.png for the image below the title. -->
-          <div class="mx-auto mt-8 max-w-2xl overflow-hidden rounded-2xl shadow-card">
-            <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Dental implants crafted in-house at Esthetic Dent in Costa Rica" class="aspect-[831/490] w-full object-cover">
-          </div>
-          <p class="mt-8 font-display text-lg font-semibold text-navy">Dental Implants in Costa Rica: Save Up to 70% Without Compromising Quality</p>
-          <p class="mt-6 text-base text-ink sm:text-lg 2xl:text-xl">Restore your smile with high-quality titanium dental implants and custom zirconia restorations, placed by our experienced implant team and crafted in our in-house dental lab. Receive the advanced materials, precision, and standards you expect in the U.S.—at a significantly more affordable cost and backed by our lifetime warranty.</p>
-          <div class="mt-8 flex flex-wrap justify-center gap-2 sm:gap-4">
-            <a href="#" class="btn-primary">Talk to a Dental Advisor</a>
-            <a href="#pricing" class="btn-ghost">See Real Pricing</a>
+          <h1 class="mt-4 text-3xl font-extrabold leading-[1.08] sm:text-5xl 2xl:text-6xl">Permanent Teeth, <span class="text-blue">Crafted In-House</span></h1>
+        </div>
+      </div>
+
+      <!-- Placeholder photo: swap empty.png for the hero photograph. From lg it
+           is the section background, so favour a wide shot with quiet space on
+           the left where the copy sits. -->
+      <div class="hero-stage-media">
+        <img decoding="async" src="../assets/img/empty.png" alt="Dental implants crafted in-house at Esthetic Dent in Costa Rica" class="hero-stage-photo">
+        <div class="hero-stage-scrim" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero-stage-panel">
+        <div class="mx-auto max-w-xl text-center lg:mx-0 lg:text-left 2xl:max-w-2xl">
+          <p class="font-display text-lg font-semibold text-navy">Dental Implants in Costa Rica: Save Up to 70% Without Compromising Quality</p>
+          <p class="copy-justified mt-6 text-base text-ink sm:text-lg 2xl:text-xl">Restore your smile with high-quality titanium dental implants and custom zirconia restorations, placed by our experienced implant team and crafted in our in-house dental lab. Receive the advanced materials, precision, and standards you expect in the U.S.—at a significantly more affordable cost and backed by our lifetime warranty.</p>
+          <div class="mt-6 flex flex-wrap justify-center gap-2 sm:gap-4 lg:justify-start">
+            <a href="#" class="btn-primary whitespace-nowrap px-3 py-2 text-[0.8rem] sm:px-6 sm:py-3 sm:text-sm">Talk to a Dental Advisor</a>
+            <a href="#pricing" class="btn-ghost whitespace-nowrap px-3 py-2 text-[0.8rem] sm:px-6 sm:py-3 sm:text-sm">See Real Pricing</a>
           </div>
         </div>
       </div>
@@ -376,32 +397,34 @@
     <!-- ============================================================ -->
     <section class="scroll-mt-24 bg-[#F4FAFF] py-16 2xl:py-24">
       <div class="mx-auto max-w-[1920px] px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <span class="badge">What Are Dental Implants?</span>
-          <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">What Are Dental Implants?</h2>
-          <!-- Placeholder photo: swap empty.png for the image below the title. -->
-          <div class="mx-auto mt-8 max-w-2xl overflow-hidden rounded-2xl shadow-card">
+        <div class="split">
+          <div class="split-copy">
+            <span class="badge">What Are Dental Implants?</span>
+            <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">What Are Dental Implants?</h2>
+            <p class="mt-6 font-display font-semibold text-navy">A Permanent Solution for Missing Teeth</p>
+            <p class="copy-justified mt-4 text-ink">Dental implants are biocompatible titanium posts placed in the jawbone to replace missing tooth roots. Through a natural process called osseointegration, the implants fuse with the surrounding bone, creating a strong and stable foundation for custom-made zirconia restorations.</p>
+            <p class="copy-justified mt-4 text-ink">Unlike removable dentures, dental implants do not shift, click, or require adhesives. They look, feel, and function more like natural teeth—helping you smile, speak, and eat with confidence.</p>
+            <p class="copy-justified mt-4 text-ink">At Esthetic Dent, your dental implant treatment in Costa Rica is coordinated under one roof—from 3D CBCT imaging and digital treatment planning to the creation of your final restoration in our in-house dental lab.</p>
+          </div>
+          <!-- Placeholder photo: swap empty.png for the illustration. -->
+          <div class="split-media">
             <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Dental implant illustration at Esthetic Dent in Costa Rica" class="aspect-[831/490] w-full object-cover">
           </div>
-          <p class="mx-auto mt-8 font-display font-semibold text-navy">A Permanent Solution for Missing Teeth</p>
-          <p class="mx-auto mt-4 max-w-[760px] text-ink">Dental implants are biocompatible titanium posts placed in the jawbone to replace missing tooth roots. Through a natural process called osseointegration, the implants fuse with the surrounding bone, creating a strong and stable foundation for custom-made zirconia restorations.</p>
-          <p class="mx-auto mt-4 max-w-[760px] text-ink">Unlike removable dentures, dental implants do not shift, click, or require adhesives. They look, feel, and function more like natural teeth—helping you smile, speak, and eat with confidence.</p>
-          <p class="mx-auto mt-4 max-w-[760px] text-ink">At Esthetic Dent, your dental implant treatment in Costa Rica is coordinated under one roof—from 3D CBCT imaging and digital treatment planning to the creation of your final restoration in our in-house dental lab.</p>
         </div>
-        <ul class="mx-auto mt-10 grid max-w-[760px] grid-cols-1 gap-4 md:grid-cols-2">
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+        <ul class="fit-list mx-auto mt-10 max-w-[1100px] gap-3">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Lifetime warranty on dental implants</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Experienced dental implant team</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Internationally recognized Zimmer implants</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">In-house CBCT imaging and digital dental lab</span>
           </li>
@@ -417,53 +440,44 @@
     <!-- ============================================================ -->
     <section class="scroll-mt-24 py-16 2xl:py-24">
       <div class="mx-auto max-w-[1920px] px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <span class="badge">Who Is a Candidate?</span>
-          <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Who Is a Candidate for Dental Implants?</h2>
-          <!-- Placeholder photos: swap empty.png for four medium images. -->
-          <div class="mx-auto mt-8 grid max-w-3xl grid-cols-2 gap-4 sm:grid-cols-4">
-            <div class="min-w-0 overflow-hidden rounded-xl shadow-card">
-              <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Dental implant candidate evaluation photo 1 at Esthetic Dent" class="aspect-[831/490] w-full object-cover">
-            </div>
-            <div class="min-w-0 overflow-hidden rounded-xl shadow-card">
-              <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Dental implant candidate evaluation photo 2 at Esthetic Dent" class="aspect-[831/490] w-full object-cover">
-            </div>
-            <div class="min-w-0 overflow-hidden rounded-xl shadow-card">
-              <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Dental implant candidate evaluation photo 3 at Esthetic Dent" class="aspect-[831/490] w-full object-cover">
-            </div>
-            <div class="min-w-0 overflow-hidden rounded-xl shadow-card">
-              <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Dental implant candidate evaluation photo 4 at Esthetic Dent" class="aspect-[831/490] w-full object-cover">
-            </div>
+        <div class="split split--flip">
+          <div class="split-copy">
+            <span class="badge">Who Is a Candidate?</span>
+            <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Who Is a Candidate for Dental Implants?</h2>
+            <p class="mt-6 text-ink">Dental implants may be right for you if you:</p>
           </div>
-          <p class="mx-auto mt-8 max-w-[760px] text-ink">Dental implants may be right for you if you:</p>
+          <!-- Placeholder photo: swap empty.png for the image beside the copy. -->
+          <div class="split-media">
+            <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Dental implant candidate evaluation at Esthetic Dent in Costa Rica" class="aspect-[831/490] w-full object-cover">
+          </div>
         </div>
-        <ul class="mx-auto mt-10 grid max-w-[760px] grid-cols-1 gap-4 md:grid-cols-2">
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+        <ul class="fit-list mx-auto mt-10 max-w-[1100px] gap-3">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Are missing one or more teeth and want a fixed, long-term solution</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Are tired of removable dentures that slip, click, or require adhesives</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Have a severely damaged or cracked tooth that cannot be saved</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Have failing crowns or bridges and need a more stable replacement</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Have enough jawbone to support an implant—or are open to bone grafting when clinically necessary</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Want to restore your ability to eat, speak, and smile with confidence</span>
           </li>
         </ul>
-        <p class="mx-auto mt-8 max-w-[760px] text-center text-ink">Have you been told you do not have enough bone for dental implants? Our implant team can evaluate your case using 3D CBCT imaging and determine whether bone grafting or another personalized treatment option may help you qualify.</p>
+        <p class="copy-justified-flush mx-auto mt-8 max-w-[760px] text-ink">Have you been told you do not have enough bone for dental implants? Our implant team can evaluate your case using 3D CBCT imaging and determine whether bone grafting or another personalized treatment option may help you qualify.</p>
         <div class="mt-8 flex justify-center">
           <a href="#" class="btn-primary">Find Out If You're a Candidate</a>
         </div>
@@ -488,8 +502,8 @@
                 <div class="process-carousel-card">
                   <span class="font-display text-3xl font-extrabold text-sky">01</span>
                   <h3 class="mt-2 font-display font-bold text-navy">Free Virtual Consultation and Personalized Treatment Plan</h3>
-                  <p class="mt-2 text-sm text-ink">Meet online with our dental team for a comprehensive review of your case. We evaluate your dental history, current concerns, photographs, X-rays, and any available 3D scans to understand your clinical needs and treatment goals.</p>
-                  <p class="mt-2 text-sm text-ink">Based on the information provided, we explain your dental implant options, recommend the most appropriate approach, and prepare a personalized treatment plan with a clearly defined package price. You will know what your proposed treatment includes, how many visits may be required, and what to expect before making any travel arrangements.</p>
+                  <p class="copy-justified-flush mt-2 text-sm text-ink">Meet online with our dental team for a comprehensive review of your case. We evaluate your dental history, current concerns, photographs, X-rays, and any available 3D scans to understand your clinical needs and treatment goals.</p>
+                  <p class="copy-justified-flush mt-2 text-sm text-ink">Based on the information provided, we explain your dental implant options, recommend the most appropriate approach, and prepare a personalized treatment plan with a clearly defined package price. You will know what your proposed treatment includes, how many visits may be required, and what to expect before making any travel arrangements.</p>
                   <p class="mt-2 text-sm font-semibold text-navy">Your journey begins with a real treatment plan—not simply a sales call.</p>
                 </div>
               </article>
@@ -498,8 +512,8 @@
                 <div class="process-carousel-card">
                   <span class="font-display text-3xl font-extrabold text-sky">02</span>
                   <h3 class="mt-2 font-display font-bold text-navy">In-Person Evaluation and 3D Confirmation</h3>
-                  <p class="mt-2 text-sm text-ink">Once you arrive in Costa Rica, we complete your clinical evaluation and 3D CBCT scan to confirm the treatment plan prepared during your virtual consultation. The price of your approved dental implant package remains unchanged for everything included in your plan.</p>
-                  <p class="mt-2 text-sm text-ink">If an additional procedure outside the package is clinically necessary, it will be clearly explained and quoted separately before you make any decision. If your in-person evaluation shows that you need less treatment than originally planned, we will adjust your treatment and package price accordingly.</p>
+                  <p class="copy-justified-flush mt-2 text-sm text-ink">Once you arrive in Costa Rica, we complete your clinical evaluation and 3D CBCT scan to confirm the treatment plan prepared during your virtual consultation. The price of your approved dental implant package remains unchanged for everything included in your plan.</p>
+                  <p class="copy-justified-flush mt-2 text-sm text-ink">If an additional procedure outside the package is clinically necessary, it will be clearly explained and quoted separately before you make any decision. If your in-person evaluation shows that you need less treatment than originally planned, we will adjust your treatment and package price accordingly.</p>
                 </div>
               </article>
 
@@ -507,7 +521,7 @@
                 <div class="process-carousel-card">
                   <span class="font-display text-3xl font-extrabold text-sky">03</span>
                   <h3 class="mt-2 font-display font-bold text-navy">Dental Implant Placement</h3>
-                  <p class="mt-2 text-sm text-ink">A biocompatible titanium implant is precisely placed into the jawbone under local anesthesia. Sedation options are also available when clinically appropriate.</p>
+                  <p class="copy-justified-flush mt-2 text-sm text-ink">A biocompatible titanium implant is precisely placed into the jawbone under local anesthesia. Sedation options are also available when clinically appropriate.</p>
                 </div>
               </article>
 
@@ -515,7 +529,7 @@
                 <div class="process-carousel-card">
                   <span class="font-display text-3xl font-extrabold text-sky">04</span>
                   <h3 class="mt-2 font-display font-bold text-navy">Healing and Osseointegration</h3>
-                  <p class="mt-2 text-sm text-ink">During a healing period of approximately three to six months, the implant naturally integrates with your jawbone, creating a strong and stable foundation for your final tooth.</p>
+                  <p class="copy-justified-flush mt-2 text-sm text-ink">During a healing period of approximately three to six months, the implant naturally integrates with your jawbone, creating a strong and stable foundation for your final tooth.</p>
                 </div>
               </article>
 
@@ -523,8 +537,8 @@
                 <div class="process-carousel-card">
                   <span class="font-display text-3xl font-extrabold text-sky">05</span>
                   <h3 class="mt-2 font-display font-bold text-navy">Custom Abutment and Crown</h3>
-                  <p class="mt-2 text-sm text-ink">After the healing period, the abutment is connected to the implant. Our in-house digital dental lab then designs and fabricates your custom zirconia crown.</p>
-                  <p class="mt-2 text-sm text-ink">Because your clinical and laboratory teams work under one roof, adjustments can be completed efficiently and with greater control over fit, function, and appearance.</p>
+                  <p class="copy-justified-flush mt-2 text-sm text-ink">After the healing period, the abutment is connected to the implant. Our in-house digital dental lab then designs and fabricates your custom zirconia crown.</p>
+                  <p class="copy-justified-flush mt-2 text-sm text-ink">Because your clinical and laboratory teams work under one roof, adjustments can be completed efficiently and with greater control over fit, function, and appearance.</p>
                 </div>
               </article>
 
@@ -532,7 +546,7 @@
                 <div class="process-carousel-card">
                   <span class="font-display text-3xl font-extrabold text-sky">06</span>
                   <h3 class="mt-2 font-display font-bold text-navy">Your Final Result</h3>
-                  <p class="mt-2 text-sm text-ink">Receive a strong, fixed replacement tooth designed to look, feel, and function naturally—backed by our lifetime implant warranty.</p>
+                  <p class="copy-justified-flush mt-2 text-sm text-ink">Receive a strong, fixed replacement tooth designed to look, feel, and function naturally—backed by our lifetime implant warranty.</p>
                 </div>
               </article>
 
@@ -597,9 +611,9 @@
             </tbody>
           </table>
         </div>
-        <p class="mx-auto mt-4 max-w-[760px] text-center text-[0.8rem] text-ink/60">Estimates in USD. Full-arch (All-on-4/6/8) cases are quoted individually. Final plan confirmed at your free quote.</p>
+        <p class="copy-justified-flush mx-auto mt-4 max-w-[760px] text-[0.8rem] text-ink/60">Estimates in USD. Full-arch (All-on-4/6/8) cases are quoted individually. Final plan confirmed at your free quote.</p>
         <p class="mx-auto mt-4 max-w-[760px] text-center text-sm text-ink">The final zirconia crown is quoted separately according to your personalized treatment plan.</p>
-        <p class="mx-auto mt-3 max-w-[760px] text-center text-sm text-ink">Your dental implant package will clearly explain everything included in your treatment. Any procedure outside the approved package will be discussed and quoted separately—and will only be performed with your authorization.</p>
+        <p class="copy-justified-flush mx-auto mt-3 max-w-[760px] text-sm text-ink">Your dental implant package will clearly explain everything included in your treatment. Any procedure outside the approved package will be discussed and quoted separately—and will only be performed with your authorization.</p>
         <div class="mt-8 flex justify-center">
           <a href="#contact" class="btn-primary">Request Your Free Implant Assessment</a>
         </div>

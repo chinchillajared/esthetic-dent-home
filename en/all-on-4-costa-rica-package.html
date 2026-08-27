@@ -67,6 +67,9 @@
     <g id="icon-pin" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
       <path d="M12 21s7-6.6 7-11.5A7 7 0 0 0 5 9.5C5 14.4 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/>
     </g>
+    <g id="icon-home" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3.5 10.5 12 3.5l8.5 7"/><path d="M5.5 9.2V20h13V9.2"/><path d="M9.75 20v-5.5h4.5V20"/>
+    </g>
     <g id="icon-menu" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
       <path d="M4 7h16M4 12h16M4 17h16"/>
     </g>
@@ -118,6 +121,11 @@
       </button>
     </div>
     <div class="divide-y divide-sky-pale/50 px-2">
+      <div>
+        <a href="index.html" class="flex w-full items-center gap-3 px-3 py-4 text-left font-display font-semibold text-navy">
+          <svg viewBox="0 0 24 24" class="h-5 w-5 text-blue"><use href="#icon-home"/></svg>Home
+        </a>
+      </div>
       <!-- 1 -->
       <div>
         <button class="flex w-full items-center justify-between px-3 py-4 text-left font-display font-semibold text-navy" data-accordion-trigger aria-expanded="false" aria-controls="m-packages">
@@ -260,6 +268,10 @@
     <nav class="hidden border-t border-navy/10 xl:block" aria-label="Primary" data-desktop-nav>
       <div class="nav-row flex items-center justify-center gap-1 px-4 py-1.5 sm:px-6 lg:px-8">
         <div class="nav-item">
+          <a href="index.html" class="nav-trigger">Home</a>
+        </div>
+
+        <div class="nav-item">
           <button type="button" class="nav-trigger" data-nav aria-expanded="false" aria-haspopup="true">
             Packages
             <svg viewBox="0 0 24 24" class="h-3.5 w-3.5"><use href="#icon-chevron"/></svg>
@@ -327,7 +339,7 @@
             Blog
             <svg viewBox="0 0 24 24" class="h-3.5 w-3.5"><use href="#icon-chevron"/></svg>
           </button>
-          <div class="dropdown" role="menu">
+          <div class="dropdown dropdown--right" role="menu">
             <a href="/en/blog/" class="dropdown-link" role="menuitem">All articles</a>
             <a href="/en/blog/?category=dental-care-guides" class="dropdown-link" role="menuitem">Dental Care Guides</a>
             <a href="/en/blog/?category=dental-tourism-guides" class="dropdown-link" role="menuitem">Dental Tourism Guides</a>
@@ -352,28 +364,51 @@
     <!-- ============================================================ -->
     <!-- Page hero                                                     -->
     <!-- ============================================================ -->
+    <section class="hero-stage">
+      <div class="hero-stage-heading">
+        <div class="mx-auto max-w-xl text-center lg:mx-0 lg:text-left 2xl:max-w-2xl">
+          <span class="badge">All-on-4 &amp; More Costa Rica Package</span>
+          <h1 class="mt-4 text-3xl font-extrabold leading-[1.08] sm:text-5xl 2xl:text-6xl">Full-Arch <span class="text-blue">Fixed Teeth</span> in Costa Rica</h1>
+        </div>
+      </div>
+
+      <!-- Placeholder photo: swap empty.png for the hero photograph. From lg it
+           is the section background, so favour a wide shot with quiet space on
+           the left where the copy sits. -->
+      <div class="hero-stage-media">
+        <img decoding="async" src="../assets/img/empty.png" alt="Full-arch fixed dental implants at Esthetic Dent in Costa Rica" class="hero-stage-photo">
+        <div class="hero-stage-scrim" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero-stage-panel">
+        <div class="mx-auto max-w-xl text-center lg:mx-0 lg:text-left 2xl:max-w-2xl">
+          <p class="copy-justified text-base text-ink sm:text-lg 2xl:text-xl">Missing or severely damaged teeth can affect the way you eat, speak, smile, and feel about yourself. Full-arch dental implants in Costa Rica offer a stable, natural-looking solution designed to restore an entire upper arch, lower arch, or both.</p>
+          <p class="copy-justified mt-4 text-base text-ink sm:text-lg 2xl:text-xl">Our All-on-4, All-on-6, and All-on-8 dental implant treatments use four, six, or eight strategically positioned implants to support a fixed full-arch restoration. When both the upper and lower arches are treated, this may be described as full-mouth dental implants.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- How many implants                                             -->
+    <!-- ============================================================ -->
     <section class="py-16 2xl:py-24">
       <div class="mx-auto max-w-[1920px] px-4 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-[760px] text-center">
-          <span class="badge">All-on-4 &amp; More Costa Rica Package</span>
-          <h1 class="mt-4 text-3xl font-extrabold leading-[1.08] sm:text-5xl 2xl:text-6xl">Full-Arch Fixed Teeth in Costa Rica</h1>
-          <!-- Placeholder photo: swap empty.png for the image below the title. -->
-          <div class="mx-auto mt-8 max-w-2xl overflow-hidden rounded-2xl shadow-card">
-            <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Full-arch fixed dental implants at Esthetic Dent in Costa Rica" class="aspect-[831/490] w-full object-cover">
+        <div class="split">
+          <div class="split-copy">
+            <span class="badge">How Many Implants</span>
+            <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Four, Six or Eight — Decided by Your Anatomy</h2>
+            <p class="copy-justified mt-6 text-base text-ink 2xl:text-lg">The appropriate number of implants depends on your bone structure, anatomy, bite, and clinical needs. Your dental team will recommend a personalized treatment plan after reviewing your diagnostic imaging and completing a comprehensive clinical evaluation.</p>
           </div>
-          <p class="mt-8 text-base text-ink sm:text-lg 2xl:text-xl">Missing or severely damaged teeth can affect the way you eat, speak, smile, and feel about yourself. Full-arch dental implants in Costa Rica offer a stable, natural-looking solution designed to restore an entire upper arch, lower arch, or both.</p>
-          <p class="mt-4 text-base text-ink sm:text-lg 2xl:text-xl">Our All-on-4, All-on-6, and All-on-8 dental implant treatments use four, six, or eight strategically positioned implants to support a fixed full-arch restoration. When both the upper and lower arches are treated, this may be described as full-mouth dental implants.</p>
-          <p class="mt-4 text-base text-ink sm:text-lg 2xl:text-xl">The appropriate number of implants depends on your bone structure, anatomy, bite, and clinical needs. Your dental team will recommend a personalized treatment plan after reviewing your diagnostic imaging and completing a comprehensive clinical evaluation.</p>
           <!-- Placeholder photos: swap empty.png for three small images. -->
-          <div class="mx-auto mt-6 grid max-w-xl grid-cols-3 gap-3">
+          <div class="grid min-w-0 grid-cols-3 gap-3">
             <div class="min-w-0 overflow-hidden rounded-xl shadow-card">
-              <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Bone structure evaluation for All-on-X implants at Esthetic Dent" class="aspect-[831/490] w-full object-cover">
+              <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Bone structure evaluation for All-on-X implants at Esthetic Dent" class="aspect-[3/4] w-full object-cover">
             </div>
             <div class="min-w-0 overflow-hidden rounded-xl shadow-card">
-              <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="3D CBCT diagnostic imaging at Esthetic Dent" class="aspect-[831/490] w-full object-cover">
+              <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="3D CBCT diagnostic imaging at Esthetic Dent" class="aspect-[3/4] w-full object-cover">
             </div>
             <div class="min-w-0 overflow-hidden rounded-xl shadow-card">
-              <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Personalized full-arch treatment planning at Esthetic Dent" class="aspect-[831/490] w-full object-cover">
+              <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Personalized full-arch treatment planning at Esthetic Dent" class="aspect-[3/4] w-full object-cover">
             </div>
           </div>
         </div>
@@ -385,12 +420,16 @@
     <!-- ============================================================ -->
     <section class="bg-[#F4FAFF] py-16 2xl:py-24">
       <div class="mx-auto max-w-[1920px] px-4 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-[760px] text-center">
-          <!-- Placeholder photo: swap empty.png for the image above this paragraph. -->
-          <div class="mx-auto mb-8 max-w-2xl overflow-hidden rounded-2xl shadow-card">
+        <div class="split split--flip">
+          <div class="split-copy">
+            <span class="badge">The Destination</span>
+            <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Treatment on the Coast. Recovery on the Same Coast.</h2>
+            <p class="copy-justified mt-6 text-base text-ink sm:text-lg 2xl:text-xl">Receive coordinated implant care in Cóbano, Costa Rica, and spend the time between appointments surrounded by the beaches, nature, and peaceful atmosphere of nearby Santa Teresa.</p>
+          </div>
+          <!-- Placeholder photo: swap empty.png for the destination photograph. -->
+          <div class="split-media">
             <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Cóbano, Santa Teresa beach near Esthetic Dent's clinic in Costa Rica" class="aspect-[831/490] w-full object-cover">
           </div>
-          <p class="text-base text-ink sm:text-lg 2xl:text-xl">Receive coordinated implant care in Cóbano, Costa Rica, and spend the time between appointments surrounded by the beaches, nature, and peaceful atmosphere of nearby Santa Teresa.</p>
         </div>
       </div>
     </section>
@@ -403,17 +442,17 @@
         <div class="rounded-2xl border border-navy/10 bg-white p-6 text-center shadow-card">
           <p class="font-display text-3xl font-extrabold text-navy sm:text-4xl">35+</p>
           <h3 class="mt-2 font-display text-base font-bold text-navy sm:text-lg">Years of Experience</h3>
-          <p class="mt-2 text-sm text-ink">Over a decade and a half of specialized clinical practice in advanced cosmetic dentistry and complex oral rehabilitation.</p>
+          <p class="copy-justified mt-2 text-sm text-ink">Over a decade and a half of specialized clinical practice in advanced cosmetic dentistry and complex oral rehabilitation.</p>
         </div>
         <div class="rounded-2xl border border-navy/10 bg-white p-6 text-center shadow-card">
           <p class="font-display text-3xl font-extrabold text-navy sm:text-4xl">2,000+</p>
           <h3 class="mt-2 font-display text-base font-bold text-navy sm:text-lg">Documented Cases</h3>
-          <p class="mt-2 text-sm text-ink">A verified track record of successfully treating over 2,000 local and international patients with biomimetic restorations.</p>
+          <p class="copy-justified mt-2 text-sm text-ink">A verified track record of successfully treating over 2,000 local and international patients with biomimetic restorations.</p>
         </div>
         <div class="rounded-2xl border border-navy/10 bg-white p-6 text-center shadow-card">
           <svg viewBox="0 0 24 24" class="mx-auto h-9 w-9 text-mint-dark"><use href="#icon-flask"/></svg>
           <h3 class="mt-2 font-display text-base font-bold text-navy sm:text-lg">In-House Dental Lab</h3>
-          <p class="mt-2 text-sm text-ink">Our fully integrated, proprietary laboratory guarantees immediate clinical adjustments, absolute quality control, and zero shipping delays.</p>
+          <p class="copy-justified mt-2 text-sm text-ink">Our fully integrated, proprietary laboratory guarantees immediate clinical adjustments, absolute quality control, and zero shipping delays.</p>
         </div>
       </div>
     </section>
@@ -423,19 +462,21 @@
     <!-- ============================================================ -->
     <section class="scroll-mt-24 bg-[#F4FAFF] py-16 2xl:py-24">
       <div class="mx-auto max-w-[1920px] px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <span class="badge">What Are All-on-4?</span>
-          <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">What Are All-on-4 Dental Implants?</h2>
-          <!-- Placeholder photo: swap empty.png for the image below the title. -->
-          <div class="mx-auto mt-8 max-w-2xl overflow-hidden rounded-2xl shadow-card">
+        <div class="split">
+          <div class="split-copy">
+            <span class="badge">What Are All-on-4?</span>
+            <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">What Are All-on-4 Dental Implants?</h2>
+            <p class="copy-justified mt-6 text-ink">All-on-4 dental implants in Costa Rica provide a fixed full-arch solution for patients who have lost most or all of their teeth—or whose remaining teeth can no longer be predictably restored.</p>
+            <p class="copy-justified mt-4 text-ink">At Esthetic Dent, four strategically positioned dental implants are used to support a fixed prosthesis that replaces an entire upper or lower arch. Implant position and angulation are personalized according to the patient's available bone, anatomy, bite, and restorative needs.</p>
+            <p class="copy-justified mt-4 text-ink">This approach may reduce the need for bone grafting in selected cases. However, the final surgical plan can only be determined after a comprehensive clinical evaluation and 3D CBCT analysis.</p>
+            <div class="mt-8 flex justify-center lg:justify-start">
+              <a href="#" class="btn-primary">Start Your Free Virtual Consultation</a>
+            </div>
+          </div>
+          <!-- Placeholder photo: swap empty.png for the illustration. -->
+          <div class="split-media">
             <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="All-on-4 dental implant illustration at Esthetic Dent in Costa Rica" class="aspect-[831/490] w-full object-cover">
           </div>
-          <p class="mx-auto mt-8 max-w-[760px] text-ink">All-on-4 dental implants in Costa Rica provide a fixed full-arch solution for patients who have lost most or all of their teeth—or whose remaining teeth can no longer be predictably restored.</p>
-          <p class="mx-auto mt-4 max-w-[760px] text-ink">At Esthetic Dent, four strategically positioned dental implants are used to support a fixed prosthesis that replaces an entire upper or lower arch. Implant position and angulation are personalized according to the patient's available bone, anatomy, bite, and restorative needs.</p>
-          <p class="mx-auto mt-4 max-w-[760px] text-ink">This approach may reduce the need for bone grafting in selected cases. However, the final surgical plan can only be determined after a comprehensive clinical evaluation and 3D CBCT analysis.</p>
-        </div>
-        <div class="mt-8 flex justify-center">
-          <a href="#" class="btn-primary">Start Your Free Virtual Consultation</a>
         </div>
       </div>
     </section>
@@ -448,14 +489,14 @@
         <div class="text-center">
           <span class="badge">Package Options</span>
           <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">All-on-x Packages</h2>
-          <p class="mx-auto mt-3 max-w-[760px] text-ink">The number of implants placed in your mouth will depend on your specific case, bone availability, and your needs and expectations. These factors will guide our collaborative decisions.</p>
+          <p class="copy-justified mx-auto mt-3 max-w-[760px] text-ink">The number of implants placed in your mouth will depend on your specific case, bone availability, and your needs and expectations. These factors will guide our collaborative decisions.</p>
           <p class="mx-auto mt-6 font-display font-semibold text-navy">Our Best Options</p>
         </div>
-        <ul class="mx-auto mt-6 grid max-w-[900px] grid-cols-2 gap-3 text-sm text-ink sm:grid-cols-4">
-          <li class="flex items-center justify-center gap-2 rounded-2xl border border-navy/10 bg-white p-4 text-center shadow-card"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>The Best All-on-4</li>
-          <li class="flex items-center justify-center gap-2 rounded-2xl border border-navy/10 bg-white p-4 text-center shadow-card"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>The Best All-on-5</li>
-          <li class="flex items-center justify-center gap-2 rounded-2xl border border-navy/10 bg-white p-4 text-center shadow-card"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>The Best All-on-6</li>
-          <li class="flex items-center justify-center gap-2 rounded-2xl border border-navy/10 bg-white p-4 text-center shadow-card"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>The Best All-on-8</li>
+        <ul class="chip-row mx-auto mt-6 max-w-[900px] gap-3 text-sm text-ink">
+          <li class="chip flex items-center gap-2 rounded-2xl border border-navy/10 bg-white px-5 py-4 shadow-card"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>The Best All-on-4</li>
+          <li class="chip flex items-center gap-2 rounded-2xl border border-navy/10 bg-white px-5 py-4 shadow-card"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>The Best All-on-5</li>
+          <li class="chip flex items-center gap-2 rounded-2xl border border-navy/10 bg-white px-5 py-4 shadow-card"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>The Best All-on-6</li>
+          <li class="chip flex items-center gap-2 rounded-2xl border border-navy/10 bg-white px-5 py-4 shadow-card"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>The Best All-on-8</li>
         </ul>
       </div>
     </section>
@@ -483,42 +524,46 @@
         <div class="text-center">
           <span class="badge">Materials</span>
           <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Materials Available for All-on-X Cases</h2>
-          <p class="mx-auto mt-3 max-w-[760px] text-ink">Each case is meticulously crafted with precision to ensure longevity, comfort, and a natural appearance. We create beautiful smiles through advanced Digital Sciences, utilizing our multiple intraoral digital scanners, including iCam4D and Digital.</p>
+          <p class="copy-justified mx-auto mt-3 max-w-[760px] text-ink">Each case is meticulously crafted with precision to ensure longevity, comfort, and a natural appearance. We create beautiful smiles through advanced Digital Sciences, utilizing our multiple intraoral digital scanners, including iCam4D and Digital.</p>
           <p class="mx-auto mt-4 max-w-[760px] text-ink">Our onsite dental lab, guarantees the highest quality restorations.</p>
           <p class="mx-auto mt-6 font-display font-semibold text-navy">Available Materials:</p>
         </div>
-        <ul class="mx-auto mt-6 max-w-[760px] space-y-3 text-left">
-          <li class="rounded-2xl border border-navy/10 bg-white p-6 shadow-card">
-            <h3 class="font-display font-bold text-navy">High Translucent Full Monolithic Zirconia Fixed Bridge</h3>
+        <ul class="mt-10 space-y-12 lg:space-y-16">
+          <li class="split split--flip">
+            <div class="split-copy">
+              <h3 class="font-display text-2xl font-bold text-navy">High Translucent Full Monolithic Zirconia Fixed Bridge</h3>
+              <p class="mt-4 text-ink">With a milled titanium substructure, computer-designed, and then milled with a titanium internal bar.</p>
+            </div>
             <!-- Placeholder photos: swap empty.png for three small images. -->
-            <div class="mt-3 grid grid-cols-3 gap-2">
-              <div class="min-w-0 overflow-hidden rounded-lg shadow-card">
-                <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Zirconia fixed bridge material at Esthetic Dent" class="aspect-[831/490] w-full object-cover">
+            <div class="grid min-w-0 grid-cols-3 gap-3">
+              <div class="min-w-0 overflow-hidden rounded-xl shadow-card">
+                <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Zirconia fixed bridge material at Esthetic Dent" class="aspect-[3/4] w-full object-cover">
               </div>
-              <div class="min-w-0 overflow-hidden rounded-lg shadow-card">
-                <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Milled titanium substructure at Esthetic Dent" class="aspect-[831/490] w-full object-cover">
+              <div class="min-w-0 overflow-hidden rounded-xl shadow-card">
+                <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Milled titanium substructure at Esthetic Dent" class="aspect-[3/4] w-full object-cover">
               </div>
-              <div class="min-w-0 overflow-hidden rounded-lg shadow-card">
-                <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Finished zirconia restoration at Esthetic Dent" class="aspect-[831/490] w-full object-cover">
+              <div class="min-w-0 overflow-hidden rounded-xl shadow-card">
+                <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Finished zirconia restoration at Esthetic Dent" class="aspect-[3/4] w-full object-cover">
               </div>
             </div>
-            <p class="mt-3 text-sm text-ink">With a milled titanium substructure, computer-designed, and then milled with a titanium internal bar.</p>
           </li>
-          <li class="rounded-2xl border border-navy/10 bg-white p-6 shadow-card">
-            <h3 class="font-display font-bold text-navy">Hybrid Acrylic</h3>
+          <li class="split">
+            <div class="split-copy">
+              <h3 class="font-display text-2xl font-bold text-navy">Hybrid Acrylic</h3>
+              <p class="mt-4 text-ink">With a milled titanium substructure, computer-designed, and then milled with a titanium internal bar.</p>
+            </div>
             <!-- Placeholder photos: swap empty.png for three small images. -->
-            <div class="mt-3 grid grid-cols-3 gap-2">
-              <div class="min-w-0 overflow-hidden rounded-lg shadow-card">
-                <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Hybrid acrylic bridge material at Esthetic Dent" class="aspect-[831/490] w-full object-cover">
+            <div class="grid min-w-0 grid-cols-3 gap-3">
+              <div class="min-w-0 overflow-hidden rounded-xl shadow-card">
+                <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Hybrid acrylic bridge material at Esthetic Dent" class="aspect-[3/4] w-full object-cover">
               </div>
-              <div class="min-w-0 overflow-hidden rounded-lg shadow-card">
-                <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Milled titanium substructure at Esthetic Dent" class="aspect-[831/490] w-full object-cover">
+              <div class="min-w-0 overflow-hidden rounded-xl shadow-card">
+                <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Milled titanium substructure at Esthetic Dent" class="aspect-[3/4] w-full object-cover">
               </div>
-              <div class="min-w-0 overflow-hidden rounded-lg shadow-card">
-                <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Finished hybrid acrylic restoration at Esthetic Dent" class="aspect-[831/490] w-full object-cover">
+              <div class="min-w-0 overflow-hidden rounded-xl shadow-card">
+                <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Finished hybrid acrylic restoration at Esthetic Dent" class="aspect-[3/4] w-full object-cover">
               </div>
             </div>
-            <p class="mt-3 text-sm text-ink">With a milled titanium substructure, computer-designed, and then milled with a titanium internal bar.</p>
           </li>
         </ul>
       </div>
@@ -529,11 +574,14 @@
     <!-- ============================================================ -->
     <section class="scroll-mt-24 py-16 2xl:py-24">
       <div class="mx-auto max-w-[1920px] px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <span class="badge">What's Included</span>
-          <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">All of our "All on X" Cases include</h2>
+        <div class="split split--flip">
+          <div class="split-copy">
+            <span class="badge">What's Included</span>
+            <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">All of our "All on X" Cases include</h2>
+            <p class="copy-justified mt-6 text-ink">Every package below covers the same ground: planning, surgery, the fixed restoration, the travel around it, and the follow-up. Nothing on this list is an upsell once you arrive.</p>
+          </div>
           <!-- Placeholder photos: swap empty.png for six small images. -->
-          <div class="mx-auto mt-8 grid max-w-4xl grid-cols-2 gap-4 sm:grid-cols-3">
+          <div class="grid min-w-0 grid-cols-2 gap-3 sm:grid-cols-3">
             <div class="min-w-0 overflow-hidden rounded-lg shadow-card">
               <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="All-on-X case photo 1 at Esthetic Dent" class="aspect-[831/490] w-full object-cover">
             </div>
@@ -554,100 +602,100 @@
             </div>
           </div>
         </div>
-        <ul class="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2">
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+        <ul class="fit-list mt-12 gap-3">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Free virtual consultation and preliminary case review</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">In-person clinical evaluation and all treatment-related consultations</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Panoramic X-ray and other clinically necessary diagnostic imaging</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">3D CBCT scan for implant planning</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Diagnostic study models</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Comprehensive surgical, functional, and aesthetic treatment planning</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">All extractions needed when it applies</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Any bone grafts needed, excluding sinus floor lifts and bone grafts</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">IV sedation administered by a certified anesthesiologist is available upon request</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Personalized planning of implant position, prosthetic design, tooth shape, size, shade, and restoration material based on your anatomy and clinical needs</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Four, six, or eight dental implants per treated arch, according to the package selected</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Surgical placement of the planned dental implants</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">All necessary prosthetic components for the planned full-arch restoration</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">A fixed provisional full-arch restoration during the healing period, when clinically appropriate</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">One or two final fixed full-arch restorations, according to whether the selected package treats one arch or both arches</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Clinical evaluations of shape, shade, fit, function, hygiene access, and bite</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Final placement and securing of your implant-supported restoration</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Final bite, function, and comfort adjustments</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Treatment-related follow-up appointments during your stay</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Custom-made protective night guard when clinically recommended</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Lifetime warranty, subject to the clinic's terms and conditions</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">24/7 bilingual concierge support throughout your stay</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Round-trip domestic airfare between Juan Santamaría International Airport (SJO) and Cóbano</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Private transportation between Cóbano Airport, your hotel, and the clinic throughout your treatment, including arrival pickup, transportation to and from every scheduled dental appointment, and return transportation to Cóbano Airport for your departure</span>
           </li>
@@ -751,21 +799,23 @@
     <!-- San José location                                             -->
     <!-- ============================================================ -->
     <section class="mx-auto max-w-[1920px] px-4 py-16 2xl:py-24 sm:px-6 lg:px-8">
-      <div class="mx-auto max-w-[760px] text-center">
-        <span class="badge">Our San José Location</span>
-        <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Prefer the Convenience of San&nbsp;José?</h2>
+      <div class="split">
+        <div class="split-copy">
+          <span class="badge">Our San José Location</span>
+          <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Prefer the Convenience of San&nbsp;José?</h2>
+          <p class="mt-6 text-ink">Esthetic Dent also welcomes international patients at our Pavas clinic in San José.</p>
+          <p class="copy-justified mt-3 text-ink">You can receive the same personalized treatment planning, specialist-led care, and coordinated support while staying in the city. Transportation between your hotel and scheduled dental appointments can also be arranged by our team.</p>
+          <p class="copy-justified mt-3 text-ink">Whether you choose San José or the Nicoya Peninsula, you will receive the quality, attention, and support Esthetic Dent provides throughout your dental journey.</p>
+        </div>
         <!-- Placeholder photos: swap empty.png for two small images. -->
-        <div class="mx-auto mt-8 grid max-w-xl grid-cols-2 gap-4">
+        <div class="grid min-w-0 grid-cols-2 gap-3">
           <div class="min-w-0 overflow-hidden rounded-xl shadow-card">
-            <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="San José, Costa Rica city view near Esthetic Dent's clinic" class="aspect-[831/490] w-full object-cover">
+            <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="San José, Costa Rica city view near Esthetic Dent's clinic" class="aspect-[3/4] w-full object-cover">
           </div>
           <div class="min-w-0 overflow-hidden rounded-xl shadow-card">
-            <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="San José, Costa Rica, Esthetic Dent's Pavas clinic" class="aspect-[831/490] w-full object-cover">
+            <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="San José, Costa Rica, Esthetic Dent's Pavas clinic" class="aspect-[3/4] w-full object-cover">
           </div>
         </div>
-        <p class="mt-8 text-ink">Esthetic Dent also welcomes international patients at our Pavas clinic in San José.</p>
-        <p class="mt-3 text-ink">You can receive the same personalized treatment planning, specialist-led care, and coordinated support while staying in the city. Transportation between your hotel and scheduled dental appointments can also be arranged by our team.</p>
-        <p class="mt-3 text-ink">Whether you choose San José or the Nicoya Peninsula, you will receive the quality, attention, and support Esthetic Dent provides throughout your dental journey.</p>
       </div>
     </section>
 
@@ -777,7 +827,7 @@
         <div class="text-center">
           <span class="badge">Treatment Timeline</span>
           <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">What Is the Treatment Timeline for All-on-X Dental Implants in Costa Rica?</h2>
-          <p class="mx-auto mt-3 max-w-[760px] text-ink">Your treatment may be completed in one or two trips to Costa Rica, depending on your bone quality, implant stability, healing requirements, and personalized restorative plan.</p>
+          <p class="copy-justified mx-auto mt-3 max-w-[760px] text-ink">Your treatment may be completed in one or two trips to Costa Rica, depending on your bone quality, implant stability, healing requirements, and personalized restorative plan.</p>
         </div>
 
         <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -788,8 +838,8 @@
             <div class="mt-3 overflow-hidden rounded-xl shadow-card">
               <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Implant placement and fixed teeth at Esthetic Dent in Costa Rica" class="aspect-[831/490] w-full object-cover">
             </div>
-            <p class="mt-3 text-sm text-ink">During your first trip, your dental team completes the required clinical evaluation, diagnostic imaging, surgical planning, and implant placement.</p>
-            <p class="mt-2 text-sm text-ink">When the implants achieve the stability required for immediate loading, a fixed full-arch restoration may be placed during the same trip. Some patients can complete their planned restoration at this stage, while others receive a fixed provisional restoration designed for the healing period.</p>
+            <p class="copy-justified-flush mt-3 text-sm text-ink">During your first trip, your dental team completes the required clinical evaluation, diagnostic imaging, surgical planning, and implant placement.</p>
+            <p class="copy-justified-flush mt-2 text-sm text-ink">When the implants achieve the stability required for immediate loading, a fixed full-arch restoration may be placed during the same trip. Some patients can complete their planned restoration at this stage, while others receive a fixed provisional restoration designed for the healing period.</p>
           </div>
           <div class="rounded-2xl border border-navy/10 bg-white p-6 shadow-card">
             <span class="font-display text-3xl font-extrabold text-sky">02</span>
@@ -799,8 +849,8 @@
               <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Virtual follow-up care during the healing period at Esthetic Dent" class="aspect-[831/490] w-full object-cover">
             </div>
             <p class="mt-3 text-sm text-ink">You may be back home, but you are never on your own.</p>
-            <p class="mt-2 text-sm text-ink">Our care does not end when you leave Costa Rica. Throughout your healing period, our dental team stays connected with you through scheduled virtual follow-ups to monitor your progress, answer questions, and guide you through every stage of recovery.</p>
-            <p class="mt-2 text-sm text-ink">We will check in with you, review healing updates when needed, and provide personalized instructions for hygiene, eating, and caring for your restoration.</p>
+            <p class="copy-justified-flush mt-2 text-sm text-ink">Our care does not end when you leave Costa Rica. Throughout your healing period, our dental team stays connected with you through scheduled virtual follow-ups to monitor your progress, answer questions, and guide you through every stage of recovery.</p>
+            <p class="copy-justified-flush mt-2 text-sm text-ink">We will check in with you, review healing updates when needed, and provide personalized instructions for hygiene, eating, and caring for your restoration.</p>
             <p class="mt-2 text-sm text-ink">From implant placement to your completed fixed smile, we are with you every step of the way.</p>
           </div>
           <div class="rounded-2xl border border-navy/10 bg-white p-6 shadow-card">
@@ -810,11 +860,11 @@
             <div class="mt-3 overflow-hidden rounded-xl shadow-card">
               <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Final restoration placement at Esthetic Dent in Costa Rica" class="aspect-[831/490] w-full object-cover">
             </div>
-            <p class="mt-3 text-sm text-ink">Patients who receive a provisional restoration during the first trip return to Costa Rica after the implants have completed the required healing and integration period.</p>
-            <p class="mt-2 text-sm text-ink">During this visit, the final restoration is evaluated for fit, appearance, function, comfort, and bite before being securely placed. Necessary refinements are completed before you return home.</p>
+            <p class="copy-justified-flush mt-3 text-sm text-ink">Patients who receive a provisional restoration during the first trip return to Costa Rica after the implants have completed the required healing and integration period.</p>
+            <p class="copy-justified-flush mt-2 text-sm text-ink">During this visit, the final restoration is evaluated for fit, appearance, function, comfort, and bite before being securely placed. Necessary refinements are completed before you return home.</p>
           </div>
         </div>
-        <p class="mx-auto mt-8 max-w-[760px] text-center text-sm text-ink/75">The number of trips and treatment schedule vary by patient. Your personalized timeline will be determined after your clinical evaluation and 3D CBCT analysis.</p>
+        <p class="copy-justified-flush mx-auto mt-8 max-w-[760px] text-sm text-ink/75">The number of trips and treatment schedule vary by patient. Your personalized timeline will be determined after your clinical evaluation and 3D CBCT analysis.</p>
       </div>
     </section>
 
@@ -827,10 +877,10 @@
           <span class="badge">Implant Systems</span>
           <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Globally Recognized Dental Implant Systems</h2>
           <p class="mx-auto mt-3 font-display font-semibold text-navy">Premium implant care should travel with you.</p>
-          <p class="mx-auto mt-4 max-w-[760px] text-ink">At Esthetic Dent, we work with internationally recognized implant systems from Straumann Group, Zimmer Biomet, and Nobel Biocare. The system recommended for you will depend on your clinical needs, bone structure, and personalized treatment plan.</p>
-          <p class="mx-auto mt-4 max-w-[760px] text-ink">Choosing an established implant brand can make future care more convenient. If maintenance, adjustments, or restorative work are ever needed after you return home, dental professionals are more likely to recognize the system and access the appropriate compatible components.</p>
-          <p class="mx-auto mt-4 max-w-[760px] text-ink">This is especially important for international patients. Instead of relying on an unfamiliar implant system with limited availability, you receive a trusted solution designed to support long-term continuity of care in Costa Rica and abroad.</p>
-          <p class="mx-auto mt-4 max-w-[760px] text-ink">Your implant system and components will be carefully documented, giving you a clear treatment record that you can keep and share with another dental professional if necessary.</p>
+          <p class="copy-justified mx-auto mt-4 max-w-[760px] text-ink">At Esthetic Dent, we work with internationally recognized implant systems from Straumann Group, Zimmer Biomet, and Nobel Biocare. The system recommended for you will depend on your clinical needs, bone structure, and personalized treatment plan.</p>
+          <p class="copy-justified mx-auto mt-4 max-w-[760px] text-ink">Choosing an established implant brand can make future care more convenient. If maintenance, adjustments, or restorative work are ever needed after you return home, dental professionals are more likely to recognize the system and access the appropriate compatible components.</p>
+          <p class="copy-justified mx-auto mt-4 max-w-[760px] text-ink">This is especially important for international patients. Instead of relying on an unfamiliar implant system with limited availability, you receive a trusted solution designed to support long-term continuity of care in Costa Rica and abroad.</p>
+          <p class="copy-justified mx-auto mt-4 max-w-[760px] text-ink">Your implant system and components will be carefully documented, giving you a clear treatment record that you can keep and share with another dental professional if necessary.</p>
         </div>
         <div class="mx-auto mt-10 flex max-w-2xl flex-wrap items-center justify-center gap-6 rounded-2xl border border-navy/10 bg-white p-6 shadow-card sm:p-8">
           <img loading="lazy" decoding="async" src="../assets/img/Straumann_Logo.svg.webp" alt="Straumann Group dental implant system" class="h-10 w-auto">
@@ -848,9 +898,9 @@
         <div class="text-center">
           <span class="badge">Recovery</span>
           <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">What Is the Recovery Process After All-on-X Surgery?</h2>
-          <p class="mx-auto mt-3 max-w-[760px] text-ink">Recovery occurs in several stages over approximately three to six months while the implants integrate with the jawbone. Discomfort, tenderness, bruising, and swelling are common during the first few days and can generally be managed with prescribed medication and personalized post-surgical instructions.</p>
-          <p class="mx-auto mt-4 max-w-[760px] text-ink">Depending on your clinical plan, you may receive either a fixed provisional restoration during the healing period or your planned fixed restoration during the first trip.</p>
-          <p class="mx-auto mt-4 max-w-[760px] text-ink">The following table, per the American Academy of Implant Dentistry guidance, explains the four general phases of recovery after All-on-4, All-on-6, or All-on-8 dental implant surgery. Recovery times and experiences vary from patient to patient.</p>
+          <p class="copy-justified mx-auto mt-3 max-w-[760px] text-ink">Recovery occurs in several stages over approximately three to six months while the implants integrate with the jawbone. Discomfort, tenderness, bruising, and swelling are common during the first few days and can generally be managed with prescribed medication and personalized post-surgical instructions.</p>
+          <p class="copy-justified mx-auto mt-4 max-w-[760px] text-ink">Depending on your clinical plan, you may receive either a fixed provisional restoration during the healing period or your planned fixed restoration during the first trip.</p>
+          <p class="copy-justified mx-auto mt-4 max-w-[760px] text-ink">The following table, per the American Academy of Implant Dentistry guidance, explains the four general phases of recovery after All-on-4, All-on-6, or All-on-8 dental implant surgery. Recovery times and experiences vary from patient to patient.</p>
         </div>
         <div class="mx-auto mt-12 min-w-0 max-w-[900px] overflow-hidden rounded-2xl bg-white shadow-card">
           <table class="price-table w-full text-left text-sm">
@@ -892,18 +942,20 @@
     <!-- ============================================================ -->
     <section class="scroll-mt-24 py-16 2xl:py-24">
       <div class="mx-auto max-w-[1920px] px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <span class="badge">Get Started</span>
-          <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Ready to Begin Your Full-Arch Dental Implant Journey in Costa Rica?</h2>
-          <!-- Placeholder photo: swap empty.png for the image below the title. -->
-          <div class="mx-auto mt-8 max-w-2xl overflow-hidden rounded-2xl shadow-card">
+        <div class="split split--flip">
+          <div class="split-copy">
+            <span class="badge">Get Started</span>
+            <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Ready to Begin Your Full-Arch Dental Implant Journey in Costa Rica?</h2>
+            <p class="copy-justified mt-6 text-ink">At Esthetic Dent, we coordinate your experience from your first virtual consultation through the completion of your fixed smile. Your personalized package includes treatment with globally recognized dental implants, round-trip domestic airfare between San José and Cóbano, private transportation for your dental appointments, and 24/7 bilingual concierge support throughout your stay.</p>
+            <p class="copy-justified mt-4 text-ink">Receive coordinated implant care. Whether your treatment requires All-on-4, All-on-6, or All-on-8 dental implants, our team will design the appropriate plan for one arch or a complete full-mouth restoration.</p>
+            <div class="mt-8 flex justify-center lg:justify-start">
+              <a href="#" class="btn-primary">Start Your Free Virtual Consultation</a>
+            </div>
+          </div>
+          <!-- Placeholder photo: swap empty.png for the image beside the copy. -->
+          <div class="split-media">
             <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Full-arch dental implant journey at Esthetic Dent in Costa Rica" class="aspect-[831/490] w-full object-cover">
           </div>
-          <p class="mx-auto mt-8 max-w-[760px] text-ink">At Esthetic Dent, we coordinate your experience from your first virtual consultation through the completion of your fixed smile. Your personalized package includes treatment with globally recognized dental implants, round-trip domestic airfare between San José and Cóbano, private transportation for your dental appointments, and 24/7 bilingual concierge support throughout your stay.</p>
-          <p class="mx-auto mt-4 max-w-[760px] text-ink">Receive coordinated implant care. Whether your treatment requires All-on-4, All-on-6, or All-on-8 dental implants, our team will design the appropriate plan for one arch or a complete full-mouth restoration.</p>
-        </div>
-        <div class="mt-8 flex justify-center">
-          <a href="#" class="btn-primary">Start Your Free Virtual Consultation</a>
         </div>
       </div>
     </section>
@@ -927,10 +979,10 @@
         <div class="text-center">
           <span class="badge">Why All-on-4</span>
           <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Why Can All-on-4 Be So Effective?</h2>
-          <p class="mx-auto mt-3 max-w-[760px] text-ink">All-on-4 uses four strategically positioned implants to support an entire fixed arch. The posterior implants may be angled to maximize the available bone and avoid important anatomical structures.</p>
-          <p class="mx-auto mt-4 max-w-[760px] text-ink">For qualifying patients, this approach may reduce the need for bone grafting, simplify treatment, and allow a fixed provisional restoration to be placed shortly after surgery. Immediate fixed teeth depend on bone quality, implant stability, and the clinical judgment of your dental team.</p>
+          <p class="copy-justified mx-auto mt-3 max-w-[760px] text-ink">All-on-4 uses four strategically positioned implants to support an entire fixed arch. The posterior implants may be angled to maximize the available bone and avoid important anatomical structures.</p>
+          <p class="copy-justified mx-auto mt-4 max-w-[760px] text-ink">For qualifying patients, this approach may reduce the need for bone grafting, simplify treatment, and allow a fixed provisional restoration to be placed shortly after surgery. Immediate fixed teeth depend on bone quality, implant stability, and the clinical judgment of your dental team.</p>
           <p class="mx-auto mt-8 font-display font-semibold text-navy">Want to Learn More About All-on-4?</p>
-          <p class="mx-auto mt-2 max-w-[760px] text-ink">Discover how the treatment works, who may be a candidate, what to expect during recovery, and how All-on-4 compares with other full-arch dental implant options.</p>
+          <p class="copy-justified mx-auto mt-2 max-w-[760px] text-ink">Discover how the treatment works, who may be a candidate, what to expect during recovery, and how All-on-4 compares with other full-arch dental implant options.</p>
           <div class="mt-6 flex justify-center">
             <a href="#" class="btn-primary">Read Our Complete All-on-4 Guide</a>
           </div>
@@ -943,15 +995,19 @@
     <!-- ============================================================ -->
     <section class="scroll-mt-24 py-16 2xl:py-24">
       <div class="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col items-center gap-6 rounded-3xl bg-gradient-to-br from-navy to-blue p-10 text-center text-white sm:p-14">
-          <h2 class="text-3xl font-bold text-white sm:text-4xl 2xl:text-5xl">The Smile You've Been Missing Starts Here.</h2>
-          <!-- Placeholder photo: swap empty.png for the image below the title. -->
-          <div class="w-full max-w-md overflow-hidden rounded-xl shadow-card">
+        <div class="split rounded-3xl bg-gradient-to-br from-navy to-blue p-8 text-white sm:p-12 2xl:p-16">
+          <div class="split-copy">
+            <h2 class="text-3xl font-bold text-white sm:text-4xl 2xl:text-5xl">The Smile You've Been Missing Starts Here.</h2>
+            <p class="copy-justified mt-6 text-white/80">Rebuild your confidence and enjoy life again with a permanent solution that truly works. This will be one of the best decisions of your life.</p>
+            <p class="mt-6 font-display text-lg font-semibold uppercase tracking-wide text-white">Let's Talk About Your Smile!</p>
+            <div class="mt-6 flex justify-center lg:justify-start">
+              <a href="#" class="btn-outline whitespace-nowrap px-4 text-[0.8rem] sm:px-6 sm:text-sm">Request My Personalized Treatment Plan</a>
+            </div>
+          </div>
+          <!-- Placeholder photo: swap empty.png for the image beside the copy. -->
+          <div class="split-media">
             <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="A patient's new smile after All-on-X dental implants at Esthetic Dent in Costa Rica" class="aspect-[831/490] w-full object-cover">
           </div>
-          <p class="max-w-2xl text-white/80">Rebuild your confidence and enjoy life again with a permanent solution that truly works. This will be one of the best decisions of your life.</p>
-          <p class="font-display text-lg font-semibold uppercase tracking-wide text-white">Let's Talk About Your Smile!</p>
-          <a href="#" class="btn-outline whitespace-nowrap px-4 text-[0.8rem] sm:px-6 sm:text-sm">Request My Personalized Treatment Plan</a>
         </div>
       </div>
     </section>

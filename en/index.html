@@ -68,6 +68,9 @@
     <g id="icon-pin" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
       <path d="M12 21s7-6.6 7-11.5A7 7 0 0 0 5 9.5C5 14.4 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/>
     </g>
+    <g id="icon-home" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3.5 10.5 12 3.5l8.5 7"/><path d="M5.5 9.2V20h13V9.2"/><path d="M9.75 20v-5.5h4.5V20"/>
+    </g>
     <g id="icon-menu" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
       <path d="M4 7h16M4 12h16M4 17h16"/>
     </g>
@@ -119,6 +122,11 @@
       </button>
     </div>
     <div class="divide-y divide-sky-pale/50 px-2">
+      <div>
+        <a href="index.html" aria-current="page" class="flex w-full items-center gap-3 px-3 py-4 text-left font-display font-semibold text-navy">
+          <svg viewBox="0 0 24 24" class="h-5 w-5 text-blue"><use href="#icon-home"/></svg>Home
+        </a>
+      </div>
       <!-- 1 -->
       <div>
         <button class="flex w-full items-center justify-between px-3 py-4 text-left font-display font-semibold text-navy" data-accordion-trigger aria-expanded="false" aria-controls="m-packages">
@@ -264,6 +272,10 @@
     <nav class="hidden border-t border-navy/10 xl:block" aria-label="Primary" data-desktop-nav>
       <div class="nav-row flex items-center justify-center gap-1 px-4 py-1.5 sm:px-6 lg:px-8">
         <div class="nav-item">
+          <a href="index.html" class="nav-trigger" aria-current="page">Home</a>
+        </div>
+
+        <div class="nav-item">
           <button type="button" class="nav-trigger" data-nav aria-expanded="false" aria-haspopup="true">
             Packages
             <svg viewBox="0 0 24 24" class="h-3.5 w-3.5"><use href="#icon-chevron"/></svg>
@@ -331,7 +343,7 @@
             Blog
             <svg viewBox="0 0 24 24" class="h-3.5 w-3.5"><use href="#icon-chevron"/></svg>
           </button>
-          <div class="dropdown" role="menu">
+          <div class="dropdown dropdown--right" role="menu">
             <a href="/en/blog/" class="dropdown-link" role="menuitem">All articles</a>
             <a href="/en/blog/?category=dental-care-guides" class="dropdown-link" role="menuitem">Dental Care Guides</a>
             <a href="/en/blog/?category=dental-tourism-guides" class="dropdown-link" role="menuitem">Dental Tourism Guides</a>
@@ -387,7 +399,7 @@
 
       <div class="hero-stage-panel">
         <div class="mx-auto max-w-xl text-center lg:mx-0 lg:text-left 2xl:max-w-2xl">
-          <p class="text-base text-ink sm:text-lg lg:mt-4 2xl:text-xl">Specialist-led dental care, an in-house digital lab, and a lifetime warranty—all built into a stress-free dental vacation on Costa Rica’s Pacific coast. Save up to 65% compared with typical U.S. prices.</p>
+          <p class="copy-justified text-base text-ink sm:text-lg 2xl:text-xl">Specialist-led dental care, an in-house digital lab, and a lifetime warranty—all built into a stress-free dental vacation on Costa Rica’s Pacific coast. Save up to 65% compared with typical U.S. prices.</p>
           <div class="mt-6 flex flex-wrap justify-center gap-2 sm:gap-4 lg:justify-start">
             <a href="#" class="btn-primary whitespace-nowrap px-3 py-2 text-[0.8rem] sm:px-6 sm:py-3 sm:text-sm">Get My Free Consultation</a>
             <a href="#" class="btn-ghost whitespace-nowrap px-3 py-2 text-[0.8rem] sm:px-6 sm:py-3 sm:text-sm">Compare Prices</a>
@@ -443,13 +455,13 @@
       <div class="text-center">
         <span class="badge">Dental Packages</span>
         <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">One destination. One personalized plan. One new smile.</h2>
-        <p class="mx-auto mt-3 max-w-2xl text-ink">Every package combines personalized dental care, round-trip airfare from San José to Cóbano, private treatment transportation, provisional restorations, and 24/7 bilingual concierge support—with transparent pricing from the start.</p>
+        <p class="copy-justified mx-auto mt-3 max-w-2xl text-ink">Every package combines personalized dental care, round-trip airfare from San José to Cóbano, private treatment transportation, provisional restorations, and 24/7 bilingual concierge support—with transparent pricing from the start.</p>
       </div>
 
       <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
         <article class="flex flex-col rounded-2xl border border-navy/10 p-6 shadow-card">
           <h3 class="text-xl font-bold">Smile Makeover</h3>
-          <p class="mt-1 text-sm text-ink">Veneers, crowns, whitening, and gum contouring—personalized to create a natural-looking smile designed around you.</p>
+          <p class="copy-justified-flush mt-1 text-sm text-ink">Veneers, crowns, whitening, and gum contouring—personalized to create a natural-looking smile designed around you.</p>
           <p class="mt-4 text-sm text-ink/60 line-through">Typical U.S. $15,000+</p>
           <p class="font-display text-3xl font-extrabold text-navy">From $7,550<span class="text-sm font-medium text-ink">USD</span></p>
           <ul class="mt-4 flex-1 space-y-2 text-sm text-ink">
@@ -463,7 +475,7 @@
         <article class="relative flex flex-col rounded-2xl border-2 border-mint p-6 shadow-card">
           <span class="absolute -top-3 left-6 rounded-full bg-mint px-3 py-1 font-display text-[0.8rem] font-bold text-navy">MOST POPULAR</span>
           <h3 class="text-xl font-bold">All-on-4 & More</h3>
-          <p class="mt-1 text-sm text-ink">A fixed full-arch smile supported by 4, 5, 6, or 8 implants—completed in one or two trips, depending on your personalized treatment plan.</p>
+          <p class="copy-justified-flush mt-1 text-sm text-ink">A fixed full-arch smile supported by 4, 5, 6, or 8 implants—completed in one or two trips, depending on your personalized treatment plan.</p>
           <p class="mt-4 text-sm text-ink/60 line-through">Typical U.S. $24,000+</p>
           <p class="font-display text-3xl font-extrabold text-navy">From $10,480<span class="text-sm font-medium text-ink">USD</span></p>
           <ul class="mt-4 flex-1 space-y-2 text-sm text-ink">
@@ -487,7 +499,7 @@
           <a href="porcelain-veneers-costa-rica-package.html" class="btn-primary mt-6 w-full">Explore This Package</a>
         </article>
       </div>
-      <p class="mx-auto mt-6 max-w-xl text-center text-sm text-ink/70"> Prices shown apply to the package described. After your free case review, your dentist will recommend the option that best fits your clinical needs and confirm your quote before treatment—no surprises.</p>
+      <p class="copy-justified mx-auto mt-6 max-w-xl text-center text-sm text-ink/70"> Prices shown apply to the package described. After your free case review, your dentist will recommend the option that best fits your clinical needs and confirm your quote before treatment—no surprises.</p>
     </section>
 
     <!-- ============================================================ -->
@@ -498,7 +510,7 @@
         <div class="text-center">
           <span class="badge">Real Patient Results</span>
           <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Real smiles. Real transformations.</h2>
-          <p class="mx-auto mt-3 max-w-2xl text-ink">Explore real before-and-after results from patients treated by Esthetic Dent. Every smile is carefully planned around the patient’s facial features, dental needs, and personal goals.</p>
+          <p class="copy-justified mx-auto mt-3 max-w-2xl text-ink">Explore real before-and-after results from patients treated by Esthetic Dent. Every smile is carefully planned around the patient’s facial features, dental needs, and personal goals.</p>
         </div>
         <!-- Placeholder photos: swap empty.png for the real before/after pairs.
              Every card links to the full Real Cases page. -->
@@ -541,12 +553,12 @@
           <div class="rounded-2xl bg-white/5 p-6">
             <svg viewBox="0 0 24 24" class="h-9 w-9 text-mint"><use href="#icon-flask"/></svg>
             <h3 class="mt-4 text-lg font-bold text-white">In-House Dental Lab</h3>
-            <p class="mt-2 text-sm text-white/75">Crowns, veneers, bridges, and dentures are crafted in our own dental lab for greater control from design to final result.</p>
+            <p class="copy-justified-flush mt-2 text-sm text-white/75">Crowns, veneers, bridges, and dentures are crafted in our own dental lab for greater control from design to final result.</p>
           </div>
           <div class="rounded-2xl bg-white/5 p-6">
             <svg viewBox="0 0 24 24" class="h-9 w-9 text-mint"><use href="#icon-shield-star"/></svg>
             <h3 class="mt-4 text-lg font-bold text-white">Advanced Technology</h3>
-            <p class="mt-2 text-sm text-white/75">From 3D CBCT imaging to digital impressions and smile design, our technology helps us plan every treatment with precision.</p>
+            <p class="copy-justified-flush mt-2 text-sm text-white/75">From 3D CBCT imaging to digital impressions and smile design, our technology helps us plan every treatment with precision.</p>
           </div>
           <div class="rounded-2xl bg-white/5 p-6">
             <svg viewBox="0 0 24 24" class="h-9 w-9 text-mint"><use href="#icon-users"/></svg>
@@ -575,8 +587,8 @@
           <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Esthetic Dent's dental clinic in San José, Costa Rica" class="aspect-[831/490] w-full object-cover">
         </div>
         <div class="location-body mx-auto min-w-0 max-w-2xl text-center lg:mx-0 lg:text-left">
-          <p class="text-ink">Your dental journey doesn’t have to take place by the beach. For patients who prefer the convenience of Costa Rica’s capital, our San José location offers personalized dental care with access to hotels, restaurants, transportation, and everything the city has to offer.</p>
-          <p class="mt-3 text-ink">Choose the setting that feels right for you—our Pacific Coast locations in Santa Teresa and Cóbano, or our location in San José.</p>
+          <p class="copy-justified text-ink">Your dental journey doesn’t have to take place by the beach. For patients who prefer the convenience of Costa Rica’s capital, our San José location offers personalized dental care with access to hotels, restaurants, transportation, and everything the city has to offer.</p>
+          <p class="copy-justified mt-3 text-ink">Choose the setting that feels right for you—our Pacific Coast locations in Santa Teresa and Cóbano, or our location in San José.</p>
         </div>
       </div>
     </section>
@@ -589,7 +601,7 @@
         <div class="text-center">
           <span class="badge">Our Partners</span>
           <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Trusted local partnerships for a smoother dental journey.</h2>
-          <p class="mx-auto mt-3 max-w-2xl text-ink">From accommodations and local services to clinical support and regional air travel, our partnerships help make your experience in Costa Rica easier from arrival to recovery.</p>
+          <p class="copy-justified mx-auto mt-3 max-w-2xl text-ink">From accommodations and local services to clinical support and regional air travel, our partnerships help make your experience in Costa Rica easier from arrival to recovery.</p>
         </div>
         <!-- Placeholder avatars: swap empty.png for the partner logos. -->
         <div class="mt-10 flex flex-wrap items-center justify-center gap-4 sm:gap-6">
@@ -609,7 +621,7 @@
         <div class="text-center">
           <span class="badge">Dental Tourism</span>
           <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Your dental vacation, step by step</h2>
-          <p class="mx-auto mt-3 max-w-2xl text-ink">From your first message to a peaceful recovery by the beach, our bilingual concierge helps coordinate every detail.</p>
+          <p class="copy-justified mx-auto mt-3 max-w-2xl text-ink">From your first message to a peaceful recovery by the beach, our bilingual concierge helps coordinate every detail.</p>
         </div>
 
         <ol class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-5">
@@ -626,7 +638,7 @@
           <li class="rounded-2xl bg-[#F4FAFF] p-5">
             <span class="font-display text-3xl font-extrabold text-sky">03</span>
             <h3 class="mt-2 font-display font-bold text-navy">Travel & Stay Coordination</h3>
-            <p class="mt-1 text-sm text-ink">We’ll help you choose your international flight and accommodation. Then, we’ll book your included round-trip SJO–Cóbano flight and coordinate your private local transportation.</p>
+            <p class="copy-justified-flush mt-1 text-sm text-ink">We’ll help you choose your international flight and accommodation. Then, we’ll book your included round-trip SJO–Cóbano flight and coordinate your private local transportation.</p>
           </li>
           <li class="rounded-2xl bg-[#F4FAFF] p-5">
             <span class="font-display text-3xl font-extrabold text-sky">04</span>
@@ -650,7 +662,7 @@
         <div class="min-w-0 text-center lg:text-left">
           <span class="badge">PRICES & SAVINGS</span>
           <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Costa Rica prices. <br><span class="whitespace-nowrap">World-class</span> dental&nbsp;care.</h2>
-          <p class="mt-3 text-ink">Advanced technology, premium materials, and an in-house dental lab allow us to deliver exceptional care at prices up to 65% below typical U.S. costs.</p>
+          <p class="copy-justified mt-3 text-ink">Advanced technology, premium materials, and an in-house dental lab allow us to deliver exceptional care at prices up to 65% below typical U.S. costs.</p>
           <div class="mt-6 flex flex-nowrap justify-center gap-3 sm:gap-4 lg:justify-start">
             <a href="#" class="btn-primary min-w-0 flex-1 whitespace-nowrap px-3 py-2 text-center text-[0.8rem] sm:flex-none sm:px-6 sm:py-3 sm:text-sm">
               <span class="sm:hidden">Get a Quote</span>
@@ -676,7 +688,7 @@
 
             </tbody>
           </table>
-          <p class="max-w-xl px-5 py-3 text-[0.8rem] text-ink/60"> Prices reflect the treatments described. Your personalized treatment plan and quote will be confirmed after your free case review.</p>
+          <p class="copy-justified-flush max-w-xl px-5 py-3 text-[0.8rem] text-ink/60"> Prices reflect the treatments described. Your personalized treatment plan and quote will be confirmed after your free case review.</p>
         </div>
       </div>
     </section>
@@ -689,7 +701,7 @@
         <div class="flex flex-col items-center gap-6 rounded-3xl bg-gradient-to-br from-navy to-blue p-10 text-center text-white sm:p-14">
           <svg viewBox="0 0 24 24" class="h-14 w-14 text-mint"><use href="#icon-shield-check"/></svg>
           <h2 class="text-3xl font-bold text-white sm:text-4xl 2xl:text-5xl">Dental implants and restorations. Backed for life.</h2>
-          <p class="max-w-2xl text-white/80">Our lifetime warranty protects qualifying implants, crowns, bridges, veneers, and dentures—so your care continues long after you return home.
+          <p class="copy-justified max-w-2xl text-white/80">Our lifetime warranty protects qualifying implants, crowns, bridges, veneers, and dentures—so your care continues long after you return home.
 </p>
           <a href="#" class="btn-outline whitespace-nowrap px-4 text-[0.8rem] sm:px-6 sm:text-sm">Explore Our Lifetime Warranty</a>
         </div>
@@ -704,7 +716,7 @@
         <div class="text-center">
           <span class="badge">Meet Our Dental Specialists</span>
           <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">The expertise behind every smile.</h2>
-          <p class="mx-auto mt-3 max-w-2xl text-ink">From implant surgery and full-mouth rehabilitation to cosmetic and restorative dentistry, our specialists work together to create personalized treatment plans with natural, lasting results.</p>
+          <p class="copy-justified mx-auto mt-3 max-w-2xl text-ink">From implant surgery and full-mouth rehabilitation to cosmetic and restorative dentistry, our specialists work together to create personalized treatment plans with natural, lasting results.</p>
         </div>
         <!-- Placeholder portraits and names: swap empty.png and "Dr. Full Name"
              for the real specialist photos and credentials. -->
@@ -757,7 +769,7 @@
           <div>
             <span class="badge">Contact</span>
             <h2 class="mt-4 text-3xl font-bold text-white sm:text-4xl 2xl:text-5xl">Start with a free virtual consultation</h2>
-            <p class="mt-3 text-white/80">Tell us about your dental needs and smile goals. Our team will contact you to schedule your free virtual consultation and guide you through the next steps—no obligation.</p>
+            <p class="copy-justified-flush mt-3 text-white/80">Tell us about your dental needs and smile goals. Our team will contact you to schedule your free virtual consultation and guide you through the next steps—no obligation.</p>
           </div>
           <form class="grid grid-cols-2 items-end gap-x-3 gap-y-4 rounded-2xl bg-white p-4 text-ink sm:gap-x-4 sm:p-6" action="#" method="post" enctype="multipart/form-data">
             <div>
@@ -794,12 +806,12 @@
             </div>
             <div class="col-span-2">
               <label for="files" class="mb-1 block text-[0.8rem] font-semibold text-navy sm:text-sm">Upload Photos or X-Rays (Optional)</label>
-              <p class="mb-2 max-w-xl text-[0.8rem] leading-snug text-ink/70">If available, upload recent dental X-rays and clear photos of your smile.<span class="hidden sm:inline"> These files help our dental team better understand your case before your virtual consultation.</span> Don’t have X-rays or photos yet? You can still request your free consultation.</p>
+              <p class="copy-justified-flush mb-2 max-w-xl text-[0.8rem] leading-snug text-ink/70">If available, upload recent dental X-rays and clear photos of your smile.<span class="hidden sm:inline"> These files help our dental team better understand your case before your virtual consultation.</span> Don’t have X-rays or photos yet? You can still request your free consultation.</p>
               <input id="files" name="files" type="file" accept=".jpg,.jpeg,.png,.pdf" multiple class="w-full rounded-lg border border-navy/15 px-3 py-2.5 text-sm text-ink/80 file:mr-3 file:rounded-md file:border-0 file:bg-sky-pale/50 file:px-3 file:py-1.5 file:text-[0.8rem] file:font-semibold file:text-navy focus:border-blue focus:outline-none">
               <p class="mt-1 text-[0.8rem] text-ink/50">Accepted formats: JPG, PNG or PDF · Up to 5 files</p>
             </div>
             <button type="submit" class="btn-primary col-span-2 w-full whitespace-nowrap px-4 text-[0.8rem] sm:px-6 sm:text-sm">Request My Free Consultation</button>
-            <p class="col-span-2 text-center text-[0.8rem] leading-snug text-ink/60">By submitting this form, you agree to our <a href="#" class="underline hover:text-blue">Privacy Policy</a>. Your information and uploaded files will remain confidential. We follow HIPAA guidelines for patient records.</p>
+            <p class="copy-justified col-span-2 text-center text-[0.8rem] leading-snug text-ink/60">By submitting this form, you agree to our <a href="#" class="underline hover:text-blue">Privacy Policy</a>. Your information and uploaded files will remain confidential. We follow HIPAA guidelines for patient records.</p>
           </form>
         </div>
       </div>

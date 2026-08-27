@@ -67,6 +67,9 @@
     <g id="icon-pin" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
       <path d="M12 21s7-6.6 7-11.5A7 7 0 0 0 5 9.5C5 14.4 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/>
     </g>
+    <g id="icon-home" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3.5 10.5 12 3.5l8.5 7"/><path d="M5.5 9.2V20h13V9.2"/><path d="M9.75 20v-5.5h4.5V20"/>
+    </g>
     <g id="icon-menu" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
       <path d="M4 7h16M4 12h16M4 17h16"/>
     </g>
@@ -118,6 +121,11 @@
       </button>
     </div>
     <div class="divide-y divide-sky-pale/50 px-2">
+      <div>
+        <a href="index.html" class="flex w-full items-center gap-3 px-3 py-4 text-left font-display font-semibold text-navy">
+          <svg viewBox="0 0 24 24" class="h-5 w-5 text-blue"><use href="#icon-home"/></svg>Home
+        </a>
+      </div>
       <!-- 1 -->
       <div>
         <button class="flex w-full items-center justify-between px-3 py-4 text-left font-display font-semibold text-navy" data-accordion-trigger aria-expanded="false" aria-controls="m-packages">
@@ -263,6 +271,10 @@
     <nav class="hidden border-t border-navy/10 xl:block" aria-label="Primary" data-desktop-nav>
       <div class="nav-row flex items-center justify-center gap-1 px-4 py-1.5 sm:px-6 lg:px-8">
         <div class="nav-item">
+          <a href="index.html" class="nav-trigger">Home</a>
+        </div>
+
+        <div class="nav-item">
           <button type="button" class="nav-trigger" data-nav aria-expanded="false" aria-haspopup="true">
             Packages
             <svg viewBox="0 0 24 24" class="h-3.5 w-3.5"><use href="#icon-chevron"/></svg>
@@ -330,7 +342,7 @@
             Blog
             <svg viewBox="0 0 24 24" class="h-3.5 w-3.5"><use href="#icon-chevron"/></svg>
           </button>
-          <div class="dropdown" role="menu">
+          <div class="dropdown dropdown--right" role="menu">
             <a href="/en/blog/" class="dropdown-link" role="menuitem">All articles</a>
             <a href="/en/blog/?category=dental-care-guides" class="dropdown-link" role="menuitem">Dental Care Guides</a>
             <a href="/en/blog/?category=dental-tourism-guides" class="dropdown-link" role="menuitem">Dental Tourism Guides</a>
@@ -355,21 +367,44 @@
     <!-- ============================================================ -->
     <!-- Page hero                                                     -->
     <!-- ============================================================ -->
+    <section class="hero-stage">
+      <div class="hero-stage-heading">
+        <div class="mx-auto max-w-xl text-center lg:mx-0 lg:text-left 2xl:max-w-2xl">
+          <span class="badge">Porcelain Veneers Costa Rica Package</span>
+          <h1 class="mt-4 text-3xl font-extrabold leading-[1.08] sm:text-5xl 2xl:text-6xl">Your Dental Ceramist Is in the <span class="text-blue">Next Room</span></h1>
+        </div>
+      </div>
+
+      <!-- Placeholder photo: swap empty.png for the dentist and ceramist at work.
+           From lg it is the section background, so favour a wide shot with quiet
+           space on the left where the copy sits. -->
+      <div class="hero-stage-media">
+        <img decoding="async" src="../assets/img/empty.png" alt="Dentist and ceramist working together on porcelain veneers at Esthetic Dent in Costa Rica" class="hero-stage-photo">
+        <div class="hero-stage-scrim" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero-stage-panel">
+        <div class="mx-auto max-w-xl text-center lg:mx-0 lg:text-left 2xl:max-w-2xl">
+          <p class="font-display text-lg font-semibold text-navy">Beautiful veneers depend on artistry—not just technology.</p>
+          <p class="copy-justified mt-6 text-base text-ink sm:text-lg 2xl:text-xl">Your veneers are digitally designed and finished by hand in our on-site laboratory. Your dentist and ceramist evaluate the shade, translucency, and shape against your real face—not photographs sent to an outside lab.</p>
+          <p class="copy-justified mt-4 text-base text-ink sm:text-lg 2xl:text-xl">Adjustments can be made while you are here, allowing every detail to be refined before your veneers are permanently placed.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- The result                                                    -->
+    <!-- ============================================================ -->
     <section class="py-16 2xl:py-24">
       <div class="mx-auto max-w-[1920px] px-4 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-[760px] text-center">
-          <span class="badge">Porcelain Veneers Costa Rica Package</span>
-          <h1 class="mt-4 text-3xl font-extrabold leading-[1.08] sm:text-5xl 2xl:text-6xl">Your Dental Ceramist Is in the Next Room</h1>
-          <!-- Placeholder photo: swap empty.png for the image below the title. -->
-          <div class="mx-auto mt-8 max-w-2xl overflow-hidden rounded-2xl shadow-card">
-            <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Dentist and ceramist working together on porcelain veneers at Esthetic Dent in Costa Rica" class="aspect-[831/490] w-full object-cover">
+        <div class="split">
+          <div class="split-copy">
+            <span class="badge">The Result</span>
+            <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">The goal is not for people to notice your veneers. It is for them to notice your smile.</h2>
+            <p class="copy-justified mt-6 text-base text-ink sm:text-lg 2xl:text-xl">Shape, proportion and translucency are matched to your own face, so the work reads as teeth rather than as dentistry.</p>
           </div>
-          <p class="mt-8 font-display text-lg font-semibold text-navy">Beautiful veneers depend on artistry—not just technology.</p>
-          <p class="mt-6 text-base text-ink sm:text-lg 2xl:text-xl">Your veneers are digitally designed and finished by hand in our on-site laboratory. Your dentist and ceramist evaluate the shade, translucency, and shape against your real face—not photographs sent to an outside lab.</p>
-          <p class="mt-4 text-base text-ink sm:text-lg 2xl:text-xl">Adjustments can be made while you are here, allowing every detail to be refined before your veneers are permanently placed.</p>
-          <p class="mt-8 font-display text-lg font-semibold text-navy">The goal is not for people to notice your veneers. It is for them to notice your smile.</p>
-          <!-- Placeholder photo: swap empty.png for the image below the subtitle. -->
-          <div class="mx-auto mt-6 max-w-2xl overflow-hidden rounded-2xl shadow-card">
+          <!-- Placeholder photo: swap empty.png for the finished smile. -->
+          <div class="split-media">
             <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="A natural-looking smile after porcelain veneers at Esthetic Dent in Costa Rica" class="aspect-[831/490] w-full object-cover">
           </div>
         </div>
@@ -381,14 +416,16 @@
     <!-- ============================================================ -->
     <section class="bg-[#F4FAFF] py-16 2xl:py-24">
       <div class="mx-auto max-w-[1920px] px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <span class="badge">Your Stay in Costa Rica</span>
-          <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Why complete your smile in a busy city when you can do it by the beach?</h2>
-          <!-- Placeholder photo: swap empty.png for the image below the title. -->
-          <div class="mx-auto mt-8 max-w-2xl overflow-hidden rounded-2xl shadow-card">
+        <div class="split split--flip">
+          <div class="split-copy">
+            <span class="badge">Your Stay in Costa Rica</span>
+            <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Why complete your smile in a busy city when you can do it by the beach?</h2>
+            <p class="copy-justified mt-6 text-ink">Receive personalized dental care in Cóbano, Santa Teresa, Costa Rica, and spend the time between appointments surrounded by ocean, nature, and the calm of paradise.</p>
+          </div>
+          <!-- Placeholder photo: swap empty.png for the destination photograph. -->
+          <div class="split-media">
             <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Cóbano, Santa Teresa beach near Esthetic Dent's clinic in Costa Rica" class="aspect-[831/490] w-full object-cover">
           </div>
-          <p class="mx-auto mt-8 max-w-[760px] text-ink">Receive personalized dental care in Cóbano, Santa Teresa, Costa Rica, and spend the time between appointments surrounded by ocean, nature, and the calm of paradise.</p>
         </div>
       </div>
     </section>
@@ -401,17 +438,17 @@
         <div class="rounded-2xl border border-navy/10 bg-white p-6 text-center shadow-card">
           <p class="font-display text-3xl font-extrabold text-navy sm:text-4xl">16+</p>
           <h3 class="mt-2 font-display text-base font-bold text-navy sm:text-lg">Years of Experience</h3>
-          <p class="mt-2 text-sm text-ink">Over a decade and a half of specialized clinical practice in advanced cosmetic dentistry and complex oral rehabilitation.</p>
+          <p class="copy-justified mt-2 text-sm text-ink">Over a decade and a half of specialized clinical practice in advanced cosmetic dentistry and complex oral rehabilitation.</p>
         </div>
         <div class="rounded-2xl border border-navy/10 bg-white p-6 text-center shadow-card">
           <p class="font-display text-3xl font-extrabold text-navy sm:text-4xl">2,000+</p>
           <h3 class="mt-2 font-display text-base font-bold text-navy sm:text-lg">Documented Cases</h3>
-          <p class="mt-2 text-sm text-ink">A verified track record of successfully treating over 2,000 local and international patients with biomimetic restorations.</p>
+          <p class="copy-justified mt-2 text-sm text-ink">A verified track record of successfully treating over 2,000 local and international patients with biomimetic restorations.</p>
         </div>
         <div class="rounded-2xl border border-navy/10 bg-white p-6 text-center shadow-card">
           <svg viewBox="0 0 24 24" class="mx-auto h-9 w-9 text-mint-dark"><use href="#icon-flask"/></svg>
           <h3 class="mt-2 font-display text-base font-bold text-navy sm:text-lg">In-House Dental Lab</h3>
-          <p class="mt-2 text-sm text-ink">Our fully integrated, proprietary laboratory guarantees immediate clinical adjustments, absolute quality control, and zero shipping delays.</p>
+          <p class="copy-justified mt-2 text-sm text-ink">Our fully integrated, proprietary laboratory guarantees immediate clinical adjustments, absolute quality control, and zero shipping delays.</p>
         </div>
       </div>
     </section>
@@ -425,8 +462,8 @@
           <span class="badge">Package Options</span>
           <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Porcelain Veneer Packages</h2>
           <p class="mx-auto mt-3 max-w-[760px] text-ink">Four options. The same personalized care, artistry, and attention to detail.</p>
-          <p class="mx-auto mt-4 max-w-[760px] text-ink">Every package includes porcelain veneers digitally designed for your face and hand-finished in our on-site dental laboratory. Your dentist will recommend the appropriate number and distribution of veneers based on your smile, clinical needs, and desired result.</p>
-          <p class="mx-auto mt-4 max-w-[760px] font-display font-semibold text-navy">In the United States, a single porcelain veneer can cost $900 or more. Our packages begin at $2,995 for a personalized set of six.</p>
+          <p class="copy-justified mx-auto mt-4 max-w-[760px] text-ink">Every package includes porcelain veneers digitally designed for your face and hand-finished in our on-site dental laboratory. Your dentist will recommend the appropriate number and distribution of veneers based on your smile, clinical needs, and desired result.</p>
+          <p class="copy-justified mx-auto mt-4 max-w-[760px] font-display font-semibold text-navy">In the United States, a single porcelain veneer can cost $900 or more. Our packages begin at $2,995 for a personalized set of six.</p>
         </div>
         <div class="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <article class="flex flex-col rounded-2xl border border-navy/10 bg-white p-6 shadow-card">
@@ -466,7 +503,7 @@
             </ul>
           </article>
         </div>
-        <p class="mx-auto mt-6 max-w-[760px] text-center text-sm text-ink/75">The recommended number and placement of veneers will be determined after your clinical evaluation and personalized smile analysis.</p>
+        <p class="copy-justified-flush mx-auto mt-6 max-w-[760px] text-sm text-ink/75">The recommended number and placement of veneers will be determined after your clinical evaluation and personalized smile analysis.</p>
       </div>
       <!-- Placeholder photo: swap empty.png for a full-width image below the package options. -->
       <div class="mt-8 overflow-hidden">
@@ -525,88 +562,88 @@
           <span class="badge">What's Included</span>
           <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Package Includes</h2>
         </div>
-        <ul class="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2">
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+        <ul class="fit-list mt-12 gap-3">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Free virtual consultation and preliminary case review</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">In-person clinical evaluation and all treatment-related consultations</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Panoramic X-ray and other clinically necessary diagnostic imaging</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">3D CBCT scan when clinically indicated</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Diagnostic study models</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Personalized Digital Smile Design and all clinically necessary design refinements</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Comprehensive aesthetic and functional treatment planning</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Personalized selection of veneer shape, size, shade, and translucency based on your approved smile design, facial features, and clinical needs</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">6 to 16 hand-finished porcelain veneers, according to the package selected</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Conservative preparation of the selected teeth, as clinically necessary</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Local anesthesia when clinically indicated</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">All provisional veneers clinically required while your final veneers are being fabricated</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">In-person evaluation of shape, shade, translucency, fit, function, and bite</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Final bonding and placement of your porcelain veneers</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Final bite, comfort, and aesthetic adjustments</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Treatment-related follow-up appointments during your stay</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Custom-made night guard to help protect your new veneers</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Limited lifetime guarantee, subject to the clinic's guarantee terms and conditions</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">24/7 bilingual concierge support throughout your stay</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Round-trip domestic airfare between Juan Santamaría International Airport (SJO) and Cóbano</span>
           </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-navy/10 bg-white p-5 shadow-card">
+          <li class="fit-box flex items-start gap-3 rounded-2xl border border-navy/10 bg-white px-5 py-4 text-left shadow-card">
             <svg viewBox="0 0 24 24" class="mt-0.5 h-5 w-5 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>
             <span class="text-sm text-ink">Private transportation between Cóbano Airport, your hotel, and the clinic throughout your treatment, including arrival pickup, transportation to and from every scheduled dental appointment, and return transportation to Cóbano Airport for your departure</span>
           </li>
@@ -619,11 +656,13 @@
     <!-- ============================================================ -->
     <section class="py-16 2xl:py-24">
       <div class="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col items-center gap-4 rounded-3xl bg-gradient-to-br from-navy to-blue p-10 text-center text-white sm:p-14">
-          <p class="max-w-2xl text-white/80">Average U.S. Price: <strong class="text-white">$26,000 USD</strong>.</p>
-          <p class="font-display text-3xl font-bold text-white sm:text-4xl">Save over <span class="text-mint">$19,500 USD</span> with us!</p>
-          <!-- Placeholder photo: swap empty.png for the image below this line. -->
-          <div class="w-full max-w-md overflow-hidden rounded-xl shadow-card">
+        <div class="split rounded-3xl bg-gradient-to-br from-navy to-blue p-8 text-white sm:p-12 2xl:p-16">
+          <div class="split-copy">
+            <p class="text-white/80">Average U.S. Price: <strong class="text-white">$26,000 USD</strong>.</p>
+            <p class="mt-3 font-display text-3xl font-bold text-white sm:text-4xl">Save over <span class="text-mint">$19,500 USD</span> with us!</p>
+          </div>
+          <!-- Placeholder photo: swap empty.png for the image beside the copy. -->
+          <div class="split-media">
             <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Porcelain veneer savings at Esthetic Dent in Costa Rica" class="aspect-[831/490] w-full object-cover">
           </div>
         </div>
@@ -635,32 +674,36 @@
     <!-- ============================================================ -->
     <section class="scroll-mt-24 bg-[#F4FAFF] py-16 2xl:py-24">
       <div class="mx-auto max-w-[1920px] px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <div class="rounded-2xl border border-navy/10 bg-white p-6 shadow-card">
-            <h3 class="text-xl font-bold">Private Transportation</h3>
-            <p class="mt-1 text-sm text-ink">Door-to-Door Transfers</p>
-            <!-- Placeholder photo: swap empty.png for a small image below the subtitle. -->
-            <div class="mt-4 max-w-[220px] overflow-hidden rounded-xl shadow-card">
+        <div class="space-y-12 lg:space-y-16">
+          <div class="split split--flip">
+            <div class="split-copy">
+              <h3 class="text-2xl font-bold">Private Transportation</h3>
+              <p class="mt-1 text-sm text-ink">Door-to-Door Transfers</p>
+              <ul class="mt-6 space-y-2 text-left text-sm text-ink">
+                <li class="flex gap-2"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Airport pickup on arrival — private driver, no Uber, no taxis</li>
+                <li class="flex gap-2"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>All clinic transfers included — hotel to clinic and back, for every appointment</li>
+                <li class="flex gap-2"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Airport drop-off on departure — you leave with a new smile, we handle the rest</li>
+              </ul>
+            </div>
+            <!-- Placeholder photo: swap empty.png for the image beside the copy. -->
+            <div class="split-media">
               <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Private transportation for Esthetic Dent patients in Costa Rica" class="aspect-[831/490] w-full object-cover">
             </div>
-            <ul class="mt-4 space-y-2 text-sm text-ink">
-              <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Airport pickup on arrival — private driver, no Uber, no taxis</li>
-              <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>All clinic transfers included — hotel to clinic and back, for every appointment</li>
-              <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Airport drop-off on departure — you leave with a new smile, we handle the rest</li>
-            </ul>
           </div>
-          <div class="rounded-2xl border border-navy/10 bg-white p-6 shadow-card">
-            <h3 class="text-xl font-bold">Bilingual Support</h3>
-            <p class="mt-1 text-sm text-ink">Personal Concierge</p>
-            <!-- Placeholder photo: swap empty.png for a small image below the subtitle. -->
-            <div class="mt-4 max-w-[220px] overflow-hidden rounded-xl shadow-card">
+          <div class="split">
+            <div class="split-copy">
+              <h3 class="text-2xl font-bold">Bilingual Support</h3>
+              <p class="mt-1 text-sm text-ink">Personal Concierge</p>
+              <ul class="mt-6 space-y-2 text-left text-sm text-ink">
+                <li class="flex gap-2"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Fully bilingual (English-Spanish) support at every step of your journey</li>
+                <li class="flex gap-2"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Present with you inside every appointment — you are never alone at our Costa Rica clinic</li>
+                <li class="flex gap-2"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Greets you at the airport on arrival and coordinates hotel check-in</li>
+              </ul>
+            </div>
+            <!-- Placeholder photo: swap empty.png for the image beside the copy. -->
+            <div class="split-media">
               <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Bilingual concierge support for Esthetic Dent patients in Costa Rica" class="aspect-[831/490] w-full object-cover">
             </div>
-            <ul class="mt-4 space-y-2 text-sm text-ink">
-              <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Fully bilingual (English-Spanish) support at every step of your journey</li>
-              <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Present with you inside every appointment — you are never alone at our Costa Rica clinic</li>
-              <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Greets you at the airport on arrival and coordinates hotel check-in</li>
-            </ul>
           </div>
         </div>
       </div>
@@ -670,16 +713,18 @@
     <!-- San José location                                             -->
     <!-- ============================================================ -->
     <section class="mx-auto max-w-[1920px] px-4 py-16 2xl:py-24 sm:px-6 lg:px-8">
-      <div class="mx-auto max-w-[760px] text-center">
-        <span class="badge">Our San José Location</span>
-        <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Prefer the Convenience of San&nbsp;José?</h2>
-        <!-- Placeholder photo: swap empty.png for the image below the title. -->
-        <div class="mx-auto mt-8 max-w-xl overflow-hidden rounded-2xl shadow-card">
+      <div class="split split--flip">
+        <div class="split-copy">
+          <span class="badge">Our San José Location</span>
+          <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Prefer the Convenience of San&nbsp;José?</h2>
+          <p class="mt-6 text-ink">Esthetic Dent also welcomes international patients at our Pavas clinic in San José.</p>
+          <p class="copy-justified mt-3 text-ink">You can receive the same personalized treatment planning, specialist-led care, and coordinated support while staying in the city. Transportation between your hotel and scheduled dental appointments can also be arranged by our team.</p>
+          <p class="copy-justified mt-3 text-ink">Whether you choose San José or the Nicoya Peninsula, you will receive the quality, attention, and support Esthetic Dent provides throughout your dental journey.</p>
+        </div>
+        <!-- Placeholder photo: swap empty.png for the Pavas clinic. -->
+        <div class="split-media">
           <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="San José, Costa Rica, Esthetic Dent's Pavas clinic" class="aspect-[831/490] w-full object-cover">
         </div>
-        <p class="mt-8 text-ink">Esthetic Dent also welcomes international patients at our Pavas clinic in San José.</p>
-        <p class="mt-3 text-ink">You can receive the same personalized treatment planning, specialist-led care, and coordinated support while staying in the city. Transportation between your hotel and scheduled dental appointments can also be arranged by our team.</p>
-        <p class="mt-3 text-ink">Whether you choose San José or the Nicoya Peninsula, you will receive the quality, attention, and support Esthetic Dent provides throughout your dental journey.</p>
       </div>
     </section>
 
@@ -688,16 +733,25 @@
     <!-- ============================================================ -->
     <section id="warranty" class="scroll-mt-24 py-16 2xl:py-24">
       <div class="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-col items-center gap-6 rounded-3xl bg-gradient-to-br from-navy to-blue p-10 text-center text-white sm:p-14">
-          <svg viewBox="0 0 24 24" class="h-14 w-14 text-mint"><use href="#icon-shield-check"/></svg>
-          <span class="badge">Lifetime Warranty</span>
-          <h2 class="text-3xl font-bold text-white sm:text-4xl 2xl:text-5xl">Lifetime Warranty</h2>
-          <!-- Placeholder photo: swap empty.png for the image below the title. -->
-          <div class="w-full max-w-md overflow-hidden rounded-xl shadow-card">
-            <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Premium porcelain veneers at Esthetic Dent in Costa Rica" class="aspect-[831/490] w-full object-cover">
+        <div class="split rounded-3xl bg-gradient-to-br from-navy to-blue p-8 text-white sm:p-12 2xl:p-16">
+          <div class="split-copy">
+            <svg viewBox="0 0 24 24" class="mx-auto h-14 w-14 text-mint lg:mx-0"><use href="#icon-shield-check"/></svg>
+            <span class="badge mt-4">Lifetime Warranty</span>
+            <h2 class="mt-4 text-3xl font-bold text-white sm:text-4xl 2xl:text-5xl">Lifetime Warranty</h2>
+            <p class="mt-6 font-display text-lg font-semibold text-white">The Best Dental Care in Costa Rica Deserves the Best Warranty in the World!</p>
+            <p class="mt-3 text-white/80">We challenge you to look around and compare.</p>
           </div>
-          <p class="max-w-2xl font-display text-lg font-semibold text-white">The Best Dental Care in Costa Rica Deserves the Best Warranty in the World!</p>
-          <p class="max-w-2xl text-white/80">We challenge you to look around and compare.</p>
+          <!-- Placeholder photo: swap empty.png for the image beside the copy.
+               The seal has to hang off the corner, so the rounded clipping stays on an
+               inner wrapper and the seal is positioned against this outer one; the mb
+               leaves room for the corner it hangs into. -->
+          <div class="relative mb-8 min-w-0">
+            <div class="overflow-hidden rounded-2xl shadow-card">
+              <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Premium porcelain veneers at Esthetic Dent in Costa Rica" class="aspect-[831/490] w-full object-cover">
+            </div>
+            <!-- Decorative: the badge and heading beside it already say "Lifetime Warranty". -->
+            <img loading="lazy" decoding="async" src="../assets/img/lifetime_warranty.webp" alt="" aria-hidden="true" class="absolute -bottom-6 -right-6 h-24 w-24 -rotate-[30deg] drop-shadow-lg sm:h-28 sm:w-28">
+          </div>
         </div>
       </div>
     </section>
@@ -775,17 +829,17 @@
           <div class="rounded-2xl bg-white/5 p-6">
             <svg viewBox="0 0 24 24" class="h-9 w-9 text-mint"><use href="#icon-shield-check"/></svg>
             <h3 class="mt-4 text-lg font-bold text-white">Certified materials &amp; written warranty</h3>
-            <p class="mt-2 text-sm text-white/75">Only certified porcelain from the world's leading brands, placed in a modern clinic. Every treatment comes with a written warranty you can hold us to.</p>
+            <p class="copy-justified-flush mt-2 text-sm text-white/75">Only certified porcelain from the world's leading brands, placed in a modern clinic. Every treatment comes with a written warranty you can hold us to.</p>
           </div>
           <div class="rounded-2xl bg-white/5 p-6">
             <svg viewBox="0 0 24 24" class="h-9 w-9 text-mint"><use href="#icon-users"/></svg>
             <h3 class="mt-4 text-lg font-bold text-white">Specialist team, English spoken</h3>
-            <p class="mt-2 text-sm text-white/75">Cosmetic dentistry, implantology and rehabilitation under one roof, led by founder Daziel Dulcinaes. A bilingual team guides you at every step.</p>
+            <p class="copy-justified-flush mt-2 text-sm text-white/75">Cosmetic dentistry, implantology and rehabilitation under one roof, led by founder Daziel Dulcinaes. A bilingual team guides you at every step.</p>
           </div>
           <div class="rounded-2xl bg-white/5 p-6">
             <svg viewBox="0 0 24 24" class="h-9 w-9 text-mint"><use href="#icon-plane"/></svg>
             <h3 class="mt-4 text-lg font-bold text-white">Full dental-tourism support</h3>
-            <p class="mt-2 text-sm text-white/75">Airport pickup, help with your hotel and a plan built around your trip. Everything is designed digitally before you fly, so a few days is all you need.</p>
+            <p class="copy-justified-flush mt-2 text-sm text-white/75">Airport pickup, help with your hotel and a plan built around your trip. Everything is designed digitally before you fly, so a few days is all you need.</p>
           </div>
         </div>
       </div>
@@ -800,8 +854,8 @@
           <span class="badge">Cost Comparison</span>
           <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Veneers in Costa Rica vs. Mexico, Turkey and the USA</h2>
           <p class="mx-auto mt-3 font-display font-semibold text-navy">A Complete Cost and Treatment Comparison</p>
-          <p class="mx-auto mt-4 max-w-[760px] text-ink">Costa Rica offers a balance of competitive pricing, convenient travel from the United States, and coordinated care in a destination known for its natural beauty.</p>
-          <p class="mx-auto mt-4 max-w-[760px] text-ink">Prices vary by clinic, veneer material, case complexity, and included services. This comparison provides general market estimates alongside the Esthetic Dent package for eight porcelain veneers.</p>
+          <p class="copy-justified mx-auto mt-4 max-w-[760px] text-ink">Costa Rica offers a balance of competitive pricing, convenient travel from the United States, and coordinated care in a destination known for its natural beauty.</p>
+          <p class="copy-justified mx-auto mt-4 max-w-[760px] text-ink">Prices vary by clinic, veneer material, case complexity, and included services. This comparison provides general market estimates alongside the Esthetic Dent package for eight porcelain veneers.</p>
         </div>
         <div class="mx-auto mt-12 min-w-0 max-w-[900px] overflow-hidden rounded-2xl bg-white shadow-card">
           <table class="price-table w-full text-left text-sm">
@@ -844,7 +898,7 @@
         </div>
         <!-- Placeholder photo: swap empty.png for the image below the table. -->
         <div class="mx-auto mt-8 max-w-[900px] overflow-hidden rounded-2xl shadow-card">
-          <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Porcelain veneers cost comparison at Esthetic Dent in Costa Rica" class="aspect-[831/490] w-full object-cover">
+          <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Porcelain veneers cost comparison at Esthetic Dent in Costa Rica" class="h-48 w-full object-cover sm:h-60 lg:h-72">
         </div>
       </div>
     </section>
@@ -901,7 +955,7 @@
               <p class="mt-1 text-[0.8rem] text-ink/50">Accepted formats: JPG, PNG or PDF · Up to 5 files</p>
             </div>
             <button type="submit" class="btn-primary col-span-2 w-full whitespace-nowrap px-4 text-[0.8rem] sm:px-6 sm:text-sm">Start My Free Consultation</button>
-            <p class="col-span-2 text-center text-[0.8rem] leading-snug text-ink/60">By submitting this form, you agree to our <a href="#" class="underline hover:text-blue">Privacy Policy</a>. Your information and uploaded files will remain confidential. We follow HIPAA guidelines for patient records.</p>
+            <p class="copy-justified-flush col-span-2 text-[0.8rem] leading-snug text-ink/60">By submitting this form, you agree to our <a href="#" class="underline hover:text-blue">Privacy Policy</a>. Your information and uploaded files will remain confidential. We follow HIPAA guidelines for patient records.</p>
           </form>
         </div>
       </div>

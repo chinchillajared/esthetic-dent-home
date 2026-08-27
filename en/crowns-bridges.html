@@ -67,6 +67,9 @@
     <g id="icon-pin" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
       <path d="M12 21s7-6.6 7-11.5A7 7 0 0 0 5 9.5C5 14.4 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/>
     </g>
+    <g id="icon-home" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3.5 10.5 12 3.5l8.5 7"/><path d="M5.5 9.2V20h13V9.2"/><path d="M9.75 20v-5.5h4.5V20"/>
+    </g>
     <g id="icon-menu" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
       <path d="M4 7h16M4 12h16M4 17h16"/>
     </g>
@@ -121,6 +124,11 @@
       </button>
     </div>
     <div class="divide-y divide-sky-pale/50 px-2">
+      <div>
+        <a href="index.html" class="flex w-full items-center gap-3 px-3 py-4 text-left font-display font-semibold text-navy">
+          <svg viewBox="0 0 24 24" class="h-5 w-5 text-blue"><use href="#icon-home"/></svg>Home
+        </a>
+      </div>
       <!-- 1 -->
       <div>
         <button class="flex w-full items-center justify-between px-3 py-4 text-left font-display font-semibold text-navy" data-accordion-trigger aria-expanded="false" aria-controls="m-packages">
@@ -263,6 +271,10 @@
     <nav class="hidden border-t border-navy/10 xl:block" aria-label="Primary" data-desktop-nav>
       <div class="nav-row flex items-center justify-center gap-1 px-4 py-1.5 sm:px-6 lg:px-8">
         <div class="nav-item">
+          <a href="index.html" class="nav-trigger">Home</a>
+        </div>
+
+        <div class="nav-item">
           <button type="button" class="nav-trigger" data-nav aria-expanded="false" aria-haspopup="true">
             Packages
             <svg viewBox="0 0 24 24" class="h-3.5 w-3.5"><use href="#icon-chevron"/></svg>
@@ -330,7 +342,7 @@
             Blog
             <svg viewBox="0 0 24 24" class="h-3.5 w-3.5"><use href="#icon-chevron"/></svg>
           </button>
-          <div class="dropdown" role="menu">
+          <div class="dropdown dropdown--right" role="menu">
             <a href="/en/blog/" class="dropdown-link" role="menuitem">All articles</a>
             <a href="/en/blog/?category=dental-care-guides" class="dropdown-link" role="menuitem">Dental Care Guides</a>
             <a href="/en/blog/?category=dental-tourism-guides" class="dropdown-link" role="menuitem">Dental Tourism Guides</a>
@@ -355,22 +367,31 @@
     <!-- ============================================================ -->
     <!-- Page hero                                                     -->
     <!-- ============================================================ -->
-    <section class="py-16 2xl:py-24">
-      <div class="mx-auto max-w-[1920px] px-4 sm:px-6 lg:px-8">
-        <div class="mx-auto max-w-[760px] text-center">
+    <section class="hero-stage">
+      <div class="hero-stage-heading">
+        <div class="mx-auto max-w-xl text-center lg:mx-0 lg:text-left 2xl:max-w-2xl">
           <span class="badge">Dental Crowns &amp; Bridges in Costa Rica</span>
-          <h1 class="mt-4 text-3xl font-extrabold leading-[1.08] sm:text-5xl 2xl:text-6xl">Strong. Precise. Crafted In-House.</h1>
-          <!-- Placeholder photo: swap empty.png for the image below the title. -->
-          <div class="mx-auto mt-8 max-w-2xl overflow-hidden rounded-2xl shadow-card">
-            <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Custom zirconia and E.max crowns crafted at Esthetic Dent in Costa Rica" class="aspect-[831/490] w-full object-cover">
+          <h1 class="mt-4 text-3xl font-extrabold leading-[1.08] sm:text-5xl 2xl:text-6xl">Strong. Precise. <span class="text-blue">Crafted In-House.</span></h1>
+        </div>
+      </div>
+
+      <!-- Placeholder photo: swap empty.png for the hero photograph. From lg it
+           is the section background, so favour a wide shot with quiet space on
+           the left where the copy sits. -->
+      <div class="hero-stage-media">
+        <img decoding="async" src="../assets/img/empty.png" alt="Custom zirconia and E.max crowns crafted at Esthetic Dent in Costa Rica" class="hero-stage-photo">
+        <div class="hero-stage-scrim" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero-stage-panel">
+        <div class="mx-auto max-w-xl text-center lg:mx-0 lg:text-left 2xl:max-w-2xl">
+          <p class="copy-justified text-base text-ink sm:text-lg 2xl:text-xl">Restore the strength, function, and natural appearance of your smile with custom zirconia and E.max crowns—digitally designed and crafted in our in-house dental lab for $450 per crown, compared with approximately $1,200–$1,500 in the U.S.</p>
+          <p class="copy-justified mt-4 text-base text-ink sm:text-lg 2xl:text-xl">Dental bridges and implant-supported crowns are created with the same precision, premium materials, and direct collaboration between your dentist and our laboratory team.</p>
+          <p class="mt-6 font-display text-lg font-semibold text-navy">Precision You Can See. Strength You Can Trust.</p>
+          <div class="mt-6 flex flex-wrap justify-center gap-2 sm:gap-4 lg:justify-start">
+            <a href="#contact" class="btn-primary whitespace-nowrap px-3 py-2 text-[0.8rem] sm:px-6 sm:py-3 sm:text-sm">Start Your Free Virtual Consultation</a>
+            <a href="#pricing" class="btn-ghost whitespace-nowrap px-3 py-2 text-[0.8rem] sm:px-6 sm:py-3 sm:text-sm">View Pricing</a>
           </div>
-          <p class="mt-8 text-base text-ink sm:text-lg 2xl:text-xl">Restore the strength, function, and natural appearance of your smile with custom zirconia and E.max crowns—digitally designed and crafted in our in-house dental lab for $450 per crown, compared with approximately $1,200–$1,500 in the U.S.</p>
-          <p class="mt-4 text-base text-ink sm:text-lg 2xl:text-xl">Dental bridges and implant-supported crowns are created with the same precision, premium materials, and direct collaboration between your dentist and our laboratory team.</p>
-          <div class="mt-8 flex flex-wrap justify-center gap-2 sm:gap-4">
-            <a href="#contact" class="btn-primary">Start Your Free Virtual Consultation</a>
-            <a href="#pricing" class="btn-ghost">View Crowns &amp; Bridges Pricing</a>
-          </div>
-          <p class="mt-8 font-display text-lg font-semibold text-navy">Precision You Can See. Strength You Can Trust.</p>
         </div>
       </div>
     </section>
@@ -380,29 +401,32 @@
     <!-- ============================================================ -->
     <section class="scroll-mt-24 bg-[#F4FAFF] py-16 2xl:py-24">
       <div class="mx-auto max-w-[1920px] px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <span class="badge">In-House Lab</span>
-          <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Zirconia and E.max, Crafted In-House</h2>
-          <!-- Placeholder photos: swap empty.png for a sequence of four medium photos. -->
-          <div class="mx-auto mt-8 grid max-w-3xl grid-cols-2 gap-4 sm:grid-cols-4">
-            <div class="min-w-0 overflow-hidden rounded-xl shadow-card">
-              <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Digital scan of a tooth at Esthetic Dent's in-house dental lab" class="aspect-[831/490] w-full object-cover">
-            </div>
-            <div class="min-w-0 overflow-hidden rounded-xl shadow-card">
-              <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Digital crown design at Esthetic Dent's in-house dental lab" class="aspect-[831/490] w-full object-cover">
-            </div>
-            <div class="min-w-0 overflow-hidden rounded-xl shadow-card">
-              <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Precision milling of a crown at Esthetic Dent's in-house dental lab" class="aspect-[831/490] w-full object-cover">
-            </div>
-            <div class="min-w-0 overflow-hidden rounded-xl shadow-card">
-              <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Finished zirconia crown at Esthetic Dent's in-house dental lab" class="aspect-[831/490] w-full object-cover">
+        <div class="split">
+          <div class="split-copy">
+            <span class="badge">In-House Lab</span>
+            <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Zirconia and E.max, Crafted In-House</h2>
+            <p class="copy-justified mt-6 text-ink">Your crown is digitally scanned, designed, and precision-milled in our own lab—giving us complete control over its fit, bite, shade, and natural appearance.</p>
+            <p class="copy-justified mt-4 text-ink">Missing a tooth? We will tell you honestly whether a fixed bridge or an implant-supported crown is the better long-term solution for you.</p>
+            <div class="mt-8 flex justify-center lg:justify-start">
+              <a href="#" class="btn-primary">See Our In-House Lab</a>
             </div>
           </div>
-          <p class="mx-auto mt-8 max-w-[760px] text-ink">Your crown is digitally scanned, designed, and precision-milled in our own lab—giving us complete control over its fit, bite, shade, and natural appearance.</p>
-          <p class="mx-auto mt-4 max-w-[760px] text-ink">Missing a tooth? We will tell you honestly whether a fixed bridge or an implant-supported crown is the better long-term solution for you.</p>
-        </div>
-        <div class="mt-8 flex justify-center">
-          <a href="#" class="btn-primary">See Our In-House Lab</a>
+          <!-- Placeholder photos: swap empty.png for a sequence of four medium photos.
+               Scan, design, mill, finish -- the order is the process, so keep it. -->
+          <div class="grid min-w-0 grid-cols-2 gap-3">
+            <div class="min-w-0 overflow-hidden rounded-xl shadow-card">
+              <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Digital scan of a tooth at Esthetic Dent's in-house dental lab" class="aspect-[4/3] w-full object-cover">
+            </div>
+            <div class="min-w-0 overflow-hidden rounded-xl shadow-card">
+              <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Digital crown design at Esthetic Dent's in-house dental lab" class="aspect-[4/3] w-full object-cover">
+            </div>
+            <div class="min-w-0 overflow-hidden rounded-xl shadow-card">
+              <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Precision milling of a crown at Esthetic Dent's in-house dental lab" class="aspect-[4/3] w-full object-cover">
+            </div>
+            <div class="min-w-0 overflow-hidden rounded-xl shadow-card">
+              <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Finished zirconia crown at Esthetic Dent's in-house dental lab" class="aspect-[4/3] w-full object-cover">
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -449,7 +473,7 @@
             </tbody>
           </table>
         </div>
-        <p class="mx-auto mt-4 max-w-[760px] text-center text-sm text-ink">Dental bridges are priced per unit at the same rate as individual crowns. You will receive a clear, itemized written quote following your free virtual consultation.</p>
+        <p class="copy-justified-flush mx-auto mt-4 max-w-[760px] text-sm text-ink">Dental bridges are priced per unit at the same rate as individual crowns. You will receive a clear, itemized written quote following your free virtual consultation.</p>
       </div>
     </section>
 
@@ -506,7 +530,7 @@
               <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-navy/25 transition-transform" data-chevron><use href="#icon-chevron"/></svg>
             </button>
             <div id="faq-1" class="hidden px-5 pt-5 pb-8 text-sm text-ink">
-              <p>A dental crown restores and protects a damaged tooth when the root can still be preserved. If a tooth is missing, a dental bridge fills the space using neighboring teeth for support, while a dental implant replaces the missing root and helps preserve the surrounding bone. Our dentist will recommend the right treatment based on your examination, digital scans, and long-term oral health—not simply on price.</p>
+              <p class="copy-justified-flush">A dental crown restores and protects a damaged tooth when the root can still be preserved. If a tooth is missing, a dental bridge fills the space using neighboring teeth for support, while a dental implant replaces the missing root and helps preserve the surrounding bone. Our dentist will recommend the right treatment based on your examination, digital scans, and long-term oral health—not simply on price.</p>
               <!-- Placeholder photo: swap empty.png for the image below this answer. -->
               <div class="mx-auto mt-4 max-w-xs overflow-hidden rounded-xl shadow-card">
                 <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Comparing crowns, bridges, and dental implants at Esthetic Dent" class="aspect-[831/490] w-full object-cover">
@@ -519,7 +543,7 @@
               <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-navy/25 transition-transform" data-chevron><use href="#icon-chevron"/></svg>
             </button>
             <div id="faq-2" class="hidden px-5 pt-5 pb-8 text-sm text-ink">
-              <p>Because your crown is digitally designed and milled in our in-house dental lab, treatment can usually be completed within a few days. Many international patients receive their final crown during the same trip as their clinical evaluation, depending on their individual case.</p>
+              <p class="copy-justified-flush">Because your crown is digitally designed and milled in our in-house dental lab, treatment can usually be completed within a few days. Many international patients receive their final crown during the same trip as their clinical evaluation, depending on their individual case.</p>
               <div class="mt-4 inline-flex items-center gap-2 rounded-full bg-mint/15 px-4 py-2 font-display text-sm font-semibold text-mint-dark">
                 <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0"><use href="#icon-calendar"/></svg>
                 Typically completed within a few days
@@ -532,7 +556,7 @@
               <svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-navy/25 transition-transform" data-chevron><use href="#icon-chevron"/></svg>
             </button>
             <div id="faq-3" class="hidden px-5 pt-5 pb-8 text-sm text-ink">
-              <p>With proper care, zirconia crowns commonly last 10 to 15 years and may last significantly longer. Their lifespan depends on oral hygiene, bite forces, regular dental checkups, and habits such as teeth grinding. Although the crown protects the tooth, the surrounding gums, bone, and natural tooth structure still require daily brushing and flossing.</p>
+              <p class="copy-justified-flush">With proper care, zirconia crowns commonly last 10 to 15 years and may last significantly longer. Their lifespan depends on oral hygiene, bite forces, regular dental checkups, and habits such as teeth grinding. Although the crown protects the tooth, the surrounding gums, bone, and natural tooth structure still require daily brushing and flossing.</p>
               <!-- Placeholder photos: swap empty.png for three small images. -->
               <div class="mt-4 grid grid-cols-3 gap-3">
                 <div class="min-w-0 overflow-hidden rounded-lg shadow-card">
