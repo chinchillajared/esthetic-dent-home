@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body class="bg-white">
-<a href="#" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-navy focus:px-4 focus:py-2 focus:text-white">Skip to main content</a>
+<a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-navy focus:px-4 focus:py-2 focus:text-white">Skip to main content</a>
 
 <!-- ============================================================ -->
 <!-- Icon sprite (decorative, referenced via <use>)                -->
@@ -56,6 +56,9 @@
     <g id="icon-question" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
       <circle cx="12" cy="12" r="9"/><path d="M9.5 9.3a2.5 2.5 0 1 1 3.7 2.2c-.9.5-1.2 1-1.2 1.9"/><path d="M12 17h.01"/>
     </g>
+    <g id="icon-search" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="7"/><path d="m16.2 16.2 4.3 4.3"/>
+    </g>
     <g id="icon-phone" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
       <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"/>
     </g>
@@ -82,6 +85,9 @@
     </g>
     <g id="icon-flask" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
       <path d="M9 3h6M10 3v6.5L5.5 18a2 2 0 0 0 1.8 3h9.4a2 2 0 0 0 1.8-3L14 9.5V3"/><path d="M8 15h8"/>
+    </g>
+    <g id="icon-calendar" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 9.5h17M8 3v3.5M16 3v3.5"/><path d="M8 13.5h.01M12 13.5h.01M16 13.5h.01M8 17h.01M12 17h.01"/>
     </g>
     <g id="icon-users" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
       <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
@@ -123,81 +129,81 @@
     </div>
     <div class="divide-y divide-sky-pale/50 px-2">
       <div>
-        <a href="index.html" aria-current="page" class="flex w-full items-center gap-3 px-3 py-4 text-left font-display font-semibold text-navy">
-          <svg viewBox="0 0 24 24" class="h-5 w-5 text-blue"><use href="#icon-home"/></svg>Home
+        <a href="index.html" class="flex w-full items-center gap-3 px-3 py-4 text-left font-display font-semibold text-navy" aria-current="page">
+          <svg viewBox="0 0 24 24" class="h-5 w-5 text-blue"><use href="#icon-home"/></svg><span class="nav-label">Home</span>
         </a>
       </div>
       <!-- 1 -->
       <div>
         <button class="flex w-full items-center justify-between px-3 py-4 text-left font-display font-semibold text-navy" data-accordion-trigger aria-expanded="false" aria-controls="m-packages">
-          <span class="flex items-center gap-3"><svg viewBox="0 0 24 24" class="h-5 w-5 text-blue"><use href="#icon-package"/></svg>Dental Packages</span>
+          <span class="flex items-center gap-3"><svg viewBox="0 0 24 24" class="h-5 w-5 text-blue"><use href="#icon-package"/></svg><span class="nav-label">Dental Packages</span></span>
           <svg viewBox="0 0 24 24" class="h-4 w-4 transition-transform" data-chevron><use href="#icon-chevron"/></svg>
         </button>
         <div id="m-packages" class="hidden pb-3 pl-11 pr-3">
-          <a href="all-treatments-prices.html" class="block py-1.5 text-sm">All Treatments &amp; Prices</a>
-          <a href="costa-rica-smile-makeover-package.html" class="block py-1.5 text-sm">Smile Makeover Package</a>
-          <a href="porcelain-veneers-costa-rica-package.html" class="block py-1.5 text-sm">Porcelain Veneers Package</a>
-          <a href="all-on-4-costa-rica-package.html" class="block py-1.5 text-sm">All-on-4 &amp; More Package</a>
-          <a href="dental-implants.html" class="block py-1.5 text-sm">Dental Implants</a>
-          <a href="crowns-bridges.html" class="block py-1.5 text-sm">Crowns &amp; Bridges</a>
-          <a href="#" class="block py-1.5 text-sm">Special Offers</a>
+          <a href="packages/all-treatments-prices.html" class="block py-1.5 text-sm">All Treatments &amp; Prices</a>
+          <a href="packages/costa-rica-smile-makeover-package.html" class="block py-1.5 text-sm">Smile Makeover Package</a>
+          <a href="packages/porcelain-veneers-costa-rica-package.html" class="block py-1.5 text-sm">Porcelain Veneers Package</a>
+          <a href="packages/all-on-4-costa-rica-package.html" class="block py-1.5 text-sm">All-on-4 &amp; More Package</a>
+          <a href="packages/dental-implants.html" class="block py-1.5 text-sm">Dental Implants</a>
+          <a href="packages/crowns-bridges.html" class="block py-1.5 text-sm">Crowns &amp; Bridges</a>
+          <a href="packages/special-offers.html" class="block py-1.5 text-sm">Special Offers</a>
         </div>
       </div>
       <!-- 2 -->
       <div>
         <button class="flex w-full items-center justify-between px-3 py-4 text-left font-display font-semibold text-navy" data-accordion-trigger aria-expanded="false" aria-controls="m-about">
-          <span class="flex items-center gap-3"><svg viewBox="0 0 24 24" class="h-5 w-5 text-blue"><use href="#icon-building"/></svg>About Us</span>
+          <span class="flex items-center gap-3"><svg viewBox="0 0 24 24" class="h-5 w-5 text-blue"><use href="#icon-building"/></svg><span class="nav-label">About Us</span></span>
           <svg viewBox="0 0 24 24" class="h-4 w-4 transition-transform" data-chevron><use href="#icon-chevron"/></svg>
         </button>
         <div id="m-about" class="hidden pb-3 pl-11 pr-3">
-          <a href="#" class="block py-1.5 text-sm">Who We Are</a>
-          <a href="#" class="block py-1.5 text-sm">Our Clinics</a>
-          <a href="#" class="block py-1.5 text-sm">Meet Our Specialists</a>
+          <a href="about-us/who-we-are.html" class="block py-1.5 text-sm">Who We Are</a>
+          <a href="about-us/our-clinics.html" class="block py-1.5 text-sm">Our Clinics</a>
+          <a href="about-us/meet-our-specialists.html" class="block py-1.5 text-sm">Meet Our Specialists</a>
         </div>
       </div>
       <!-- 3 -->
       <div>
         <button class="flex w-full items-center justify-between px-3 py-4 text-left font-display font-semibold text-navy" data-accordion-trigger aria-expanded="false" aria-controls="m-why">
-          <span class="flex items-center gap-3"><svg viewBox="0 0 24 24" class="h-5 w-5 text-blue"><use href="#icon-shield-star"/></svg>Why Esthetic Dent</span>
+          <span class="flex items-center gap-3"><svg viewBox="0 0 24 24" class="h-5 w-5 text-blue"><use href="#icon-shield-star"/></svg><span class="nav-label">Why Esthetic Dent</span></span>
           <svg viewBox="0 0 24 24" class="h-4 w-4 transition-transform" data-chevron><use href="#icon-chevron"/></svg>
         </button>
         <div id="m-why" class="hidden pb-3 pl-11 pr-3">
-          <a href="#" class="block py-1.5 text-sm">In-House Dental Lab &amp; Technology</a>
-          <a href="#" class="block py-1.5 text-sm">Patient Safety &amp; Sterilization</a>
-          <a href="#" class="block py-1.5 text-sm">Real Patient Cases</a>
-          <a href="#" class="block py-1.5 text-sm">Patient Stories &amp; Reviews</a>
+          <a href="why-esthetic-dent/in-house-dental-lab-technology.html" class="block py-1.5 text-sm">In-House Dental Lab &amp; Technology</a>
+          <a href="why-esthetic-dent/patient-safety-sterilization.html" class="block py-1.5 text-sm">Patient Safety &amp; Sterilization</a>
+          <a href="why-esthetic-dent/real-patient-cases.html" class="block py-1.5 text-sm">Real Patient Cases</a>
+          <a href="why-esthetic-dent/patient-stories-reviews.html" class="block py-1.5 text-sm">Patient Stories &amp; Reviews</a>
         </div>
       </div>
       <!-- 4 -->
       <div>
         <button class="flex w-full items-center justify-between px-3 py-4 text-left font-display font-semibold text-navy" data-accordion-trigger aria-expanded="false" aria-controls="m-trip">
-          <span class="flex items-center gap-3"><svg viewBox="0 0 24 24" class="h-5 w-5 text-blue"><use href="#icon-plane"/></svg>Dental Tourism</span>
+          <span class="flex items-center gap-3"><svg viewBox="0 0 24 24" class="h-5 w-5 text-blue"><use href="#icon-plane"/></svg><span class="nav-label">Dental Tourism</span></span>
           <svg viewBox="0 0 24 24" class="h-4 w-4 transition-transform" data-chevron><use href="#icon-chevron"/></svg>
         </button>
         <div id="m-trip" class="hidden pb-3 pl-11 pr-3">
-          <a href="#" class="block py-1.5 text-sm">How It Works</a>
-          <a href="#" class="block py-1.5 text-sm">Why Costa Rica</a>
-          <a href="#" class="block py-1.5 text-sm">Direct Flights From Your City</a>
-          <a href="#" class="block py-1.5 text-sm">Hotels &amp; Travel Partners</a>
-          <a href="#" class="block py-1.5 text-sm">Your Travel Coordinator</a>
+          <a href="dental-tourism/how-it-works.html" class="block py-1.5 text-sm">How It Works</a>
+          <a href="dental-tourism/why-costa-rica.html" class="block py-1.5 text-sm">Why Costa Rica</a>
+          <a href="dental-tourism/direct-flights-from-your-city.html" class="block py-1.5 text-sm">Direct Flights From Your City</a>
+          <a href="dental-tourism/hotels-travel-partners.html" class="block py-1.5 text-sm">Hotels &amp; Travel Partners</a>
+          <a href="dental-tourism/your-travel-coordinator.html" class="block py-1.5 text-sm">Your Travel Coordinator</a>
         </div>
       </div>
       <!-- 5 -->
       <div>
-        <a href="#warranty" class="flex w-full items-center gap-3 px-3 py-4 text-left font-display font-semibold text-navy">
-          <svg viewBox="0 0 24 24" class="h-5 w-5 text-blue"><use href="#icon-shield-check"/></svg>Lifetime Warranty
+        <a href="lifetime-warranty/index.html" class="flex w-full items-center gap-3 px-3 py-4 text-left font-display font-semibold text-navy">
+          <svg viewBox="0 0 24 24" class="h-5 w-5 text-blue"><use href="#icon-shield-check"/></svg><span class="nav-label">Lifetime Warranty</span>
         </a>
       </div>
       <!-- 6 -->
       <div>
-        <a href="#pricing" class="flex w-full items-center gap-3 px-3 py-4 text-left font-display font-semibold text-navy">
-          <svg viewBox="0 0 24 24" class="h-5 w-5 text-blue"><use href="#icon-coin"/></svg>Prices &amp; Financing
+        <a href="prices-and-financing/index.html" class="flex w-full items-center gap-3 px-3 py-4 text-left font-display font-semibold text-navy">
+          <svg viewBox="0 0 24 24" class="h-5 w-5 text-blue"><use href="#icon-coin"/></svg><span class="nav-label">Prices &amp; Financing</span>
         </a>
       </div>
       <!-- 7 -->
       <div>
         <button class="flex w-full items-center justify-between px-3 py-4 text-left font-display font-semibold text-navy" data-accordion-trigger aria-expanded="false" aria-controls="m-blog">
-          <span class="flex items-center gap-3"><svg viewBox="0 0 24 24" class="h-5 w-5 text-blue"><use href="#icon-document"/></svg>Blog</span>
+          <span class="flex items-center gap-3"><svg viewBox="0 0 24 24" class="h-5 w-5 text-blue"><use href="#icon-document"/></svg><span class="nav-label">Blog</span></span>
           <svg viewBox="0 0 24 24" class="h-4 w-4 transition-transform" data-chevron><use href="#icon-chevron"/></svg>
         </button>
         <div id="m-blog" class="hidden pb-3 pl-11 pr-3">
@@ -209,51 +215,37 @@
       </div>
       <!-- 8 -->
       <div>
-        <a href="#" class="flex w-full items-center gap-3 px-3 py-4 text-left font-display font-semibold text-navy">
-          <svg viewBox="0 0 24 24" class="h-5 w-5 text-blue"><use href="#icon-question"/></svg>FAQs
+        <a href="faqs/index.html" class="flex w-full items-center gap-3 px-3 py-4 text-left font-display font-semibold text-navy">
+          <svg viewBox="0 0 24 24" class="h-5 w-5 text-blue"><use href="#icon-question"/></svg><span class="nav-label">FAQs</span>
         </a>
       </div>
       <!-- 9 -->
       <div>
-        <a href="#contact" class="flex w-full items-center gap-3 px-3 py-4 text-left font-display font-semibold text-navy">
-          <svg viewBox="0 0 24 24" class="h-5 w-5 text-blue"><use href="#icon-phone"/></svg>Contact
+        <a href="contact/index.html" class="flex w-full items-center gap-3 px-3 py-4 text-left font-display font-semibold text-navy">
+          <svg viewBox="0 0 24 24" class="h-5 w-5 text-blue"><use href="#icon-phone"/></svg><span class="nav-label">Contact</span>
         </a>
       </div>
     </div>
     <div class="mt-4 px-5">
-      <a href="#" class="btn-primary w-full">Start Free Consultation</a>
+      <a href="contact/index.html" class="btn-primary w-full">Start Free Consultation</a>
     </div>
   </div>
 </div>
 
 <div>
 
-  <!-- Top block: from lg up the announcement bar, the logo row and the nav
-       stick to the viewport as one unit. -->
-  <div class="lg:sticky lg:top-0 lg:z-30">
-
-  <!-- Announcement bar -->
-  <div class="bg-[#F4FAFF] px-4 py-3 text-[0.8rem] text-navy/70 sm:px-6 lg:px-8">
-    <div class="flex items-center justify-between gap-x-2">
-      <p class="flex items-center gap-1.5">
-        <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 shrink-0 text-mint-dark"><use href="#icon-pin"/></svg>
-        <span class="font-display font-semibold text-mint-dark">Cóbano, Costa Rica</span>
-      </p>
-      <a href="tel:+50600000000" class="flex items-center gap-1.5 transition-colors hover:text-blue">
-        <svg viewBox="0 0 24 24" class="h-3.5 w-3.5"><use href="#icon-phone"/></svg>+506 00000-00000
-      </a>
-    </div>
-  </div>
+  <!-- Top block: the header and its nav pin to the viewport as one unit. -->
+  <div class="sticky top-0 z-30">
 
   <!-- Topbar -->
-  <header data-topbar class="sticky top-0 z-30 bg-white transition-shadow lg:static lg:z-auto">
-    <div class="flex items-center justify-between gap-4 px-4 py-2 sm:px-6 lg:px-8">
+  <header data-topbar class="bg-white transition-shadow">
+    <div class="header-row flex items-center justify-between gap-4 px-4 py-2 sm:px-6 lg:px-8">
       <div class="flex items-center gap-3">
         <button type="button" data-drawer-toggle aria-expanded="false" aria-label="Open menu" class="flex h-10 w-10 items-center justify-center rounded-full border border-navy/10 text-navy xl:hidden">
           <svg viewBox="0 0 24 24" class="h-5 w-5"><use href="#icon-menu"/></svg>
         </button>
-        <a href="#" class="flex items-center">
-          <img decoding="async" src="../assets/img/logo-en.png" alt="Esthetic Dent" class="h-16 w-auto">
+        <a href="index.html" class="flex items-center">
+          <img loading="eager" decoding="async" width="928" height="465" fetchpriority="high" src="../assets/img/logo-en.webp" alt="Esthetic Dent" class="header-logo h-16 w-auto">
         </a>
       </div>
 
@@ -262,85 +254,83 @@
           <span class="bg-navy px-3 py-1.5 text-white">EN</span>
           <a href="../es/index.html" class="px-3 py-1.5 text-navy hover:bg-sky-pale/40">ES</a>
         </div>
-        <a href="#" class="btn-primary hidden xl:inline-flex">Start Free Consultation</a>
+        <a href="contact/index.html" class="header-cta btn-primary hidden xl:inline-flex">Start Free Consultation</a>
       </div>
     </div>
 
-    <!-- ============================================================ -->
-    <!-- Horizontal desktop nav with dropdowns                         -->
-    <!-- ============================================================ -->
+    <!-- Horizontal desktop nav with dropdowns -->
     <nav class="hidden border-t border-navy/10 xl:block" aria-label="Primary" data-desktop-nav>
       <div class="nav-row flex items-center justify-center gap-1 px-4 py-1.5 sm:px-6 lg:px-8">
         <div class="nav-item">
-          <a href="index.html" class="nav-trigger" aria-current="page">Home</a>
+          <a href="index.html" class="nav-trigger" aria-current="page"><span class="nav-label">Home</span></a>
         </div>
 
         <div class="nav-item">
           <button type="button" class="nav-trigger" data-nav aria-expanded="false" aria-haspopup="true">
-            Packages
+            <span class="nav-label">Packages</span>
             <svg viewBox="0 0 24 24" class="h-3.5 w-3.5"><use href="#icon-chevron"/></svg>
           </button>
           <div class="dropdown" role="menu">
-            <a href="all-treatments-prices.html" class="dropdown-link" role="menuitem">All Treatments &amp; Prices</a>
-            <a href="costa-rica-smile-makeover-package.html" class="dropdown-link" role="menuitem">Costa Rica Smile Makeover Package</a>
-            <a href="porcelain-veneers-costa-rica-package.html" class="dropdown-link" role="menuitem">Porcelain Veneers Costa Rica Package</a>
-            <a href="all-on-4-costa-rica-package.html" class="dropdown-link" role="menuitem">All-on-4 &amp; More Costa Rica Package</a>
-            <a href="dental-implants.html" class="dropdown-link" role="menuitem">Dental Implants</a>
-            <a href="crowns-bridges.html" class="dropdown-link" role="menuitem">Crowns &amp; Bridges</a>
-            <a href="#" class="dropdown-link" role="menuitem">Special Offers</a>
+            <a href="packages/all-treatments-prices.html" class="dropdown-link" role="menuitem">All Treatments &amp; Prices</a>
+            <a href="packages/costa-rica-smile-makeover-package.html" class="dropdown-link" role="menuitem">Costa Rica Smile Makeover Package</a>
+            <a href="packages/porcelain-veneers-costa-rica-package.html" class="dropdown-link" role="menuitem">Porcelain Veneers Costa Rica Package</a>
+            <a href="packages/all-on-4-costa-rica-package.html" class="dropdown-link" role="menuitem">All-on-4 &amp; More Costa Rica Package</a>
+            <a href="packages/dental-implants.html" class="dropdown-link" role="menuitem">Dental Implants</a>
+            <a href="packages/crowns-bridges.html" class="dropdown-link" role="menuitem">Crowns &amp; Bridges</a>
+            <a href="packages/special-offers.html" class="dropdown-link" role="menuitem">Special Offers</a>
           </div>
         </div>
 
         <div class="nav-item">
           <button type="button" class="nav-trigger" data-nav aria-expanded="false" aria-haspopup="true">
-            About Us
+            <span class="nav-label">About Us</span>
             <svg viewBox="0 0 24 24" class="h-3.5 w-3.5"><use href="#icon-chevron"/></svg>
           </button>
           <div class="dropdown" role="menu">
-            <a href="#" class="dropdown-link" role="menuitem">Who We Are</a>
-            <a href="#" class="dropdown-link" role="menuitem">Our Clinics — Santa Teresa, Cóbano &amp; San José</a>
-            <a href="#" class="dropdown-link" role="menuitem">Meet Our Specialists</a>
+            <a href="about-us/who-we-are.html" class="dropdown-link" role="menuitem">Who We Are</a>
+            <a href="about-us/our-clinics.html" class="dropdown-link" role="menuitem">Our Clinics — Santa Teresa, Cóbano &amp; San José</a>
+            <a href="about-us/meet-our-specialists.html" class="dropdown-link" role="menuitem">Meet Our Specialists</a>
           </div>
         </div>
 
         <div class="nav-item">
           <button type="button" class="nav-trigger" data-nav aria-expanded="false" aria-haspopup="true">
-            Why Esthetic Dent
+            <span class="nav-label">Why Esthetic Dent</span>
             <svg viewBox="0 0 24 24" class="h-3.5 w-3.5"><use href="#icon-chevron"/></svg>
           </button>
           <div class="dropdown" role="menu">
-            <a href="#" class="dropdown-link" role="menuitem">In-House Dental Lab &amp; Technology</a>
-            <a href="#" class="dropdown-link" role="menuitem">Patient Safety &amp; Sterilization</a>
-            <a href="#" class="dropdown-link" role="menuitem">Real Patient Cases</a>
-            <a href="#" class="dropdown-link" role="menuitem">Patient Stories &amp; Reviews</a>
+            <a href="why-esthetic-dent/in-house-dental-lab-technology.html" class="dropdown-link" role="menuitem">In-House Dental Lab &amp; Technology</a>
+            <a href="why-esthetic-dent/patient-safety-sterilization.html" class="dropdown-link" role="menuitem">Patient Safety &amp; Sterilization</a>
+            <a href="why-esthetic-dent/real-patient-cases.html" class="dropdown-link" role="menuitem">Real Patient Cases</a>
+            <a href="why-esthetic-dent/patient-stories-reviews.html" class="dropdown-link" role="menuitem">Patient Stories &amp; Reviews</a>
           </div>
         </div>
 
         <div class="nav-item">
           <button type="button" class="nav-trigger" data-nav aria-expanded="false" aria-haspopup="true">
-            Dental Tourism
+            <span class="nav-label">Dental Tourism</span>
             <svg viewBox="0 0 24 24" class="h-3.5 w-3.5"><use href="#icon-chevron"/></svg>
           </button>
           <div class="dropdown" role="menu">
-            <a href="#" class="dropdown-link" role="menuitem">How It Works</a>
-            <a href="#" class="dropdown-link" role="menuitem">Why Costa Rica</a>
-            <a href="#" class="dropdown-link" role="menuitem">Direct Flights From Your City</a>
-            <a href="#" class="dropdown-link" role="menuitem">Hotels &amp; Travel Partners</a>
-            <a href="#" class="dropdown-link" role="menuitem">Your Travel Coordinator</a>
+            <a href="dental-tourism/how-it-works.html" class="dropdown-link" role="menuitem">How It Works</a>
+            <a href="dental-tourism/why-costa-rica.html" class="dropdown-link" role="menuitem">Why Costa Rica</a>
+            <a href="dental-tourism/direct-flights-from-your-city.html" class="dropdown-link" role="menuitem">Direct Flights From Your City</a>
+            <a href="dental-tourism/hotels-travel-partners.html" class="dropdown-link" role="menuitem">Hotels &amp; Travel Partners</a>
+            <a href="dental-tourism/your-travel-coordinator.html" class="dropdown-link" role="menuitem">Your Travel Coordinator</a>
           </div>
         </div>
 
         <div class="nav-item">
-          <a href="#warranty" class="nav-trigger">Lifetime Warranty</a>
+          <a href="lifetime-warranty/index.html" class="nav-trigger"><span class="nav-label">Lifetime Warranty</span></a>
         </div>
 
         <div class="nav-item">
-          <a href="#pricing" class="nav-trigger">Prices &amp; Financing</a>
+          <a href="prices-and-financing/index.html" class="nav-trigger"><span class="nav-label">Prices &amp; Financing</span></a>
         </div>
 
         <div class="nav-item">
           <button type="button" class="nav-trigger" data-nav aria-expanded="false" aria-haspopup="true">
-            Blog
+            <span class="nav-label">Blog</span>
             <svg viewBox="0 0 24 24" class="h-3.5 w-3.5"><use href="#icon-chevron"/></svg>
           </button>
           <div class="dropdown dropdown--right" role="menu">
@@ -352,11 +342,11 @@
         </div>
 
         <div class="nav-item">
-          <a href="#" class="nav-trigger">FAQs</a>
+          <a href="faqs/index.html" class="nav-trigger"><span class="nav-label">FAQs</span></a>
         </div>
 
         <div class="nav-item">
-          <a href="#contact" class="nav-trigger">Contact</a>
+          <a href="contact/index.html" class="nav-trigger"><span class="nav-label">Contact</span></a>
         </div>
       </div>
     </nav>
@@ -380,9 +370,9 @@
       </div>
 
       <div class="hero-stage-media" data-carousel role="region" aria-label="Esthetic Dent photo gallery" aria-roledescription="carousel">
-        <img decoding="async" src="../assets/img/playa-blanca.png" alt="White sand beach on the Nicoya Peninsula, Costa Rica" class="hero-carousel-slide hero-carousel-slide--destination is-active" data-slide loading="eager">
-        <img decoding="async" src="../assets/img/empty.png" alt="Modern dental clinic in Cóbano, Costa Rica" class="hero-carousel-slide hero-carousel-slide--clinic" data-slide loading="lazy">
-        <img decoding="async" src="../assets/img/empty.png" alt="Natural, elegant patient smile after treatment" class="hero-carousel-slide hero-carousel-slide--smile" data-slide loading="lazy">
+        <img decoding="async" width="831" height="490" fetchpriority="high" src="../assets/img/playa-blanca.webp" alt="White sand beach on the Nicoya Peninsula, Costa Rica" class="hero-carousel-slide hero-carousel-slide--destination is-active" data-slide loading="eager">
+        <img decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Modern dental clinic in Cóbano, Costa Rica" class="hero-carousel-slide hero-carousel-slide--clinic" data-slide loading="lazy">
+        <img decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Natural, elegant patient smile after treatment" class="hero-carousel-slide hero-carousel-slide--smile" data-slide loading="lazy">
         <div class="hero-stage-scrim" aria-hidden="true"></div>
         <button type="button" class="hero-carousel-arrow hero-carousel-arrow--prev" data-carousel-prev aria-label="Previous photo">
           <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 rotate-90 sm:h-4 sm:w-4"><use href="#icon-chevron"/></svg>
@@ -401,23 +391,23 @@
         <div class="mx-auto max-w-xl text-center lg:mx-0 lg:text-left 2xl:max-w-2xl">
           <p class="copy-justified text-base text-ink sm:text-lg 2xl:text-xl">Specialist-led dental care, an in-house digital lab, and a lifetime warranty—all built into a stress-free dental vacation on Costa Rica’s Pacific coast. Save up to 65% compared with typical U.S. prices.</p>
           <div class="mt-6 flex flex-wrap justify-center gap-2 sm:gap-4 lg:justify-start">
-            <a href="#" class="btn-primary whitespace-nowrap px-3 py-2 text-[0.8rem] sm:px-6 sm:py-3 sm:text-sm">Get My Free Consultation</a>
-            <a href="#" class="btn-ghost whitespace-nowrap px-3 py-2 text-[0.8rem] sm:px-6 sm:py-3 sm:text-sm">Compare Prices</a>
+            <a href="#contact" class="btn-primary whitespace-nowrap px-3 py-2 text-[0.8rem] sm:px-6 sm:py-3 sm:text-sm">Get My Free Consultation</a>
+            <a href="prices-and-financing/index.html" class="btn-ghost whitespace-nowrap px-3 py-2 text-[0.8rem] sm:px-6 sm:py-3 sm:text-sm">Compare Prices</a>
           </div>
           <div class="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm font-semibold text-navy lg:justify-start">
             <span class="flex items-center gap-2"><svg viewBox="0 0 24 24" class="h-5 w-5 text-mint-dark"><use href="#icon-shield-check"/></svg>Lifetime Warranty</span>
             <span class="flex items-center gap-2"><svg viewBox="0 0 24 24" class="h-5 w-5 text-mint-dark"><use href="#icon-flask"/></svg>In-House Dental Lab</span>
             <span class="flex items-center gap-2"><svg viewBox="0 0 24 24" class="h-5 w-5 text-mint-dark"><use href="#icon-star"/></svg>4.9/5 Patient Rating</span>
           </div>
-          <!-- Placeholder marks: swap empty.png for the accreditation logos
+          <!-- Placeholder marks: swap empty.webp for the accreditation logos
                (SVG preferred, they scale to any height). -->
           <div class="mt-10 text-center sm:mt-12 lg:text-left">
             <p class="font-display text-[0.8rem] font-semibold uppercase tracking-wide text-navy">Accreditations</p>
             <div class="mt-3 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-              <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Accreditation" class="h-12 w-12 rounded-full object-cover">
-              <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Accreditation" class="h-12 w-12 rounded-full object-cover">
-              <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Accreditation" class="h-12 w-12 rounded-full object-cover">
-              <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Accreditation" class="h-12 w-12 rounded-full object-cover">
+              <img loading="lazy" decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Accreditation" class="h-16 w-16 rounded-full object-cover">
+              <img loading="lazy" decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Accreditation" class="h-16 w-16 rounded-full object-cover">
+              <img loading="lazy" decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Accreditation" class="h-16 w-16 rounded-full object-cover">
+              <img loading="lazy" decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Accreditation" class="h-16 w-16 rounded-full object-cover">
             </div>
           </div>
         </div>
@@ -469,7 +459,7 @@
             <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Preview your new smile before treatment begins</li>
             <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>SJO–Cóbano airfare and private treatment transportation</li>
           </ul>
-          <a href="costa-rica-smile-makeover-package.html" class="btn-primary mt-6 w-full">Explore This Package</a>
+          <a href="packages/costa-rica-smile-makeover-package.html" class="btn-primary mt-6 w-full">Explore This Package</a>
         </article>
 
         <article class="relative flex flex-col rounded-2xl border-2 border-mint p-6 shadow-card">
@@ -483,12 +473,12 @@
             <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Zimmer implants with fixed provisional and final teeth</li>
             <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Lifetime warranty included</li>
           </ul>
-          <a href="all-on-4-costa-rica-package.html" class="btn-primary mt-6 w-full">Explore This Package</a>
+          <a href="packages/all-on-4-costa-rica-package.html" class="btn-primary mt-6 w-full">Explore This Package</a>
         </article>
 
         <article class="flex flex-col rounded-2xl border border-navy/10 p-6 shadow-card">
           <h3 class="text-xl font-bold">Porcelain Veneers</h3>
-          <p class="mt-1 text-sm text-ink">Natural, durable porcelain veneers, hand-finished in our in-house dental lab for a smile designed around you.</p>
+          <p class="copy-justified-flush mt-1 text-sm text-ink">Natural, durable porcelain veneers, hand-finished in our in-house dental lab for a smile designed around you.</p>
           <p class="mt-4 text-sm text-ink/60 line-through">Typical U.S. $6,000+ / tooth</p>
           <p class="font-display text-3xl font-extrabold text-navy">From $2,995<span class="text-sm font-medium text-ink">USD</span></p>
           <ul class="mt-4 flex-1 space-y-2 text-sm text-ink">
@@ -496,7 +486,7 @@
             <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Personalized Digital Smile Design</li>
             <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Airfare, private transportation, and concierge included</li>
           </ul>
-          <a href="porcelain-veneers-costa-rica-package.html" class="btn-primary mt-6 w-full">Explore This Package</a>
+          <a href="packages/porcelain-veneers-costa-rica-package.html" class="btn-primary mt-6 w-full">Explore This Package</a>
         </article>
       </div>
       <p class="copy-justified mx-auto mt-6 max-w-xl text-center text-sm text-ink/70"> Prices shown apply to the package described. After your free case review, your dentist will recommend the option that best fits your clinical needs and confirm your quote before treatment—no surprises.</p>
@@ -512,30 +502,30 @@
           <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Real smiles. Real transformations.</h2>
           <p class="copy-justified mx-auto mt-3 max-w-2xl text-ink">Explore real before-and-after results from patients treated by Esthetic Dent. Every smile is carefully planned around the patient’s facial features, dental needs, and personal goals.</p>
         </div>
-        <!-- Placeholder photos: swap empty.png for the real before/after pairs.
+        <!-- Placeholder photos: swap empty.webp for the real before/after pairs.
              Every card links to the full Real Cases page. -->
         <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
-          <a href="#" class="group min-w-0 overflow-hidden rounded-2xl border border-navy/10 shadow-card transition-colors hover:border-blue/30">
-            <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Before and after a smile makeover at Esthetic Dent" class="aspect-[4/3] w-full object-cover 2xl:aspect-[16/10]">
+          <a href="why-esthetic-dent/real-patient-cases.html" class="group min-w-0 overflow-hidden rounded-2xl border border-navy/10 shadow-card transition-colors hover:border-blue/30">
+            <img loading="lazy" decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Before and after a smile makeover at Esthetic Dent" class="aspect-[4/3] w-full object-cover 2xl:aspect-[16/10]">
             <div class="p-5 text-center">
               <h3 class="font-display font-bold text-navy transition-colors group-hover:text-blue">Smile Makeover</h3>
             </div>
           </a>
-          <a href="#" class="group min-w-0 overflow-hidden rounded-2xl border border-navy/10 shadow-card transition-colors hover:border-blue/30">
-            <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Before and after an All-on-4 full-arch restoration at Esthetic Dent" class="aspect-[4/3] w-full object-cover 2xl:aspect-[16/10]">
+          <a href="why-esthetic-dent/real-patient-cases.html" class="group min-w-0 overflow-hidden rounded-2xl border border-navy/10 shadow-card transition-colors hover:border-blue/30">
+            <img loading="lazy" decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Before and after an All-on-4 full-arch restoration at Esthetic Dent" class="aspect-[4/3] w-full object-cover 2xl:aspect-[16/10]">
             <div class="p-5 text-center">
               <h3 class="font-display font-bold text-navy transition-colors group-hover:text-blue">All-on-4 &amp; Full-Arch Restorations</h3>
             </div>
           </a>
-          <a href="#" class="group min-w-0 overflow-hidden rounded-2xl border border-navy/10 shadow-card transition-colors hover:border-blue/30">
-            <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Before and after porcelain veneers at Esthetic Dent" class="aspect-[4/3] w-full object-cover 2xl:aspect-[16/10]">
+          <a href="why-esthetic-dent/real-patient-cases.html" class="group min-w-0 overflow-hidden rounded-2xl border border-navy/10 shadow-card transition-colors hover:border-blue/30">
+            <img loading="lazy" decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Before and after porcelain veneers at Esthetic Dent" class="aspect-[4/3] w-full object-cover 2xl:aspect-[16/10]">
             <div class="p-5 text-center">
               <h3 class="font-display font-bold text-navy transition-colors group-hover:text-blue">Porcelain Veneers</h3>
             </div>
           </a>
         </div>
         <div class="mt-10 flex justify-center">
-          <a href="#" class="btn-ghost">View More Real Cases</a>
+          <a href="why-esthetic-dent/real-patient-cases.html" class="btn-ghost">View More Real Cases</a>
         </div>
       </div>
     </section>
@@ -563,32 +553,13 @@
           <div class="rounded-2xl bg-white/5 p-6">
             <svg viewBox="0 0 24 24" class="h-9 w-9 text-mint"><use href="#icon-users"/></svg>
             <h3 class="mt-4 text-lg font-bold text-white">Real Patient Cases</h3>
-            <p class="mt-2 text-sm text-white/75">Explore real before-and-after results from patients treated by our dental team.</p>
+            <p class="copy-justified-flush mt-2 text-sm text-white/75">Explore real before-and-after results from patients treated by our dental team.</p>
           </div>
           <div class="rounded-2xl bg-white/5 p-6">
             <svg viewBox="0 0 24 24" class="h-9 w-9 text-mint"><use href="#icon-star"/></svg>
             <h3 class="mt-4 text-lg font-bold text-white">Patient Stories &amp; Reviews</h3>
-            <p class="mt-2 text-sm text-white/75">Read real experiences shared by patients who trusted Esthetic Dent with their smiles.</p>
+            <p class="copy-justified-flush mt-2 text-sm text-white/75">Read real experiences shared by patients who trusted Esthetic Dent with their smiles.</p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============================================================ -->
-    <!-- San José location                                             -->
-    <!-- ============================================================ -->
-    <section id="san-jose" class="scroll-mt-24 py-16 2xl:py-24">
-      <div class="location-grid mx-auto max-w-[1920px] px-4 sm:px-6 lg:px-8">
-        <div class="location-heading min-w-0 text-center lg:text-left">
-          <span class="badge">Our San José Location</span>
-          <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Prefer the city? <br>Esthetic Dent is also in San&nbsp;José.</h2>
-        </div>
-        <div class="location-image mx-auto w-full max-w-2xl overflow-hidden rounded-lg shadow-card lg:max-w-none">
-          <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Esthetic Dent's dental clinic in San José, Costa Rica" class="aspect-[831/490] w-full object-cover">
-        </div>
-        <div class="location-body mx-auto min-w-0 max-w-2xl text-center lg:mx-0 lg:text-left">
-          <p class="copy-justified text-ink">Your dental journey doesn’t have to take place by the beach. For patients who prefer the convenience of Costa Rica’s capital, our San José location offers personalized dental care with access to hotels, restaurants, transportation, and everything the city has to offer.</p>
-          <p class="copy-justified mt-3 text-ink">Choose the setting that feels right for you—our Pacific Coast locations in Santa Teresa and Cóbano, or our location in San José.</p>
         </div>
       </div>
     </section>
@@ -603,12 +574,12 @@
           <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Trusted local partnerships for a smoother dental journey.</h2>
           <p class="copy-justified mx-auto mt-3 max-w-2xl text-ink">From accommodations and local services to clinical support and regional air travel, our partnerships help make your experience in Costa Rica easier from arrival to recovery.</p>
         </div>
-        <!-- Placeholder avatars: swap empty.png for the partner logos. -->
+        <!-- Placeholder avatars: swap empty.webp for the partner logos. -->
         <div class="mt-10 flex flex-wrap items-center justify-center gap-4 sm:gap-6">
-          <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Partner" class="h-16 w-16 rounded-full object-cover shadow-card sm:h-20 sm:w-20">
-          <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Partner" class="h-16 w-16 rounded-full object-cover shadow-card sm:h-20 sm:w-20">
-          <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Partner" class="h-16 w-16 rounded-full object-cover shadow-card sm:h-20 sm:w-20">
-          <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Partner" class="h-16 w-16 rounded-full object-cover shadow-card sm:h-20 sm:w-20">
+          <img loading="lazy" decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Partner" class="h-16 w-16 rounded-full object-cover shadow-card sm:h-20 sm:w-20">
+          <img loading="lazy" decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Partner" class="h-16 w-16 rounded-full object-cover shadow-card sm:h-20 sm:w-20">
+          <img loading="lazy" decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Partner" class="h-16 w-16 rounded-full object-cover shadow-card sm:h-20 sm:w-20">
+          <img loading="lazy" decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Partner" class="h-16 w-16 rounded-full object-cover shadow-card sm:h-20 sm:w-20">
         </div>
       </div>
     </section>
@@ -628,12 +599,12 @@
           <li class="rounded-2xl bg-[#F4FAFF] p-5">
             <span class="font-display text-3xl font-extrabold text-sky">01</span>
             <h3 class="mt-2 font-display font-bold text-navy">Free Virtual Consultation</h3>
-            <p class="mt-1 text-sm text-ink">Discuss your dental needs and smile goals with our team—from the comfort of your home.</p>
+            <p class="copy-justified-flush mt-1 text-sm text-ink">Discuss your dental needs and smile goals with our team—from the comfort of your home.</p>
           </li>
           <li class="rounded-2xl bg-[#F4FAFF] p-5">
             <span class="font-display text-3xl font-extrabold text-sky">02</span>
             <h3 class="mt-2 font-display font-bold text-navy">Personalized Treatment Plan</h3>
-            <p class="mt-1 text-sm text-ink">Receive your recommended treatment plan and personalized quote before you travel.</p>
+            <p class="copy-justified-flush mt-1 text-sm text-ink">Receive your recommended treatment plan and personalized quote before you travel.</p>
           </li>
           <li class="rounded-2xl bg-[#F4FAFF] p-5">
             <span class="font-display text-3xl font-extrabold text-sky">03</span>
@@ -643,12 +614,12 @@
           <li class="rounded-2xl bg-[#F4FAFF] p-5">
             <span class="font-display text-3xl font-extrabold text-sky">04</span>
             <h3 class="mt-2 font-display font-bold text-navy">Arrival & Treatment</h3>
-            <p class="mt-1 text-sm text-ink">Your in-person evaluation and 3D CBCT scan confirm your plan before treatment begins.</p>
+            <p class="copy-justified-flush mt-1 text-sm text-ink">Your in-person evaluation and 3D CBCT scan confirm your plan before treatment begins.</p>
           </li>
           <li class="rounded-2xl bg-[#F4FAFF] p-5">
             <span class="font-display text-3xl font-extrabold text-sky">05</span>
             <h3 class="mt-2 font-display font-bold text-navy">Recover in Costa Rica</h3>
-            <p class="mt-1 text-sm text-ink">Heal by the beach before your follow-up check.</p>
+            <p class="copy-justified-flush mt-1 text-sm text-ink">Heal by the beach before your follow-up check.</p>
           </li>
         </ol>
       </div>
@@ -664,11 +635,11 @@
           <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Costa Rica prices. <br><span class="whitespace-nowrap">World-class</span> dental&nbsp;care.</h2>
           <p class="copy-justified mt-3 text-ink">Advanced technology, premium materials, and an in-house dental lab allow us to deliver exceptional care at prices up to 65% below typical U.S. costs.</p>
           <div class="mt-6 flex flex-nowrap justify-center gap-3 sm:gap-4 lg:justify-start">
-            <a href="#" class="btn-primary min-w-0 flex-1 whitespace-nowrap px-3 py-2 text-center text-[0.8rem] sm:flex-none sm:px-6 sm:py-3 sm:text-sm">
+            <a href="#contact" class="btn-primary min-w-0 flex-1 whitespace-nowrap px-3 py-2 text-center text-[0.8rem] sm:flex-none sm:px-6 sm:py-3 sm:text-sm">
               <span class="sm:hidden">Get a Quote</span>
               <span class="hidden sm:inline">Get a Personalized Quote</span>
             </a>
-            <a href="#" class="btn-ghost min-w-0 flex-1 whitespace-nowrap px-3 py-2 text-center text-[0.8rem] sm:flex-none sm:px-6 sm:py-3 sm:text-sm">
+            <a href="prices-and-financing/index.html" class="btn-ghost min-w-0 flex-1 whitespace-nowrap px-3 py-2 text-center text-[0.8rem] sm:flex-none sm:px-6 sm:py-3 sm:text-sm">
               <span class="sm:hidden">Compare Prices</span>
               <span class="hidden sm:inline">View Full Price Comparison</span>
             </a>
@@ -703,7 +674,7 @@
           <h2 class="text-3xl font-bold text-white sm:text-4xl 2xl:text-5xl">Dental implants and restorations. Backed for life.</h2>
           <p class="copy-justified max-w-2xl text-white/80">Our lifetime warranty protects qualifying implants, crowns, bridges, veneers, and dentures—so your care continues long after you return home.
 </p>
-          <a href="#" class="btn-outline whitespace-nowrap px-4 text-[0.8rem] sm:px-6 sm:text-sm">Explore Our Lifetime Warranty</a>
+          <a href="lifetime-warranty/index.html" class="btn-outline whitespace-nowrap px-4 text-[0.8rem] sm:px-6 sm:text-sm">Explore Our Lifetime Warranty</a>
         </div>
       </div>
     </section>
@@ -718,19 +689,19 @@
           <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">The expertise behind every smile.</h2>
           <p class="copy-justified mx-auto mt-3 max-w-2xl text-ink">From implant surgery and full-mouth rehabilitation to cosmetic and restorative dentistry, our specialists work together to create personalized treatment plans with natural, lasting results.</p>
         </div>
-        <!-- Placeholder portraits and names: swap empty.png and "Dr. Full Name"
+        <!-- Placeholder portraits and names: swap empty.webp and "Dr. Full Name"
              for the real specialist photos and credentials. -->
         <div class="mt-12 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
           <article class="min-w-0 overflow-hidden rounded-2xl border border-navy/10 shadow-card">
-            <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Portrait of Esthetic Dent's oral and maxillofacial surgeon" class="aspect-[4/5] w-full object-cover sm:aspect-[5/4] lg:aspect-square 2xl:aspect-[5/4]">
+            <img loading="lazy" decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Portrait of Esthetic Dent's oral and maxillofacial surgeon" class="aspect-[4/5] w-full object-cover sm:aspect-[5/4] lg:aspect-square 2xl:aspect-[5/4]">
             <div class="p-4 text-center sm:p-5">
               <h3 class="font-display text-base font-bold text-navy sm:text-lg">Dr. Full Name</h3>
               <p class="mt-1 font-display text-[0.8rem] font-semibold uppercase tracking-wide text-mint-dark">Oral and Maxillofacial Surgery</p>
-              <p class="mt-2 text-[0.8rem] text-ink sm:text-sm">Implant surgery, extractions, and bone grafting</p>
+              <p class="copy-justified mt-2 text-[0.8rem] text-ink sm:text-sm">Implant surgery, extractions, and bone grafting</p>
             </div>
           </article>
           <article class="min-w-0 overflow-hidden rounded-2xl border border-navy/10 shadow-card">
-            <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Portrait of Esthetic Dent's implant and full-arch rehabilitation specialist" class="aspect-[4/5] w-full object-cover sm:aspect-[5/4] lg:aspect-square 2xl:aspect-[5/4]">
+            <img loading="lazy" decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Portrait of Esthetic Dent's implant and full-arch rehabilitation specialist" class="aspect-[4/5] w-full object-cover sm:aspect-[5/4] lg:aspect-square 2xl:aspect-[5/4]">
             <div class="p-4 text-center sm:p-5">
               <h3 class="font-display text-base font-bold text-navy sm:text-lg">Dr. Full Name</h3>
               <p class="mt-1 font-display text-[0.8rem] font-semibold uppercase tracking-wide text-mint-dark">Implant and Full-Arch Rehabilitation</p>
@@ -738,19 +709,19 @@
             </div>
           </article>
           <article class="min-w-0 overflow-hidden rounded-2xl border border-navy/10 shadow-card">
-            <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Portrait of Esthetic Dent's cosmetic and restorative dentist" class="aspect-[4/5] w-full object-cover sm:aspect-[5/4] lg:aspect-square 2xl:aspect-[5/4]">
+            <img loading="lazy" decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Portrait of Esthetic Dent's cosmetic and restorative dentist" class="aspect-[4/5] w-full object-cover sm:aspect-[5/4] lg:aspect-square 2xl:aspect-[5/4]">
             <div class="p-4 text-center sm:p-5">
               <h3 class="font-display text-base font-bold text-navy sm:text-lg">Dra. Full Name</h3>
               <p class="mt-1 font-display text-[0.8rem] font-semibold uppercase tracking-wide text-mint-dark">Cosmetic and Restorative Dentistry</p>
-              <p class="mt-2 text-[0.8rem] text-ink sm:text-sm">Porcelain veneers, crowns, and smile makeovers</p>
+              <p class="copy-justified mt-2 text-[0.8rem] text-ink sm:text-sm">Porcelain veneers, crowns, and smile makeovers</p>
             </div>
           </article>
           <article class="min-w-0 overflow-hidden rounded-2xl border border-navy/10 shadow-card">
-            <img loading="lazy" decoding="async" src="../assets/img/empty.png" alt="Portrait of Esthetic Dent's periodontist" class="aspect-[4/5] w-full object-cover sm:aspect-[5/4] lg:aspect-square 2xl:aspect-[5/4]">
+            <img loading="lazy" decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Portrait of Esthetic Dent's periodontist" class="aspect-[4/5] w-full object-cover sm:aspect-[5/4] lg:aspect-square 2xl:aspect-[5/4]">
             <div class="p-4 text-center sm:p-5">
               <h3 class="font-display text-base font-bold text-navy sm:text-lg">Dra. Full Name</h3>
               <p class="mt-1 font-display text-[0.8rem] font-semibold uppercase tracking-wide text-mint-dark">Periodontics</p>
-              <p class="mt-2 text-[0.8rem] text-ink sm:text-sm">Gum health, grafting, and implant maintenance</p>
+              <p class="copy-justified mt-2 text-[0.8rem] text-ink sm:text-sm">Gum health, grafting, and implant maintenance</p>
             </div>
           </article>
         </div>
@@ -772,12 +743,13 @@
             <p class="copy-justified-flush mt-3 text-white/80">Tell us about your dental needs and smile goals. Our team will contact you to schedule your free virtual consultation and guide you through the next steps—no obligation.</p>
           </div>
           <form class="grid grid-cols-2 items-end gap-x-3 gap-y-4 rounded-2xl bg-white p-4 text-ink sm:gap-x-4 sm:p-6" action="#" method="post" enctype="multipart/form-data">
+            <p class="col-span-2 text-xs text-ink/60">Required field <span class="text-red-600">*</span></p>
             <div>
-              <label for="name" class="mb-1 block text-[0.8rem] font-semibold text-navy sm:text-sm">Full name</label>
+              <label for="name" class="mb-1 block text-[0.8rem] font-semibold text-navy sm:text-sm">Full name <span class="text-red-600">*</span></label>
               <input id="name" name="name" type="text" required class="w-full rounded-lg border border-navy/15 px-3 py-2.5 text-sm focus:border-blue focus:outline-none sm:px-4">
             </div>
             <div>
-              <label for="email" class="mb-1 block text-[0.8rem] font-semibold text-navy sm:text-sm">Email</label>
+              <label for="email" class="mb-1 block text-[0.8rem] font-semibold text-navy sm:text-sm">Email <span class="text-red-600">*</span></label>
               <input id="email" name="email" type="email" required class="w-full rounded-lg border border-navy/15 px-3 py-2.5 text-sm focus:border-blue focus:outline-none sm:px-4">
             </div>
             <div>
@@ -808,7 +780,7 @@
               <label for="files" class="mb-1 block text-[0.8rem] font-semibold text-navy sm:text-sm">Upload Photos or X-Rays (Optional)</label>
               <p class="copy-justified-flush mb-2 max-w-xl text-[0.8rem] leading-snug text-ink/70">If available, upload recent dental X-rays and clear photos of your smile.<span class="hidden sm:inline"> These files help our dental team better understand your case before your virtual consultation.</span> Don’t have X-rays or photos yet? You can still request your free consultation.</p>
               <input id="files" name="files" type="file" accept=".jpg,.jpeg,.png,.pdf" multiple class="w-full rounded-lg border border-navy/15 px-3 py-2.5 text-sm text-ink/80 file:mr-3 file:rounded-md file:border-0 file:bg-sky-pale/50 file:px-3 file:py-1.5 file:text-[0.8rem] file:font-semibold file:text-navy focus:border-blue focus:outline-none">
-              <p class="mt-1 text-[0.8rem] text-ink/50">Accepted formats: JPG, PNG or PDF · Up to 5 files</p>
+              <p class="copy-justified-flush mt-1 text-[0.8rem] text-ink/50">Accepted formats: JPG, PNG or PDF · Up to 5 files</p>
             </div>
             <button type="submit" class="btn-primary col-span-2 w-full whitespace-nowrap px-4 text-[0.8rem] sm:px-6 sm:text-sm">Request My Free Consultation</button>
             <p class="copy-justified col-span-2 text-center text-[0.8rem] leading-snug text-ink/60">By submitting this form, you agree to our <a href="#" class="underline hover:text-blue">Privacy Policy</a>. Your information and uploaded files will remain confidential. We follow HIPAA guidelines for patient records.</p>
@@ -822,28 +794,20 @@
   <!-- Footer                                                        -->
   <!-- ============================================================ -->
   <footer class="bg-[#12203F] pt-12 pb-28 text-white/80 sm:pb-24">
-    <!-- The footer is the one band that stops at 1280px and centres itself, so on a
-         1920px monitor it reads as a deliberate block instead of content pushed
-         against the left edge. -->
     <div class="mx-auto max-w-[1280px] px-4 sm:px-6 lg:px-8">
       <div class="footer-columns grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-[auto_auto_auto] sm:justify-between lg:grid-cols-[auto_auto_auto_auto]">
         <!-- Brand + Follow Us -->
         <div class="col-span-2 border-b border-white/10 pb-8 sm:col-span-3 lg:col-span-1 lg:border-b-0 lg:pb-0">
-          <!-- Below lg the logo and the social block sit side by side, centred as
-               one pair on phones. From lg the cell becomes a real footer column
-               and they stack again. -->
           <div class="flex items-center justify-center gap-4 sm:justify-start sm:gap-6 lg:block">
-            <div class="shrink-0 rounded-xl bg-white p-2.5 lg:inline-block">
-              <img loading="lazy" decoding="async" src="../assets/img/logo-en.png" alt="Esthetic Dent" class="h-14 w-auto">
-            </div>
+            <img loading="lazy" decoding="async" width="1672" height="941" src="../assets/img/logo-w.webp" alt="Esthetic Dent" class="h-16 w-auto">
 
             <div>
               <h3 class="font-display text-sm font-semibold uppercase tracking-wide text-white lg:mt-6">Follow Us</h3>
               <div class="mt-3 flex items-center gap-3 lg:mt-4">
-                <a href="#" target="_blank" rel="noopener" aria-label="Instagram" class="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 transition-colors hover:border-mint hover:text-mint">
+                <a href="https://www.instagram.com/esthetic_dentcr/" target="_blank" rel="noopener" aria-label="Instagram" class="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 transition-colors hover:border-mint hover:text-mint">
                   <svg viewBox="0 0 24 24" class="h-[18px] w-[18px]"><use href="#icon-instagram"/></svg>
                 </a>
-                <a href="#" target="_blank" rel="noopener" aria-label="Facebook" class="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 transition-colors hover:border-mint hover:text-mint">
+                <a href="https://www.facebook.com/estheticdent.cr" target="_blank" rel="noopener" aria-label="Facebook" class="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 transition-colors hover:border-mint hover:text-mint">
                   <svg viewBox="0 0 24 24" class="h-[18px] w-[18px]"><use href="#icon-facebook"/></svg>
                 </a>
                 <a href="#" target="_blank" rel="noopener" aria-label="YouTube" class="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 transition-colors hover:border-mint hover:text-mint">
@@ -858,11 +822,14 @@
         <div>
           <h3 class="font-display text-sm font-semibold uppercase tracking-wide text-white">Explore</h3>
           <nav aria-label="Explore" class="mt-4 flex flex-col gap-2.5 text-sm">
-            <a href="#packages" class="hover:text-mint">Packages</a>
+            <a href="index.html" class="hover:text-mint" aria-current="page">Home</a>
+            <a href="about-us/who-we-are.html" class="hover:text-mint">Who We Are</a>
+            <a href="packages/costa-rica-smile-makeover-package.html" class="hover:text-mint">Smile Makeover Package</a>
+            <a href="packages/porcelain-veneers-costa-rica-package.html" class="hover:text-mint">Porcelain Veneers Package</a>
+            <a href="packages/all-on-4-costa-rica-package.html" class="hover:text-mint">All-on-4 &amp; More Package</a>
+            <a href="packages/dental-implants.html" class="hover:text-mint">Dental Implants</a>
             <a href="/en/blog/" class="hover:text-mint">Blog</a>
-            <a href="#" class="hover:text-mint">About Us</a>
-            <a href="#" class="hover:text-mint">FAQs</a>
-            <a href="#" class="hover:text-mint">Why Esthetic Dent</a>
+            <a href="faqs/index.html" class="hover:text-mint">FAQs</a>
           </nav>
         </div>
 
@@ -870,9 +837,9 @@
         <div>
           <h3 class="font-display text-sm font-semibold uppercase tracking-wide text-white">Patient Resources</h3>
           <nav aria-label="Patient Resources" class="mt-4 flex flex-col gap-2.5 text-sm">
-            <a href="#" class="hover:text-mint">Dental Tourism</a>
-            <a href="#pricing" class="hover:text-mint">Prices</a>
-            <a href="#warranty" class="hover:text-mint">Lifetime Warranty</a>
+            <a href="dental-tourism/how-it-works.html" class="hover:text-mint">Dental Tourism</a>
+            <a href="prices-and-financing/index.html" class="hover:text-mint">Prices</a>
+            <a href="lifetime-warranty/index.html" class="hover:text-mint">Lifetime Warranty</a>
           </nav>
         </div>
 
@@ -880,17 +847,17 @@
         <div class="col-span-2 sm:col-span-1">
           <h3 class="font-display text-sm font-semibold uppercase tracking-wide text-white">Contact</h3>
           <div class="mt-4 flex flex-col gap-2.5 text-sm">
-            <a href="tel:+50600000000" class="flex items-start gap-2.5 hover:text-mint">
+            <p class="flex items-start gap-2.5">
               <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-mint"><use href="#icon-whatsapp"/></svg>
               <span>+506 00000-00000<span class="block text-[0.8rem] text-white/55">Costa Rica · WhatsApp</span></span>
-            </a>
-            <a href="tel:+10000000000" class="flex items-start gap-2.5 hover:text-mint">
+            </p>
+            <p class="flex items-start gap-2.5">
               <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-mint"><use href="#icon-phone"/></svg>
               <span>+1 000 000-0000<span class="block text-[0.8rem] text-white/55">United States</span></span>
-            </a>
-            <a href="mailto:hello@estheticdent.com" class="flex items-start gap-2.5 hover:text-mint">
+            </p>
+            <a href="mailto:contacto@estheticdent.com" class="flex items-start gap-2.5 hover:text-mint">
               <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-mint"><use href="#icon-mail"/></svg>
-              <span>hello@estheticdent.com</span>
+              <span>contacto@estheticdent.com</span>
             </a>
             <p class="flex items-start gap-2.5">
               <svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-mint"><use href="#icon-pin"/></svg>
@@ -905,10 +872,9 @@
           <a href="#" class="hover:text-mint">Privacy Policy</a>
           <a href="#" class="hover:text-mint">Terms &amp; Conditions</a>
           <a href="#" class="hover:text-mint">Website Disclaimer</a>
-          <a href="#warranty" class="hover:text-mint">Lifetime Warranty</a>
+          <a href="lifetime-warranty/index.html" class="hover:text-mint">Lifetime Warranty</a>
           <a href="#" class="hover:text-mint">Payment Policies</a>
           <a href="#" class="hover:text-mint">Cookie Policy</a>
-          <a href="#" class="hover:text-mint">Sitemap</a>
         </nav>
         <div class="flex flex-col gap-1 text-white/55">
           <p>We follow HIPAA guidelines for patient records.</p>
@@ -919,15 +885,28 @@
   </footer>
 </div>
 
-<!-- Floating chat button (WhatsApp) -->
-<div class="fixed bottom-4 right-4 z-40 flex flex-col items-center gap-1.5 sm:bottom-5 sm:right-5">
-  <a href="#" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"
+<!-- Floating chat launcher: opens a WhatsApp / Live chat menu. -->
+<div class="fixed bottom-4 right-4 z-40 flex flex-col items-center gap-1.5 sm:bottom-5 sm:right-5" data-chat-launcher>
+  <!-- Absolutely positioned so opening the menu never resizes the launcher and
+       shifts the button sideways. -->
+  <div class="chat-menu absolute bottom-full right-0 mb-2" data-chat-menu hidden>
+    <a href="https://wa.me/50683061191" target="_blank" rel="noopener" class="chat-menu-item">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-whatsapp"/></svg>WhatsApp
+    </a>
+    <a href="contact/index.html" class="chat-menu-item" data-chat-live>
+      <span class="chat-menu-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-chat"/></svg></span>Live chat
+    </a>
+  </div>
+  <button type="button" data-chat-toggle aria-haspopup="true" aria-expanded="false" aria-label="Chat with us"
      class="chat-glow flex h-12 items-center gap-2 rounded-full px-4 text-white transition-transform hover:scale-105 sm:h-14 sm:gap-2.5 sm:px-5">
     <svg viewBox="0 0 24 24" class="h-6 w-6 sm:h-7 sm:w-7"><use href="#icon-whatsapp"/></svg>
     <span class="h-4 w-px bg-white/25 sm:h-5" aria-hidden="true"></span>
     <svg viewBox="0 0 24 24" class="h-7 w-7 sm:h-8 sm:w-8"><use href="#icon-chat"/></svg>
-  </a>
-  <span class="rounded-full bg-navy px-3 py-1 font-display text-[0.8rem] font-semibold text-white shadow-card">Chat with us</span>
+  </button>
+  <!-- Same action as the button above it. Hidden from assistive tech and taken
+       out of the tab order so it is not a second stop doing the same thing. -->
+  <button type="button" data-chat-toggle tabindex="-1" aria-hidden="true"
+     class="chat-launcher-label text-[0.8rem]">Chat with us</button>
 </div>
 
 <script src="../assets/js/main.js"></script>
