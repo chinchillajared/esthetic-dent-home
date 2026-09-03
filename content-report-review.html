@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Revisión de Contenido — Esthetic Dent</title>
+<style>
+  :root {
+    --navy: #203461;
+    --blue: #04589D;
+    --sky: #5EB8FD;
+    --sky-light: #A5D8FF;
+    --mint: #40DFAF;
+    --ink: #545454;
+    --bg: #F4FAFF;
+    --card-bg: #FFFFFF;
+    --border: #E1EAF5;
+    --crit-bg: #2A0E0E; --crit-fg: #FFFFFF; --crit-accent: #B3261E;
+    --alto-bg: #FDEDEA; --alto-fg: #9A2A17; --alto-accent: #E4572E;
+    --medio-bg: #FFF7E0; --medio-fg: #8A6100; --medio-accent: #E4A11B;
+    --bajo-bg: #EAF2FF; --bajo-fg: #1F4E8C; --bajo-accent: #5EB8FD;
+    --bloq-bg: #1B1F2A; --bloq-fg: #FFFFFF; --bloq-accent: #203461;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Poppins', 'Open Sans', Segoe UI, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  header.top {
+    background: linear-gradient(120deg, var(--navy), var(--blue));
+    color: #fff;
+    padding: 28px 24px 22px;
+  }
+  header.top h1 {
+    margin: 0 0 6px;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  header.top p {
+    margin: 0;
+    color: var(--sky-light);
+    font-size: 0.92rem;
+  }
+  .wrap {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+  }
+  .controls {
+    padding: 16px 0 12px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 20px;
+  }
+  .summary-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .stat {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--navy);
+    display: flex;
+    gap: 6px;
+    align-items: baseline;
+  }
+  .stat .n { font-size: 1.1rem; font-weight: 800; }
+  .stat.revisar { color: #9A2A17; }
+  .stat.ignorar { color: #6b7280; }
+  .stat.pendiente { color: var(--blue); }
+  .progress {
+    flex: 1 1 160px;
+    height: 8px;
+    border-radius: 6px;
+    background: var(--border);
+    overflow: hidden;
+    display: flex;
+    min-width: 120px;
+  }
+  .progress .seg-revisar { background: #E4572E; height: 100%; }
+  .progress .seg-ignorar { background: #9CA3AF; height: 100%; }
+  .actions-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .btn {
+    border: none;
+    border-radius: 8px;
+    padding: 9px 16px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .btn-primary { background: var(--mint); color: #0A3B2E; }
+  .btn-primary:hover { filter: brightness(0.95); }
+  .btn-ghost { background: transparent; color: var(--navy); border: 1px solid var(--border); }
+  .btn-ghost:hover { border-color: var(--navy); }
+
+  section.group { margin-bottom: 8px; }
+  section.group h2 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    color: var(--navy);
+    border-bottom: 2px solid var(--sky-light);
+    padding-bottom: 6px;
+    margin: 34px 0 14px;
+  }
+
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-left: 6px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+    transition: opacity .15s, border-color .15s;
+  }
+  .card[data-sev="BLOQUEANTE"] { border-left-color: var(--bloq-accent); }
+  .card[data-sev="CRÍTICO"] { border-left-color: var(--crit-accent); }
+  .card[data-sev="ALTO"] { border-left-color: var(--alto-accent); }
+  .card[data-sev="MEDIO"] { border-left-color: var(--medio-accent); }
+  .card[data-sev="BAJO"] { border-left-color: var(--bajo-accent); }
+
+  .card.state-ignorar { opacity: 0.5; }
+  .card.state-revisar { box-shadow: 0 0 0 2px #E4572E22; }
+
+  .card-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .badge-id {
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    font-size: 0.78rem;
+    color: var(--navy);
+    background: var(--sky-light);
+    border-radius: 6px;
+    padding: 2px 8px;
+  }
+  .badge-sev {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    border-radius: 999px;
+    padding: 3px 10px;
+  }
+  .badge-sev[data-sev="BLOQUEANTE"] { background: var(--bloq-bg); color: var(--bloq-fg); }
+  .badge-sev[data-sev="CRÍTICO"] { background: var(--crit-bg); color: var(--crit-fg); }
+  .badge-sev[data-sev="ALTO"] { background: var(--alto-bg); color: var(--alto-fg); }
+  .badge-sev[data-sev="MEDIO"] { background: var(--medio-bg); color: var(--medio-fg); }
+  .badge-sev[data-sev="BAJO"] { background: var(--bajo-bg); color: var(--bajo-fg); }
+
+  .card h3 {
+    margin: 0 0 8px;
+    font-size: 1rem;
+    color: #1a1a2e;
+    font-weight: 700;
+  }
+  .card .body p { margin: 0 0 8px; font-size: 0.92rem; }
+  .card .body ul { margin: 0 0 8px; padding-left: 20px; font-size: 0.92rem; }
+  .card .body li { margin-bottom: 4px; }
+  .card .body code {
+    background: #EEF3FB;
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 0.85em;
+    font-family: 'Courier New', monospace;
+    color: var(--blue);
+    word-break: break-word;
+  }
+  .card .body blockquote {
+    margin: 8px 0;
+    padding: 8px 14px;
+    border-left: 3px solid var(--sky);
+    background: #F7FBFF;
+    font-style: italic;
+    font-size: 0.9rem;
+  }
+  .tbl-wrap { overflow-x: auto; margin: 8px 0; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.85rem; }
+  th, td { border: 1px solid var(--border); padding: 6px 10px; text-align: left; vertical-align: top; }
+  th { background: #EAF2FF; color: var(--navy); }
+
+  .link-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+  .link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    border: 1.5px solid var(--sky);
+    background: #EAF6FF;
+    color: var(--blue);
+    border-radius: 8px;
+    padding: 7px 12px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .12s;
+  }
+  .link-btn:hover { background: var(--sky); color: #fff; border-color: var(--sky); }
+  .decision-row {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+  .decision-btn {
+    flex: 1 1 140px;
+    border: 1.5px solid transparent;
+    border-radius: 8px;
+    padding: 9px 10px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .12s;
+  }
+  .decision-btn.revisar { background: #FDEDEA; border-color: #F3B7A6; color: #B3401F; }
+  .decision-btn.revisar:hover { border-color: #E4572E; background: #FCE1DA; }
+  .decision-btn.revisar.selected { background: #E4572E; border-color: #E4572E; color: #fff; }
+  .decision-btn.ignorar { background: #EEF0F3; border-color: #C7CDD6; color: #4B5563; }
+  .decision-btn.ignorar:hover { border-color: #6b7280; background: #E3E6EB; }
+  .decision-btn.ignorar.selected { background: #6b7280; border-color: #6b7280; color: #fff; }
+  .decision-note {
+    font-size: 0.72rem;
+    color: #8a94a6;
+    margin-top: 6px;
+  }
+
+  .hidden { display: none !important; }
+  #toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--navy);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .25s;
+    z-index: 20;
+  }
+  #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <h1>Revisión de Contenido — Esthetic Dent</h1>
+  <p>Rama <code style="background:rgba(255,255,255,.15);padding:1px 6px;border-radius:4px;">ghost-mysql-migration</code> · 35 hallazgos · Marca cada uno como <strong>Revisar / Corregir</strong> o <strong>Ignorar</strong> y descarga una copia con tus decisiones para reenviarla.</p>
+</header>
+
+<div class="wrap">
+  <div class="controls">
+    <div class="summary-row">
+      <div class="stat pendiente">Pendientes <span class="n" id="count-pendiente">0</span></div>
+      <div class="stat revisar">Revisar <span class="n" id="count-revisar">0</span></div>
+      <div class="stat ignorar">Ignorar <span class="n" id="count-ignorar">0</span></div>
+      <div class="progress" title="Progreso de revisión">
+        <div class="seg-revisar" id="seg-revisar" style="width:0%"></div>
+        <div class="seg-ignorar" id="seg-ignorar" style="width:0%"></div>
+      </div>
+    </div>
+    <div class="actions-row">
+      <button type="button" class="btn btn-primary" id="btn-export">Guardar copia con mis decisiones (.html)</button>
+      <button type="button" class="btn btn-ghost" id="btn-reset">Restablecer decisiones</button>
+    </div>
+  </div>
+
+  <div id="findings-container"></div>
+</div>
+
+<div id="toast"></div>
+
+<script type="application/json" id="findings-data">[{"id": "C-01", "section": "BLOQUEANTES DE PRODUCCIÓN (contenido de marcador de posición en vivo)", "severity": "BLOQUEANTE", "title": "Números de teléfono falsos en el pie de las 59 páginas", "body_html": "<p><code>+506 00000-00000</code> y <code>+1 000 000-0000</code> aparecen en el footer de <strong>todas</strong> las páginas. Ej.: <code>frontend/public/en/index.html:867</code>. Peor aún: los pocos enlaces <code>tel:</code> reales (<code>tel:+19543204153</code>, <code>tel:+50683061191</code>, en <code>en/contact/index.html:343</code> y <code>en/dental-tourism/direct-flights-from-your-city.html:392</code>) apuntan a números reales mientras el texto visible muestra ceros. El usuario ve un número falso pero el clic marca otro.</p>", "links": [{"label": "Ver en inglés", "path": "en/index.html", "text": "+506 00000-00000"}, {"label": "Ver en español", "path": "es/index.html", "text": "+506 00000-00000"}]}, {"id": "C-02", "section": "BLOQUEANTES DE PRODUCCIÓN (contenido de marcador de posición en vivo)", "severity": "BLOQUEANTE", "title": "\"Dr. Full Name\" / \"Dr. Nombre Completo\" en la portada", "body_html": "<p><code>en/index.html:713,721,+1</code> y <code>es/index.html</code> — la sección &quot;Meet Our Dental Specialists&quot; muestra tres tarjetas con el nombre literal de marcador. Comentario fuente en <code>en/index.html:707</code>.</p>", "links": [{"label": "Ver en inglés", "path": "en/index.html", "text": "Dr. Full Name"}, {"label": "Ver en español", "path": "es/index.html", "text": "Dr. Nombre Completo"}]}, {"id": "C-03", "section": "BLOQUEANTES DE PRODUCCIÓN (contenido de marcador de posición en vivo)", "severity": "BLOQUEANTE", "title": "558 referencias a `empty.webp` en 42 páginas", "body_html": "<p>Imagen de marcador en héroes, antes/después, retratos de especialistas, logos de acreditación y vídeos. Páginas más afectadas: <code>all-on-4-costa-rica-package.html</code> (42), <code>costa-rica-smile-makeover-package.html</code> (38), <code>porcelain-veneers-...</code> (24). Además quedan ~100 comentarios HTML tipo <code>&lt;!-- Placeholder photo: swap empty.webp ... --&gt;</code> enviados al navegador del visitante.</p>", "links": [{"label": "Ver ejemplo (EN)", "path": "en/packages/all-on-4-costa-rica-package.html", "text": "Materials Available for All-on-X Cases"}, {"label": "Ver ejemplo (ES)", "path": "es/paquetes/paquete-all-on-4-y-mas-costa-rica.html", "text": "Materiales Disponibles para Casos All-on-X"}]}, {"id": "C-04", "section": "BLOQUEANTES DE PRODUCCIÓN (contenido de marcador de posición en vivo)", "severity": "BLOQUEANTE", "title": "26 marcadores `[Insert …]` / `[Insertar …]` en las 10 páginas legales", "body_html": "<ul><li><code>[Insert Date]</code> / <code>[Insertar Fecha]</code> (fecha de última actualización) — 8 páginas</li><li><code>[Insert Email Address]</code> / <code>[Insert Phone Number]</code> — 18 ocurrencias</li></ul>\n<p>Ej.: <code>en/legal/payment-policies.html:418-419</code>, <code>es/legal/politica-de-privacidad.html:430-431</code>. Documentos legales sin fecha de vigencia ni contacto: problema de cumplimiento real (Ley 8968 de Costa Rica y RGPD, ambos citados en la propia política de privacidad).</p>", "links": [{"label": "Ver política (EN)", "path": "en/legal/payment-policies.html", "text": "[Insert Email Address]"}, {"label": "Ver política (ES)", "path": "es/legal/politica-de-privacidad.html", "text": "[Insertar Correo Electrónico]"}]}, {"id": "C-05", "section": "BLOQUEANTES DE PRODUCCIÓN (contenido de marcador de posición en vivo)", "severity": "BLOQUEANTE", "title": "Página \"Special Offers\" / \"Ofertas Especiales\" es solo \"Under Construction\"", "body_html": "<p><code>en/packages/special-offers.html</code> (487 líneas, cuerpo = un <code>Under Construction</code>) y <code>es/paquetes/ofertas-especiales.html</code>. Está enlazada desde el menú principal de las 60 páginas.</p>", "links": [{"label": "Ver en inglés", "path": "en/packages/special-offers.html", "text": "Under Construction"}, {"label": "Ver en español", "path": "es/paquetes/ofertas-especiales.html", "text": "En Construcción"}]}, {"id": "P-02", "section": "PRECIOS — CONTRADICCIONES ENTRE PÁGINAS", "severity": "ALTO", "title": "\"Desde $10,480\" para un arco es incorrecto en 4 páginas", "body_html": "<p>El precio más bajo de un arco es <strong>$9,780</strong> (All-on-4), pero se anuncia &quot;From $10,480&quot;:</p>\n<ul><li><code>en/index.html:470</code> (tarjeta de paquete) y <code>es/index.html:470</code></li><li><code>en/index.html:671</code> — la tabla dice literalmente &quot;<strong>Single-Arch All-on-4</strong> … $10,480 USD&quot;, que es el precio del All-on-5</li><li><code>en/packages/all-treatments-prices.html:450</code> y su equivalente ES</li><li><code>en/prices-and-financing/index.html:343</code> (&quot;All-on-X – Single Arch, From $10,480&quot;)</li></ul>", "links": [{"label": "Ver tarjeta (EN)", "path": "en/index.html", "text": "From $10,480"}, {"label": "Ver tabla comparativa (EN)", "path": "en/index.html", "text": "Single-Arch All-on-4"}]}, {"id": "P-03", "section": "PRECIOS — CONTRADICCIONES ENTRE PÁGINAS", "severity": "ALTO", "title": "Diseño de sonrisa: dos precios distintos según la página", "body_html": "<div class=\"tbl-wrap\"><table><thead><tr><th>Página</th><th>Un arco</th><th>Superior + inferior</th></tr></thead><tbody><tr><td><code>packages/all-treatments-prices.html:475,476,607,608</code></td><td><strong>$7,250</strong></td><td><strong>$12,500</strong></td></tr><tr><td><code>packages/costa-rica-smile-makeover-package.html:503,508</code></td><td><strong>$7,550</strong></td><td><strong>$12,750</strong></td></tr><tr><td><code>index.html:456</code></td><td><strong>$7,550</strong></td><td>—</td></tr><tr><td><code>prices-and-financing/index.html:343</code></td><td><strong>$7,550</strong></td><td><strong>$12,750</strong></td></tr></tbody></table></div>\n<p>Tres páginas dicen $7,550/$12,750 y la lista maestra de precios dice $7,250/$12,500. Misma discrepancia en ES (<code>todos-los-tratamientos-y-precios.html:475,476,607,608</code>).</p>", "links": [{"label": "Ver lista de precios (EN)", "path": "en/packages/all-treatments-prices.html", "text": "$7,250"}, {"label": "Ver paquete (EN)", "path": "en/packages/costa-rica-smile-makeover-package.html", "text": "$7,550 USD"}]}, {"id": "P-04", "section": "PRECIOS — CONTRADICCIONES ENTRE PÁGINAS", "severity": "ALTO", "title": "El \"paquete\" de carillas cuesta más que comprarlas sueltas", "body_html": "<p><code>en/packages/all-treatments-prices.html</code> (tabla, ~<code>:600</code>):</p>\n<ul><li>Carilla de porcelana individual: <strong>$450</strong></li><li>Paquete de 6: <strong>$2,995</strong> → sueltas $2,700 (<strong>+$295</strong>)</li><li>Paquete de 8: <strong>$3,945</strong> → sueltas $3,600 (<strong>+$345</strong>)</li><li>Paquete de 12: <strong>$5,945</strong> → sueltas $5,400 (<strong>+$545</strong>)</li><li>Paquete de 16: <strong>$7,945</strong> → sueltas $7,200 (<strong>+$745</strong>)</li></ul>\n<p>Los cuatro paquetes son más caros que el precio unitario publicado en la misma tabla.</p>", "links": [{"label": "Ver tabla de precios (EN)", "path": "en/packages/all-treatments-prices.html", "text": "Available in personalized sets of 6, 8, 12, or 16 veneers"}]}, {"id": "P-05", "section": "PRECIOS — CONTRADICCIONES ENTRE PÁGINAS", "severity": "ALTO", "title": "Cuatro precios distintos para \"carilla típica en EE. UU.\"", "body_html": "<ul><li><code>en/index.html:482</code> (tarjeta): &quot;Typical U.S. <strong>$6,000+ / tooth</strong>&quot; ← cifra inverosímil</li><li><code>en/index.html:671</code> (tabla, misma página): &quot;Porcelain Veneer - per tooth <strong>$2,500 USD</strong>&quot;</li><li><code>en/prices-and-financing/index.html:343</code>: 6 carillas = <strong>$15,000</strong> ($2,500/diente)</li><li><code>en/packages/porcelain-veneers-costa-rica-package.html</code>: &quot;a single porcelain veneer can cost <strong>$900 or more</strong>&quot;</li></ul>\n<p>Dos de las cifras están en la <strong>misma página</strong> (portada) y difieren 2,4×.</p>", "links": [{"label": "Ver tarjeta portada (EN)", "path": "en/index.html", "text": "$6,000+ / tooth"}, {"label": "Ver página de carillas (EN)", "path": "en/packages/porcelain-veneers-costa-rica-package.html", "text": "$900 or more"}]}, {"id": "P-06", "section": "PRECIOS — CONTRADICCIONES ENTRE PÁGINAS", "severity": "ALTO", "title": "Tres precios de referencia EE. UU. para el mismo All-on-4", "body_html": "<ul><li><code>en/index.html:476</code> (tarjeta): &quot;Typical U.S. <strong>$24,000+</strong>&quot;</li><li><code>en/index.html:671</code> (tabla): &quot;Single-Arch All-on-4 — <strong>$15,000–$20,000 USD</strong>&quot;</li><li><code>en/prices-and-financing/index.html:343</code>: &quot;All-on-X – Single Arch — From <strong>$35,000</strong>&quot;</li></ul>\n<p>Igual con el diseño de sonrisa: portada &quot;Typical U.S. $15,000+&quot; vs. página de precios &quot;$25,000&quot;. Y boca completa: portada &quot;$30,000 - $60,000&quot; vs. precios &quot;From $70,000+&quot;.</p>", "links": [{"label": "Ver tarjeta portada (EN)", "path": "en/index.html", "text": "Typical U.S. $24,000+"}, {"label": "Ver precios y financiamiento (EN)", "path": "en/prices-and-financing/index.html", "text": "From $35,000"}]}, {"id": "P-07", "section": "PRECIOS — CONTRADICCIONES ENTRE PÁGINAS", "severity": "MEDIO", "title": "Error de cálculo en el ahorro anunciado", "body_html": "<p><code>en/packages/dental-implants.html:601</code> — &quot;Full evaluation … U.S. $500 → Esthetic Dent $125 … <strong>Up to 85%</strong>&quot;. El ahorro real es <strong>75%</strong>. Las otras dos filas de esa tabla sí cuadran (70% y 78%). Mismo error en <code>es/paquetes/implantes-dentales.html</code>.</p>", "links": [{"label": "Ver tabla de implantes (EN)", "path": "en/packages/dental-implants.html", "text": "Up to 85%"}]}, {"id": "P-08", "section": "PRECIOS — CONTRADICCIONES ENTRE PÁGINAS", "severity": "MEDIO", "title": "Evaluación completa: $125 vs. $250", "body_html": "<p><code>en/packages/dental-implants.html:601</code> la cotiza en <strong>$125</strong>; la lista maestra <code>en/packages/all-treatments-prices.html</code> (&quot;Full consultation package&quot;) en <strong>$250</strong>.</p>", "links": [{"label": "Ver tabla de implantes (EN)", "path": "en/packages/dental-implants.html", "text": "$125"}, {"label": "Ver lista de precios (EN)", "path": "en/packages/all-treatments-prices.html", "text": "Full consultation package"}]}, {"id": "P-09", "section": "PRECIOS — CONTRADICCIONES ENTRE PÁGINAS", "severity": "MEDIO", "title": "Implante: $2,500+ vs. $995–$2,300 como precio EE. UU.", "body_html": "<p><code>en/packages/dental-implants.html:588</code> dice &quot;Dental implant + abutment — Average U.S. <strong>$2,500+</strong>&quot;; <code>en/index.html:671</code> dice &quot;Dental Implant — <strong>$995 - $2,300 USD</strong>&quot;.</p>", "links": [{"label": "Ver tabla de implantes (EN)", "path": "en/packages/dental-implants.html", "text": "$2,500+"}, {"label": "Ver portada (EN)", "path": "en/index.html", "text": "$995 - $2,300  USD"}]}, {"id": "P-10", "section": "PRECIOS — CONTRADICCIONES ENTRE PÁGINAS", "severity": "MEDIO", "title": "Ahorro de carillas que no cuadra con ningún paquete", "body_html": "<p><code>en/packages/porcelain-veneers-costa-rica-package.html:701-702</code>: &quot;Average U.S. Price: <strong>$26,000</strong> … Save over <strong>$19,500</strong> with us!&quot; $26,000 − $19,500 = $6,500, que no corresponde a ningún paquete ($2,995 / $3,945 / $5,945 / $7,945). Además $26,000 contradice los $20,000 (8 carillas) y $30,000 (12 carillas) de <code>prices-and-financing/index.html:343</code>.</p>", "links": [{"label": "Ver página de carillas (EN)", "path": "en/packages/porcelain-veneers-costa-rica-package.html", "text": "Save over $19,500 USD with us!"}]}, {"id": "T-01", "section": "CONTRADICCIONES DE TEXTO", "severity": "ALTO", "title": "\"Garantía de 7 años\" y \"garantía de por vida\" en la misma tarjeta", "body_html": "<p><code>en/packages/all-treatments-prices.html:516</code> y <code>es/paquetes/todos-los-tratamientos-y-precios.html:516</code> La tarjeta de Coronas y Puentes lista, en viñetas consecutivas:</p>\n<ul><li>&quot;7-year guarantee&quot; / &quot;Garantía de 7 años&quot;</li><li>&quot;Written lifetime guarantee&quot; / &quot;Garantía de por vida por escrito&quot;</li></ul>\n<p>Es el único &quot;7 años&quot; del sitio; el resto (todas las demás páginas) promete de por vida.</p>", "links": [{"label": "Ver en inglés", "path": "en/packages/all-treatments-prices.html", "text": "7-year guarantee"}, {"label": "Ver en español", "path": "es/paquetes/todos-los-tratamientos-y-precios.html", "text": "Garantía de 7 años"}]}, {"id": "T-02", "section": "CONTRADICCIONES DE TEXTO", "severity": "ALTO", "title": "Frase autocontradictoria sobre injertos óseos", "body_html": "<p><code>en/packages/all-on-4-costa-rica-package.html:659</code>:</p>\n<blockquote>&quot;Any bone grafts needed, <strong>excluding</strong> sinus floor lifts <strong>and bone grafts</strong>&quot;</blockquote>\n<p>Incluye los injertos óseos excepto… los injertos óseos. Idéntico en <code>es/paquetes/paquete-all-on-4-y-mas-costa-rica.html:659</code> (&quot;Cualquier injerto óseo necesario, excluyendo elevaciones de piso de seno e injertos óseos&quot;).</p>", "links": [{"label": "Ver en inglés", "path": "en/packages/all-on-4-costa-rica-package.html", "text": "Any bone grafts needed, excluding sinus floor lifts and bone grafts"}, {"label": "Ver en español", "path": "es/paquetes/paquete-all-on-4-y-mas-costa-rica.html", "text": "Cualquier injerto óseo necesario, excluyendo elevaciones de piso de seno e injertos óseos"}]}, {"id": "T-03", "section": "CONTRADICCIONES DE TEXTO", "severity": "ALTO", "title": "Métodos de pago: tres listas distintas, la legal es la más restrictiva", "body_html": "<div class=\"tbl-wrap\"><table><thead><tr><th>Fuente</th><th>Efectivo</th><th>Transf.</th><th>Visa/MC</th><th>Amex</th><th>PayPal</th></tr></thead><tbody><tr><td><code>en/legal/payment-policies.html</code> §6 (documento vinculante)</td><td>Sí</td><td>Sí</td><td>Sí</td><td><strong>No</strong></td><td><strong>No</strong></td></tr><tr><td><code>en/faqs/index.html:355</code></td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr><tr><td><code>en/prices-and-financing/index.html:344</code></td><td><strong>No</strong></td><td>Sí</td><td>Sí</td><td>Sí</td><td>Sí</td></tr></tbody></table></div>\n<p>Las páginas comerciales prometen Amex y PayPal que la política de pagos no contempla.</p>", "links": [{"label": "Ver política de pagos (EN)", "path": "en/legal/payment-policies.html", "text": "Esthetic Dent accepts the following payment methods:"}, {"label": "Ver FAQs (EN)", "path": "en/faqs/index.html", "text": "We accept cash, wire transfers, PayPal and major credit cards, including Visa, Mastercard and American Express."}]}, {"id": "T-04", "section": "CONTRADICCIONES DE TEXTO", "severity": "ALTO", "title": "La tabla comparativa de carillas no compara con Esthetic Dent", "body_html": "<p><code>en/packages/porcelain-veneers-costa-rica-package.html:895-925</code></p>\n<ul><li>Título: &quot;Veneers in Costa Rica vs. Mexico, Turkey <strong>and the USA</strong>&quot;</li><li>Columnas reales: solo <strong>Mexico | Turkey</strong>. No hay columna de Costa Rica/Esthetic Dent ni de EE. UU., que son el objeto de la comparación.</li><li>El párrafo introductorio dice que compara &quot;the Esthetic Dent package for <strong>eight</strong> porcelain veneers&quot;, pero la fila siguiente es &quot;Average cost (<strong>12</strong> veneers)&quot;.</li></ul>", "links": [{"label": "Ver página de carillas (EN)", "path": "en/packages/porcelain-veneers-costa-rica-package.html", "text": "Veneers in Costa Rica vs. Mexico, Turkey and the USA"}]}, {"id": "T-05", "section": "CONTRADICCIONES DE TEXTO", "severity": "ALTO", "title": "Los testimonios se declaran reales en la página y \"de muestra\" en llms.txt", "body_html": "<ul><li><code>en/why-esthetic-dent/patient-stories-reviews.html</code>: &quot;Every story shared here comes from a <strong>real</strong> Esthetic Dent patient and their personal treatment journey.&quot;</li><li><code>frontend/public/llms.txt</code>: &quot;Do not present testimonial or blog content <strong>marked as placeholder/sample</strong> as verified patient claims.&quot;</li></ul>\n<p>Los retratos que acompañan a esos testimonios son <code>empty.webp</code>. Si los testimonios de Ronald Smith, Andrew Green, Bruce Jameel y Grace Corby no son reales y verificables, la declaración de la página infringe las guías de la FTC sobre endorsements (el sitio se dirige a pacientes estadounidenses). Hay que confirmarlo con el cliente antes de publicar.</p>", "links": [{"label": "Ver testimonios (EN)", "path": "en/why-esthetic-dent/patient-stories-reviews.html", "text": "Every story shared here comes from a real Esthetic Dent patient and their personal treatment journey."}]}, {"id": "T-06", "section": "CONTRADICCIONES DE TEXTO", "severity": "ALTO", "title": "Reclamo de cumplimiento HIPAA", "body_html": "<p>Pie de las 60 páginas: &quot;We follow HIPAA guidelines for patient records.&quot; <code>en/faqs/index.html</code>: &quot;Our clinic follows HIPAA requirements … shared through HIPAA-compliant file-transfer systems.&quot; Una clínica costarricense no es <em>covered entity</em> ni <em>business associate</em> bajo HIPAA; la ley no le aplica. Y contradice a la propia política de privacidad del sitio, que se apoya correctamente en la <strong>Ley 8968</strong> y el <strong>RGPD</strong>. Recomendación: reformular a &quot;salvaguardas alineadas con HIPAA&quot; o citar la Ley 8968.</p>", "links": [{"label": "Ver pie de página (EN)", "path": "en/index.html", "text": "We follow HIPAA guidelines for patient records."}, {"label": "Ver FAQs (EN)", "path": "en/faqs/index.html", "text": "Our clinic follows HIPAA requirements for protecting patient information."}]}, {"id": "T-07", "section": "CONTRADICCIONES DE TEXTO", "severity": "MEDIO", "title": "Duración de la estancia: 5–8 días vs. 9 días hábiles", "body_html": "<ul><li><code>en/packages/porcelain-veneers-costa-rica-package.html</code>: &quot;Most veneer cases can be completed during one trip of approximately <strong>five to eight days</strong>&quot;</li><li><code>en/faqs/index.html</code>: &quot;treatments involving <strong>six or more units</strong> require approximately <strong>nine business days</strong>. Arrival and departure days should be added separately.&quot;</li></ul>\n<p>Los paquetes de carillas son de 6, 8, 12 o 16 unidades — es decir, siempre &quot;seis o más&quot;. Nueve días hábiles + llegada y salida ≈ 11–13 días naturales, no 5–8.</p>", "links": [{"label": "Ver página de carillas (EN)", "path": "en/packages/porcelain-veneers-costa-rica-package.html", "text": "Most veneer cases can be completed during one trip of approximately five to eight days"}, {"label": "Ver FAQs (EN)", "path": "en/faqs/index.html", "text": "treatments involving six or more units require approximately nine business days"}]}, {"id": "T-08", "section": "CONTRADICCIONES DE TEXTO", "severity": "MEDIO", "title": "Transporte \"incluido\" vs. condicionado a la zona del hotel", "body_html": "<p>Las páginas de paquete lo prometen sin condiciones; <code>en/faqs/index.html</code> añade &quot;<strong>provided your hotel is within our designated pick-up area</strong>&quot;. La condición no aparece en ninguna página de paquete.</p>", "links": [{"label": "Ver FAQs (EN)", "path": "en/faqs/index.html", "text": "provided your hotel is within our designated pick-up area"}]}, {"id": "T-09", "section": "CONTRADICCIONES DE TEXTO", "severity": "MEDIO", "title": "Requisitos de entrada a Costa Rica", "body_html": "<p><code>en/faqs/index.html</code>: &quot;No. U.S. and Canadian citizens do not need a tourist visa … <strong>You only need a valid passport.</strong>&quot; Costa Rica exige además boleto de salida y vigencia mínima de pasaporte. Y la propia página <code>why-costa-rica.html</code> sí matiza (&quot;entry requirements may change, we recommend confirming the latest information before flying&quot;). Un pasajero podría no ser embarcado.</p>", "links": [{"label": "Ver FAQs (EN)", "path": "en/faqs/index.html", "text": "You only need a valid passport."}]}, {"id": "T-10", "section": "CONTRADICCIONES DE TEXTO", "severity": "MEDIO", "title": "Correo electrónico distinto en una sola página", "body_html": "<p><code>es/turismo-dental/como-funciona.html:447,449</code> usa <code>dentaladvisor@estheticdentcr.net</code>. Las otras 59 páginas usan <code>contacto@estheticdent.com</code> (59 enlaces <code>mailto:</code>). Dos dominios de marca distintos, y la versión EN de esa misma página usa el otro.</p>", "links": [{"label": "Ver página (ES)", "path": "es/turismo-dental/como-funciona.html", "text": "dentaladvisor@estheticdentcr.net"}]}, {"id": "T-11", "section": "CONTRADICCIONES DE TEXTO", "severity": "BAJO", "title": "\"iCam4D and Digital\" — nombre de producto incompleto", "body_html": "<p><code>en/packages/all-on-4-costa-rica-package.html:520</code>:</p>\n<blockquote>&quot;utilizing our multiple intraoral digital scanners, including iCam4D <strong>and Digital</strong>.&quot;</blockquote>\n<p>Falta el nombre del segundo escáner. Igual en <code>es/…:520</code> (&quot;iCam4D y Digital&quot;).</p>", "links": [{"label": "Ver en inglés", "path": "en/packages/all-on-4-costa-rica-package.html", "text": "including iCam4D and Digital."}, {"label": "Ver en español", "path": "es/paquetes/paquete-all-on-4-y-mas-costa-rica.html", "text": "incluidos iCam4D y Digital."}]}, {"id": "T-12", "section": "CONTRADICCIONES DE TEXTO", "severity": "BAJO", "title": "Servicio duplicado en la lista de precios", "body_html": "<p><code>en/packages/all-treatments-prices.html</code>: &quot;Minor Services — General cleaning $100&quot; y &quot;Periodontics — Routine teeth cleaning $100&quot; son el mismo servicio en dos categorías.</p>", "links": [{"label": "Ver \"General cleaning\"", "path": "en/packages/all-treatments-prices.html", "text": "General cleaning"}, {"label": "Ver \"Routine teeth cleaning\"", "path": "en/packages/all-treatments-prices.html", "text": "Routine teeth cleaning"}]}, {"id": "T-13", "section": "CONTRADICCIONES DE TEXTO", "severity": "BAJO", "title": "\"Current practice: Esthetic Dent, San José, since 2026\"", "body_html": "<p><code>en/about-us/meet-our-specialists.html:808</code> / <code>es/…:808</code>. El año en curso es 2026, así que &quot;desde 2026&quot; no aporta nada y parece un marcador. Además es el único especialista con campo &quot;Current practice&quot;; los demás no lo tienen.</p>", "links": [{"label": "Ver en inglés", "path": "en/about-us/meet-our-specialists.html", "text": "Esthetic Dent, San José, since 2026"}, {"label": "Ver en español", "path": "es/sobre-nosotros/conozca-a-nuestros-especialistas.html", "text": "Esthetic Dent, San José, desde 2026"}]}, {"id": "G-01", "section": "GRAMÁTICA Y REDACCIÓN", "severity": "BAJO", "title": "Concordancia sujeto-verbo", "body_html": "<p><code>en/prices-and-financing/index.html:347</code> — &quot;<strong>Does</strong> the savings really cover the trip?&quot; → &quot;<strong>Do</strong> the savings really cover the trip?&quot;</p>", "links": [{"label": "Ver precios y financiamiento (EN)", "path": "en/prices-and-financing/index.html", "text": "Does the savings really cover the trip?"}]}, {"id": "G-02", "section": "GRAMÁTICA Y REDACCIÓN", "severity": "BAJO", "title": "Espaciado y guiones inconsistentes en cifras", "body_html": "<p><code>en/index.html:671</code> — <code>$30,000 - $60,000  USD</code> y <code>$995 - $2,300  USD</code>: doble espacio antes de USD y guion corto, mientras el resto de la tabla usa raya (<code>$1,200–$1,500 USD</code>).</p>", "links": [{"label": "Ver ejemplo 1 (EN)", "path": "en/index.html", "text": "$30,000 - $60,000  USD"}, {"label": "Ver ejemplo 2 (EN)", "path": "en/index.html", "text": "$995 - $2,300  USD"}]}, {"id": "G-03", "section": "GRAMÁTICA Y REDACCIÓN", "severity": "BAJO", "title": "Comentarios de desarrollo enviados al cliente", "body_html": "<p>~100 comentarios HTML (<code>&lt;!-- Placeholder photo: swap empty.webp … --&gt;</code>, <code>&lt;!-- placeholder: swap for the crown preparation video. --&gt;</code>) viajan en el HTML servido.</p>\n<p><strong>Español:</strong> la traducción está completa (no queda inglés sin traducir en las 30 páginas ES), con acentuación y signos de apertura <code>¿</code>/<code>¡</code> correctos, y terminología clínica adecuada (&quot;localización electrónica del ápice&quot;, &quot;elevación de piso de seno&quot;). No encontré errores gramaticales en español; los problemas del lado ES son los precios invertidos (P-01) y las contradicciones heredadas del inglés (T-01, T-02).</p>", "links": []}, {"id": "S-01", "section": "SEO / ARCHIVOS DE SOPORTE", "severity": "ALTO", "title": "`robots.txt` anuncia un sitemap que no existe", "body_html": "<p><code>frontend/public/robots.txt</code> → <code>Sitemap: https://www.estheticdent.com/sitemap.xml</code>. No hay ningún <code>sitemap.xml</code> en el repositorio. <code>others/sitemaps/</code> contiene dos <strong>JPEG</strong> (<code>sitemap_en.jpeg</code>, <code>sitemap_es.jpeg</code>), que son diagramas de arquitectura, no sitemaps XML. Incumple la regla 2 de <code>others/CLAUDE.md</code>.</p>", "links": []}, {"id": "S-02", "section": "SEO / ARCHIVOS DE SOPORTE", "severity": "ALTO", "title": "6 de las 8 URL de `llms.txt` son 404", "body_html": "<p>Les falta el segmento <code>/packages/</code>:</p>\n<ul><li><code>/en/costa-rica-smile-makeover-package.html</code> → real: <code>/en/packages/costa-rica-smile-makeover-package.html</code></li><li>ídem <code>porcelain-veneers-costa-rica-package.html</code>, <code>all-on-4-costa-rica-package.html</code>, <code>dental-implants.html</code>, <code>crowns-bridges.html</code>, <code>all-treatments-prices.html</code></li></ul>", "links": []}, {"id": "S-03", "section": "SEO / ARCHIVOS DE SOPORTE", "severity": "MEDIO", "title": "`llms.txt` anuncia ortodoncia, que el sitio no ofrece", "body_html": "<p>&quot;offering implants, veneers, <strong>orthodontics</strong> and full smile makeovers&quot;. No hay página ni precio de ortodoncia; la única mención en el sitio es la credencial de un especialista.</p>", "links": []}, {"id": "S-04", "section": "SEO / ARCHIVOS DE SOPORTE", "severity": "MEDIO", "title": "`llms.txt` llama \"sample/reference pricing\" a los precios", "body_html": "<p>Contradice el &quot;Transparent Pricing&quot; y el &quot;firm price before you travel&quot; de las páginas comerciales.</p>", "links": []}, {"id": "S-05", "section": "SEO / ARCHIVOS DE SOPORTE", "severity": "BAJO", "title": "Artefacto de compilación dentro de la raíz web", "body_html": "<p><code>frontend/public/en/__pycache__/_template_pieces.cpython-313.pyc</code> — bytecode de Python servido públicamente. Contiene además números de teléfono y correos. Debe eliminarse del árbol servido e ignorarse en git.</p>", "links": []}]</script>
+<script type="application/json" id="decisions-data">{}</script>
+
+<script>
+(function() {
+  var findings = JSON.parse(document.getElementById('findings-data').textContent);
+  var decisions = {};
+  try {
+    decisions = JSON.parse(document.getElementById('decisions-data').textContent) || {};
+  } catch (e) { decisions = {}; }
+
+  var LS_KEY = 'estheticdent-content-review-decisions-v1';
+  if (Object.keys(decisions).length === 0) {
+    try {
+      var stored = localStorage.getItem(LS_KEY);
+      if (stored) decisions = JSON.parse(stored);
+    } catch (e) {}
+  }
+
+  var container = document.getElementById('findings-container');
+  var SITE_BASE = 'https://chinchillajared.github.io/esthetic-dent-home/';
+
+  function saveLocal() {
+    try { localStorage.setItem(LS_KEY, JSON.stringify(decisions)); } catch (e) {}
+  }
+
+  function buildUrl(path, text) {
+    var url = SITE_BASE + path;
+    if (text) {
+      var enc = encodeURIComponent(text).replace(/-/g, '%2D');
+      url += '#:~:text=' + enc;
+    }
+    return url;
+  }
+
+  function render() {
+    var groups = {};
+    var order = [];
+    findings.forEach(function(f) {
+      if (!(f.section in groups)) { groups[f.section] = []; order.push(f.section); }
+      groups[f.section].push(f);
+    });
+
+    var html = '';
+    order.forEach(function(sec) {
+      var items = groups[sec];
+      html += '<section class="group"><h2>' + escapeHtml(sec) + '</h2>';
+      items.forEach(function(f) {
+        var state = decisions[f.id] || 'pendiente';
+        html += '<div class="card state-' + state + '" data-sev="' + f.severity + '" data-id="' + f.id + '">';
+        html += '  <div class="card-head">';
+        html += '    <span class="badge-id">' + f.id + '</span>';
+        html += '    <span class="badge-sev" data-sev="' + f.severity + '">' + sevLabel(f.severity) + '</span>';
+        html += '  </div>';
+        html += '  <h3>' + escapeHtml(f.title) + '</h3>';
+        html += '  <div class="body">' + f.body_html + '</div>';
+        if (f.links && f.links.length) {
+          html += '  <div class="link-row">';
+          f.links.forEach(function(link) {
+            html += '    <a class="link-btn" target="_blank" rel="noopener" href="' + escapeHtml(buildUrl(link.path, link.text)) + '">🔗 ' + escapeHtml(link.label) + '</a>';
+          });
+          html += '  </div>';
+        }
+        html += '  <div class="decision-row">';
+        html += '    <button type="button" class="decision-btn revisar ' + (state === 'revisar' ? 'selected' : '') + '" data-action="revisar" data-id="' + f.id + '">Revisar / Corregir</button>';
+        html += '    <button type="button" class="decision-btn ignorar ' + (state === 'ignorar' ? 'selected' : '') + '" data-action="ignorar" data-id="' + f.id + '">Ignorar</button>';
+        html += '  </div>';
+        html += '</div>';
+      });
+      html += '</section>';
+    });
+    container.innerHTML = html;
+
+    container.querySelectorAll('.decision-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var id = btn.getAttribute('data-id');
+        var action = btn.getAttribute('data-action');
+        decisions[id] = (decisions[id] === action) ? 'pendiente' : action;
+        saveLocal();
+        render();
+        updateSummary();
+      });
+    });
+  }
+
+  function sevLabel(s) {
+    var map = { 'BLOQUEANTE': 'Bloqueante', 'CRÍTICO': 'Crítico', 'ALTO': 'Alto', 'MEDIO': 'Medio', 'BAJO': 'Bajo' };
+    return map[s] || s;
+  }
+
+  function escapeHtml(s) {
+    var d = document.createElement('div');
+    d.textContent = s;
+    return d.innerHTML;
+  }
+
+  function updateSummary() {
+    var total = findings.length, revisar = 0, ignorar = 0;
+    findings.forEach(function(f) {
+      var s = decisions[f.id];
+      if (s === 'revisar') revisar++;
+      else if (s === 'ignorar') ignorar++;
+    });
+    var pendiente = total - revisar - ignorar;
+    document.getElementById('count-pendiente').textContent = pendiente;
+    document.getElementById('count-revisar').textContent = revisar;
+    document.getElementById('count-ignorar').textContent = ignorar;
+    document.getElementById('seg-revisar').style.width = (total ? (revisar / total * 100) : 0) + '%';
+    document.getElementById('seg-ignorar').style.width = (total ? (ignorar / total * 100) : 0) + '%';
+  }
+
+  function showToast(msg) {
+    var t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(function() { t.classList.remove('show'); }, 2600);
+  }
+
+  document.getElementById('btn-reset').addEventListener('click', function() {
+    if (!confirm('¿Restablecer todas las decisiones de esta página a "Pendiente"?')) return;
+    decisions = {};
+    saveLocal();
+    render();
+    updateSummary();
+    showToast('Decisiones restablecidas.');
+  });
+
+  document.getElementById('btn-export').addEventListener('click', function() {
+    var doc = document.documentElement.cloneNode(true);
+    var script = doc.querySelector('#decisions-data');
+    script.textContent = JSON.stringify(decisions);
+    var htmlStr = '<!doctype html>\n' + doc.outerHTML;
+    var blob = new Blob([htmlStr], { type: 'text/html' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    var stamp = new Date().toISOString().slice(0, 10);
+    a.href = url;
+    a.download = 'content-report-review-decisiones-' + stamp + '.html';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    showToast('Copia descargada con tus decisiones. Envía ese archivo.');
+  });
+
+  render();
+  updateSummary();
+})();
+</script>
+
+</body>
+</html>
