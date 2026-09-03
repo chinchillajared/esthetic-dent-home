@@ -39,6 +39,29 @@
       });
     });
 
+  /* Every panel hangs from the left edge of its nav item, so they all open
+     the same way. The ones near the end of the row would reach past the
+     viewport at the narrowest desktop width, where html{overflow-x:hidden}
+     would silently shear off their right edge — so they are pulled back with
+     a negative margin-left. margin, not transform: the open/close transition
+     already owns the transform. Panels are laid out even while hidden, so
+     they can be measured without opening them. */
+  var EDGE_GAP = 16;
+
+  function clampDropdowns() {
+    Array.prototype.slice
+      .call(document.querySelectorAll("[data-desktop-nav] .dropdown"))
+      .forEach(function (menu) {
+        menu.style.marginLeft = "";
+        var limit = document.documentElement.clientWidth - EDGE_GAP;
+        var overflow = menu.getBoundingClientRect().right - limit;
+        if (overflow > 0) menu.style.marginLeft = "-" + Math.ceil(overflow) + "px";
+      });
+  }
+
+  clampDropdowns();
+  window.addEventListener("resize", clampDropdowns);
+
   var desktopNav = document.querySelector("[data-desktop-nav]");
   if (desktopNav) {
     desktopNav.addEventListener("mouseleave", function () {
