@@ -17,6 +17,7 @@
 <link rel="icon" href="data:,">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://js.hsforms.net">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/normalize.css">
 <link rel="stylesheet" href="../assets/css/main.css">
@@ -126,6 +127,9 @@
       <button type="button" data-drawer-close aria-label="Cerrar menú" class="rounded-full p-2 text-navy hover:bg-sky-pale/30">
         <svg viewBox="0 0 24 24" class="h-6 w-6"><use href="#icon-close"/></svg>
       </button>
+    </div>
+    <div class="border-b border-sky-pale/60 px-5 py-3">
+      <a href="../cr/index.html" class="site-switch" hreflang="es" lang="es" data-site-switch="cr">¿Paciente Nacional (Costa Rica)?</a>
     </div>
     <div class="divide-y divide-sky-pale/50 px-2">
       <div>
@@ -239,23 +243,23 @@
 
   <!-- Topbar -->
   <header data-topbar class="bg-white transition-shadow">
-    <div class="header-row flex items-center justify-between gap-4 px-4 py-2 sm:px-6 lg:px-8">
-      <div class="flex items-center gap-3">
+    <div class="header-row flex flex-wrap items-center sm:flex-nowrap gap-4 gap-y-1.5 sm:gap-y-4 px-4 py-2 sm:px-6 lg:px-8">
+      <div class="mr-auto flex items-center gap-3">
         <button type="button" data-drawer-toggle aria-expanded="false" aria-label="Abrir menú" class="flex h-10 w-10 items-center justify-center rounded-full border border-navy/10 text-navy xl:hidden">
           <svg viewBox="0 0 24 24" class="h-5 w-5"><use href="#icon-menu"/></svg>
         </button>
         <a href="index.html" class="flex items-center">
-          <img loading="eager" decoding="async" width="928" height="465" fetchpriority="high" src="../assets/img/logo-es.webp" alt="Esthetic Dent" class="header-logo h-16 w-auto">
+          <img loading="eager" decoding="async" width="928" height="465" fetchpriority="high" src="../assets/img/esthetic-dent/logo-es.webp" alt="Esthetic Dent" class="header-logo h-16 w-auto">
         </a>
       </div>
 
-      <div class="flex items-center gap-3">
-        <div class="flex overflow-hidden rounded-full border border-navy/15 text-[0.8rem] font-display font-semibold">
-          <a href="../en/index.html" class="px-3 py-1.5 text-navy hover:bg-sky-pale/40">EN</a>
-          <span class="bg-navy px-3 py-1.5 text-white">ES</span>
-        </div>
-        <a href="contacto/index.html" class="header-cta btn-primary hidden xl:inline-flex">Iniciar Consulta Gratuita</a>
+      <div class="lang-switch flex overflow-hidden rounded-full border border-navy/15 text-[0.8rem] font-display font-semibold">
+        <a href="../en/index.html" class="px-3 py-1.5 text-navy hover:bg-sky-pale/40">EN</a>
+        <span class="bg-navy px-3 py-1.5 text-white">ES</span>
       </div>
+      <!-- Selector de sitio. El sitio nacional de Costa Rica es un sitio aparte en este dominio; ninguno está bloqueado por región. -->
+      <a href="../cr/index.html" class="site-switch ml-auto sm:ml-0" hreflang="es" lang="es" data-site-switch="cr">¿Paciente Nacional (Costa Rica)?</a>
+      <a href="contacto/index.html" class="header-cta btn-primary hidden xl:inline-flex">Iniciar Consulta Gratuita</a>
     </div>
 
     <!-- Horizontal desktop nav with dropdowns -->
@@ -370,9 +374,9 @@
       </div>
 
       <div class="hero-stage-media" data-carousel role="region" aria-label="Galería de fotos de Esthetic Dent" aria-roledescription="carrusel">
-        <img decoding="async" width="831" height="490" fetchpriority="high" src="../assets/img/playa-blanca.webp" alt="Playa de arena blanca en la Península de Nicoya, Costa Rica" class="hero-carousel-slide hero-carousel-slide--destination is-active" data-slide loading="eager">
-        <img decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Clínica dental moderna en Cóbano, Costa Rica" class="hero-carousel-slide hero-carousel-slide--clinic" data-slide loading="lazy">
-        <img decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Sonrisa natural y elegante de una paciente después del tratamiento" class="hero-carousel-slide hero-carousel-slide--smile" data-slide loading="lazy">
+        <img decoding="async" width="1922" height="1189" src="../assets/img/esthetic-dent/home-page/senior-couple-beach.webp" alt="Pareja de adultos mayores sonriendo en una playa de Costa Rica tras su tratamiento dental" class="hero-carousel-slide hero-carousel-slide--smile is-active" data-slide fetchpriority="high" loading="eager">
+        <img decoding="async" width="1264" height="843" src="../assets/img/esthetic-dent/home-page/patient-dental-chair.webp" alt="Paciente adulto mayor relajado en el sillón dental de la clínica de Esthetic Dent en Costa Rica" class="hero-carousel-slide hero-carousel-slide--chair" data-slide loading="lazy">
+        <img decoding="async" width="1376" height="768" src="../assets/img/esthetic-dent/home-page/natural-smile-closeup.webp" alt="Primer plano de una sonrisa natural y segura con dientes restaurados" class="hero-carousel-slide hero-carousel-slide--closeup" data-slide loading="lazy">
         <div class="hero-stage-scrim" aria-hidden="true"></div>
         <button type="button" class="hero-carousel-arrow hero-carousel-arrow--prev" data-carousel-prev aria-label="Foto anterior">
           <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 rotate-90 sm:h-4 sm:w-4"><use href="#icon-chevron"/></svg>
@@ -392,22 +396,19 @@
           <p class="copy-justified text-base text-ink sm:text-lg 2xl:text-xl">Atención dental liderada por especialistas, un laboratorio digital propio y una garantía de por vida—todo incluido en unas vacaciones dentales sin estrés en la costa Pacífica de Costa Rica. Ahorre hasta un 65% comparado con los precios habituales en EE. UU.</p>
           <div class="mt-6 flex flex-wrap justify-center gap-2 sm:gap-4 lg:justify-start">
             <a href="#contact" class="btn-primary whitespace-nowrap px-3 py-2 text-[0.8rem] sm:px-6 sm:py-3 sm:text-sm">Obtener Mi Consulta Gratuita</a>
-            <a href="precios-y-financiamiento/index.html" class="btn-ghost whitespace-nowrap px-3 py-2 text-[0.8rem] sm:px-6 sm:py-3 sm:text-sm">Comparar Precios</a>
+            <a href="precios-y-financiamiento/index.html#comparison" class="btn-ghost whitespace-nowrap px-3 py-2 text-[0.8rem] sm:px-6 sm:py-3 sm:text-sm">Comparar Precios</a>
           </div>
           <div class="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm font-semibold text-navy lg:justify-start">
             <span class="flex items-center gap-2"><svg viewBox="0 0 24 24" class="h-5 w-5 text-mint-dark"><use href="#icon-shield-check"/></svg>Garantía de por Vida</span>
             <span class="flex items-center gap-2"><svg viewBox="0 0 24 24" class="h-5 w-5 text-mint-dark"><use href="#icon-flask"/></svg>Laboratorio Dental Propio</span>
             <span class="flex items-center gap-2"><svg viewBox="0 0 24 24" class="h-5 w-5 text-mint-dark"><use href="#icon-star"/></svg>Calificación de Pacientes 4.9/5</span>
           </div>
-          <!-- Placeholder marks: swap empty.webp for the accreditation logos
-               (SVG preferred, they scale to any height). -->
           <div class="mt-10 text-center sm:mt-12 lg:text-left">
             <p class="font-display text-[0.8rem] font-semibold uppercase tracking-wide text-navy">Acreditaciones</p>
-            <div class="mt-3 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
-              <img loading="lazy" decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Acreditación" class="h-16 w-16 rounded-full object-cover">
-              <img loading="lazy" decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Acreditación" class="h-16 w-16 rounded-full object-cover">
-              <img loading="lazy" decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Acreditación" class="h-16 w-16 rounded-full object-cover">
-              <img loading="lazy" decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Acreditación" class="h-16 w-16 rounded-full object-cover">
+            <div class="mt-3 flex w-fit flex-wrap items-center justify-center gap-4 rounded-2xl border border-navy/10 bg-white p-4 shadow-card mx-auto lg:mx-0 lg:justify-start">
+              <img loading="lazy" decoding="async" width="200" height="200" src="../assets/img/accreditations/AAID.webp" alt="Acreditación de la Academia Americana de Implantología Dental (AAID)" class="h-14 w-24 object-contain">
+              <img loading="lazy" decoding="async" width="840" height="309" src="../assets/img/accreditations/ADA.webp" alt="Acreditación de la Asociación Dental Americana (ADA)" class="h-14 w-24 object-contain">
+              <img loading="lazy" decoding="async" width="840" height="540" src="../assets/img/accreditations/ICOI.webp" alt="Acreditación del Congreso Internacional de Implantólogos Orales (ICOI)" class="h-14 w-24 object-contain">
             </div>
           </div>
         </div>
@@ -467,7 +468,7 @@
           <h3 class="text-xl font-bold">All-on-4 y Más</h3>
           <p class="copy-justified-flush mt-1 text-sm text-ink">Una sonrisa fija de arcada completa soportada por 4, 5, 6 u 8 implantes—completada en uno o dos viajes, según su plan de tratamiento personalizado.</p>
           <p class="mt-4 text-sm text-ink/60 line-through">Precio habitual en EE. UU. $24,000+</p>
-          <p class="font-display text-3xl font-extrabold text-navy">Desde $10,480<span class="text-sm font-medium text-ink">USD</span></p>
+          <p class="font-display text-3xl font-extrabold text-navy">Desde $9,780<span class="text-sm font-medium text-ink">USD</span></p>
           <ul class="mt-4 flex-1 space-y-2 text-sm text-ink">
             <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Consulta completa que incluye tomografía 3D</li>
             <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Implantes Zimmer con dientes provisionales y finales fijos</li>
@@ -479,7 +480,7 @@
         <article class="flex flex-col rounded-2xl border border-navy/10 p-6 shadow-card">
           <h3 class="text-xl font-bold">Carillas de Porcelana</h3>
           <p class="copy-justified-flush mt-1 text-sm text-ink">Carillas de porcelana naturales y duraderas, terminadas a mano en nuestro laboratorio dental propio para lograr una sonrisa diseñada para usted.</p>
-          <p class="mt-4 text-sm text-ink/60 line-through">Precio habitual en EE. UU. $6,000+ / diente</p>
+          <p class="mt-4 text-sm text-ink/60 line-through">Precio habitual en EE. UU. $900+ / diente</p>
           <p class="font-display text-3xl font-extrabold text-navy">Desde $2,995<span class="text-sm font-medium text-ink">USD</span></p>
           <ul class="mt-4 flex-1 space-y-2 text-sm text-ink">
             <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Terminadas a mano en nuestro laboratorio dental propio</li>
@@ -502,23 +503,22 @@
           <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Sonrisas reales. Transformaciones reales.</h2>
           <p class="copy-justified mx-auto mt-3 max-w-2xl text-ink">Explore resultados reales de antes y después de pacientes tratados por Esthetic Dent. Cada sonrisa se planifica cuidadosamente según los rasgos faciales, las necesidades dentales y las metas personales del paciente.</p>
         </div>
-        <!-- Placeholder photos: swap empty.webp for the real before/after pairs.
-             Every card links to the full Real Cases page. -->
+        <!-- Before/after photos link to the full Real Cases page. -->
         <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
           <a href="por-que-esthetic-dent/casos-reales-de-pacientes.html" class="group min-w-0 overflow-hidden rounded-2xl border border-navy/10 shadow-card transition-colors hover:border-blue/30">
-            <img loading="lazy" decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Antes y después de un diseño de sonrisa en Esthetic Dent" class="aspect-[4/3] w-full object-cover 2xl:aspect-[16/10]">
+            <img loading="lazy" decoding="async" width="1024" height="454" src="../assets/img/esthetic-dent/results/smile-makeover-before-after.webp" alt="Antes y después de un diseño de sonrisa en Esthetic Dent" class="aspect-[1024/457] w-full bg-white object-contain">
             <div class="p-5 text-center">
               <h3 class="font-display font-bold text-navy transition-colors group-hover:text-blue">Diseño de Sonrisa</h3>
             </div>
           </a>
           <a href="por-que-esthetic-dent/casos-reales-de-pacientes.html" class="group min-w-0 overflow-hidden rounded-2xl border border-navy/10 shadow-card transition-colors hover:border-blue/30">
-            <img loading="lazy" decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Antes y después de una restauración de arcada completa All-on-4 en Esthetic Dent" class="aspect-[4/3] w-full object-cover 2xl:aspect-[16/10]">
+            <img loading="lazy" decoding="async" width="1024" height="457" src="../assets/img/esthetic-dent/results/all-on-4-full-arch-before-after.webp" alt="Antes y después de una restauración de arcada completa All-on-4 en Esthetic Dent" class="aspect-[1024/457] w-full bg-white object-contain">
             <div class="p-5 text-center">
               <h3 class="font-display font-bold text-navy transition-colors group-hover:text-blue">All-on-4 y Restauraciones de Arcada Completa</h3>
             </div>
           </a>
           <a href="por-que-esthetic-dent/casos-reales-de-pacientes.html" class="group min-w-0 overflow-hidden rounded-2xl border border-navy/10 shadow-card transition-colors hover:border-blue/30">
-            <img loading="lazy" decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Antes y después de carillas de porcelana en Esthetic Dent" class="aspect-[4/3] w-full object-cover 2xl:aspect-[16/10]">
+            <img loading="lazy" decoding="async" width="1024" height="457" src="../assets/img/esthetic-dent/results/porcelain-veneers-before-after.webp" alt="Antes y después de carillas de porcelana en Esthetic Dent" class="aspect-[1024/457] w-full bg-white object-contain">
             <div class="p-5 text-center">
               <h3 class="font-display font-bold text-navy transition-colors group-hover:text-blue">Carillas de Porcelana</h3>
             </div>
@@ -577,7 +577,7 @@
         <ul class="mt-10 flex flex-wrap items-center justify-center gap-4 sm:gap-6">
           <li>
             <a href="https://costaricagreenair.com/es/" target="_blank" rel="noopener noreferrer" class="flex h-40 w-64 items-center justify-center rounded-2xl border border-navy/10 bg-white p-6 shadow-card transition hover:border-navy/20">
-              <img loading="lazy" decoding="async" width="300" height="71" src="../assets/img/green-airways.webp" alt="Logotipo de Costa Rica Green Airways" class="max-h-full w-auto max-w-full object-contain">
+              <img loading="lazy" decoding="async" width="300" height="71" src="../assets/img/green-airways/green-airways.webp" alt="Logotipo de Costa Rica Green Airways" class="max-h-full w-auto max-w-full object-contain">
             </a>
           </li>
           <li>
@@ -587,12 +587,12 @@
           </li>
           <li>
             <a href="https://www.instagram.com/clinicamandalaessence/" target="_blank" rel="noopener noreferrer" class="flex h-40 w-64 items-center justify-center rounded-2xl border border-navy/10 bg-white p-6 shadow-card transition hover:border-navy/20">
-              <img loading="lazy" decoding="async" width="1536" height="1024" src="../assets/img/mandala-essence-es.webp" alt="Logotipo de Clínica Mándala Essence" class="max-h-full w-auto max-w-full object-contain">
+              <img loading="lazy" decoding="async" width="1536" height="1024" src="../assets/img/mandala-essence/mandala-essence-es.webp" alt="Logotipo de Clínica Mándala Essence" class="max-h-full w-auto max-w-full object-contain">
             </a>
           </li>
           <li>
             <a href="turismo-dental/hoteles-y-socios-de-viaje.html" class="flex h-40 w-64 items-center justify-center rounded-2xl border border-navy/10 bg-white p-6 shadow-card transition hover:border-navy/20">
-              <img loading="lazy" decoding="async" width="559" height="286" src="../assets/img/prestige-property.webp" alt="Logotipo de Prestige Property Service Península de Nicoya" class="max-h-full w-auto max-w-full object-contain">
+              <img loading="lazy" decoding="async" width="559" height="286" src="../assets/img/prestige-property/prestige-property.webp" alt="Logotipo de Prestige Property Service Península de Nicoya" class="max-h-full w-auto max-w-full object-contain">
             </a>
           </li>
         </ul>
@@ -654,7 +654,7 @@
               <span class="sm:hidden">Solicitar Cotización</span>
               <span class="hidden sm:inline">Solicitar una Cotización Personalizada</span>
             </a>
-            <a href="precios-y-financiamiento/index.html" class="btn-ghost min-w-0 flex-1 whitespace-nowrap px-3 py-2 text-center text-[0.8rem] sm:flex-none sm:px-6 sm:py-3 sm:text-sm">
+            <a href="precios-y-financiamiento/index.html#comparison" class="btn-ghost min-w-0 flex-1 whitespace-nowrap px-3 py-2 text-center text-[0.8rem] sm:flex-none sm:px-6 sm:py-3 sm:text-sm">
               <span class="sm:hidden">Comparar Precios</span>
               <span class="hidden sm:inline">Ver Comparación Completa de Precios</span>
             </a>
@@ -668,9 +668,9 @@
             <tbody class="divide-y divide-navy/10">
               <tr><td class="px-5 py-3">Corona de Zirconia o Disilicato de Litio — por diente</td><td class="whitespace-nowrap px-5 py-3 text-ink/60 line-through" data-label="Precio Habitual en EE. UU.">$1,200–$1,500 USD</td><td class="whitespace-nowrap px-5 py-3 font-bold text-navy" data-label="Esthetic Dent">$450 USD</td></tr>
               <tr><td class="px-5 py-3">Carilla de Porcelana - por diente</td><td class="whitespace-nowrap px-5 py-3 text-ink/60 line-through" data-label="Precio Habitual en EE. UU.">$2,500 USD</td><td class="whitespace-nowrap px-5 py-3 font-bold text-navy" data-label="Esthetic Dent">$450 USD</td></tr>
-              <tr><td class="px-5 py-3">All-on-4 de Arcada Única</td><td class="whitespace-nowrap px-5 py-3 text-ink/60 line-through" data-label="Precio Habitual en EE. UU.">$15,000–$20,000 USD</td><td class="whitespace-nowrap px-5 py-3 font-bold text-navy" data-label="Esthetic Dent">$10,480 USD</td></tr>
-              <tr><td class="px-5 py-3">All-on-4 de Boca Completa</td><td class="whitespace-nowrap px-5 py-3 text-ink/60 line-through" data-label="Precio Habitual en EE. UU.">$30,000 - $60,000  USD</td><td class="whitespace-nowrap px-5 py-3 font-bold text-navy" data-label="Esthetic Dent">$17,775 USD</td></tr>
-              <tr><td class="px-5 py-3">Implante Dental</td><td class="whitespace-nowrap px-5 py-3 text-ink/60 line-through" data-label="Precio Habitual en EE. UU.">$995 - $2,300  USD</td><td class="whitespace-nowrap px-5 py-3 font-bold text-navy" data-label="Esthetic Dent">$750 USD</td></tr>
+              <tr><td class="px-5 py-3">All-on-4 de Arcada Única</td><td class="whitespace-nowrap px-5 py-3 text-ink/60 line-through" data-label="Precio Habitual en EE. UU.">$15,000–$20,000 USD</td><td class="whitespace-nowrap px-5 py-3 font-bold text-navy" data-label="Esthetic Dent">$9,780 USD</td></tr>
+              <tr><td class="px-5 py-3">All-on-4 de Boca Completa</td><td class="whitespace-nowrap px-5 py-3 text-ink/60 line-through" data-label="Precio Habitual en EE. UU.">$30,000–$60,000 USD</td><td class="whitespace-nowrap px-5 py-3 font-bold text-navy" data-label="Esthetic Dent">$17,775 USD</td></tr>
+              <tr><td class="px-5 py-3">Implante Dental</td><td class="whitespace-nowrap px-5 py-3 text-ink/60 line-through" data-label="Precio Habitual en EE. UU.">$2,500 USD</td><td class="whitespace-nowrap px-5 py-3 font-bold text-navy" data-label="Esthetic Dent">$750 USD</td></tr>
 
             </tbody>
           </table>
@@ -704,39 +704,38 @@
           <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">La experiencia detrás de cada sonrisa.</h2>
           <p class="copy-justified mx-auto mt-3 max-w-2xl text-ink">Desde cirugía de implantes y rehabilitación de boca completa hasta odontología cosmética y restaurativa, nuestros especialistas trabajan en conjunto para crear planes de tratamiento personalizados con resultados naturales y duraderos.</p>
         </div>
-        <!-- Placeholder portraits and names: swap empty.webp and "Dr. Full Name"
-             for the real specialist photos and credentials. -->
+        <!-- Portraits: swap empty.webp for the real photos of Dr. Bedoya and Dr. Alfaro when available. -->
         <div class="mt-12 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
           <article class="min-w-0 overflow-hidden rounded-2xl border border-navy/10 shadow-card">
-            <img loading="lazy" decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Retrato del cirujano oral y maxilofacial de Esthetic Dent" class="aspect-[4/5] w-full object-cover sm:aspect-[5/4] lg:aspect-square 2xl:aspect-[5/4]">
+            <img loading="lazy" decoding="async" width="800" height="800" src="../assets/img/esthetic-dent/team/graciela-garro-matarrita.webp" alt="Retrato de la Dra. Graciela Garro, dentista general y restaurativa de Esthetic Dent" class="aspect-[4/5] w-full object-cover sm:aspect-[5/4] lg:aspect-square 2xl:aspect-[5/4]">
             <div class="p-4 text-center sm:p-5">
-              <h3 class="font-display text-base font-bold text-navy sm:text-lg">Dr. Nombre Completo</h3>
-              <p class="mt-1 font-display text-[0.8rem] font-semibold uppercase tracking-wide text-mint-dark">Cirugía Oral y Maxilofacial</p>
-              <p class="copy-justified mt-2 text-[0.8rem] text-ink sm:text-sm">Cirugía de implantes, extracciones e injertos óseos</p>
+              <h3 class="font-display text-base font-bold text-navy sm:text-lg">Dra. Graciela Garro</h3>
+              <p class="mt-1 font-display text-[0.8rem] font-semibold uppercase tracking-wide text-mint-dark">Odontología General y Restaurativa</p>
+              <p class="copy-justified-center mt-2 text-[0.8rem] text-ink sm:text-sm">Atención preventiva, restauraciones dentales, coronas, carillas y tratamientos de sonrisa personalizados.</p>
             </div>
           </article>
           <article class="min-w-0 overflow-hidden rounded-2xl border border-navy/10 shadow-card">
-            <img loading="lazy" decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Retrato del especialista en implantes y rehabilitación de arcada completa de Esthetic Dent" class="aspect-[4/5] w-full object-cover sm:aspect-[5/4] lg:aspect-square 2xl:aspect-[5/4]">
+            <img loading="lazy" decoding="async" width="800" height="800" src="../assets/img/esthetic-dent/team/bryan-barrantes.webp" alt="Retrato del Dr. Bryan Barrantes, dentista de implantes de Esthetic Dent" style="object-position:50% 8%" class="aspect-[4/5] w-full object-cover sm:aspect-[5/4] lg:aspect-square 2xl:aspect-[5/4]">
             <div class="p-4 text-center sm:p-5">
-              <h3 class="font-display text-base font-bold text-navy sm:text-lg">Dr. Nombre Completo</h3>
-              <p class="mt-1 font-display text-[0.8rem] font-semibold uppercase tracking-wide text-mint-dark">Implantes y Rehabilitación de Arcada Completa</p>
-              <p class="mt-2 text-[0.8rem] text-ink sm:text-sm">All-on-4 y reconstrucción de boca completa</p>
+              <h3 class="font-display text-base font-bold text-navy sm:text-lg">Dr. Bryan Barrantes</h3>
+              <p class="mt-1 font-display text-[0.8rem] font-semibold uppercase tracking-wide text-mint-dark">Implantología y Rehabilitación de Arcada Completa</p>
+              <p class="copy-justified-center mt-2 text-[0.8rem] text-ink sm:text-sm">Implantes dentales, tratamiento All-on-4 y rehabilitación integral de boca completa.</p>
             </div>
           </article>
           <article class="min-w-0 overflow-hidden rounded-2xl border border-navy/10 shadow-card">
-            <img loading="lazy" decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Retrato de la dentista cosmética y restaurativa de Esthetic Dent" class="aspect-[4/5] w-full object-cover sm:aspect-[5/4] lg:aspect-square 2xl:aspect-[5/4]">
+            <img loading="lazy" decoding="async" width="625" height="408" src="../assets/img/esthetic-dent/empty.webp" alt="Retrato de la Dra. Leidy Vanessa Bedoya Ramírez, dentista de implantes y ortodoncista de Esthetic Dent" class="aspect-[4/5] w-full object-cover sm:aspect-[5/4] lg:aspect-square 2xl:aspect-[5/4]">
             <div class="p-4 text-center sm:p-5">
-              <h3 class="font-display text-base font-bold text-navy sm:text-lg">Dra. Nombre Completo</h3>
-              <p class="mt-1 font-display text-[0.8rem] font-semibold uppercase tracking-wide text-mint-dark">Odontología Cosmética y Restaurativa</p>
-              <p class="copy-justified mt-2 text-[0.8rem] text-ink sm:text-sm">Carillas de porcelana, coronas y diseños de sonrisa</p>
+              <h3 class="font-display text-base font-bold text-navy sm:text-lg">Dra. Leidy Vanessa Bedoya Ramírez</h3>
+              <p class="mt-1 font-display text-[0.8rem] font-semibold uppercase tracking-wide text-mint-dark">Implantología, Ortodoncia y Ortopedia Funcional</p>
+              <p class="copy-justified-center mt-2 text-[0.8rem] text-ink sm:text-sm">Implantes dentales, regeneración ósea y periodontal, ortodoncia y corrección funcional de la mordida.</p>
             </div>
           </article>
           <article class="min-w-0 overflow-hidden rounded-2xl border border-navy/10 shadow-card">
-            <img loading="lazy" decoding="async" width="625" height="408" src="../assets/img/empty.webp" alt="Retrato de la periodoncista de Esthetic Dent" class="aspect-[4/5] w-full object-cover sm:aspect-[5/4] lg:aspect-square 2xl:aspect-[5/4]">
+            <img loading="lazy" decoding="async" width="625" height="408" src="../assets/img/esthetic-dent/empty.webp" alt="Retrato del Dr. Fernando Alfaro, endodoncista de Esthetic Dent" class="aspect-[4/5] w-full object-cover sm:aspect-[5/4] lg:aspect-square 2xl:aspect-[5/4]">
             <div class="p-4 text-center sm:p-5">
-              <h3 class="font-display text-base font-bold text-navy sm:text-lg">Dra. Nombre Completo</h3>
-              <p class="mt-1 font-display text-[0.8rem] font-semibold uppercase tracking-wide text-mint-dark">Periodoncia</p>
-              <p class="copy-justified mt-2 text-[0.8rem] text-ink sm:text-sm">Salud de las encías, injertos y mantenimiento de implantes</p>
+              <h3 class="font-display text-base font-bold text-navy sm:text-lg">Dr. Fernando Alfaro</h3>
+              <p class="mt-1 font-display text-[0.8rem] font-semibold uppercase tracking-wide text-mint-dark">Endodoncia</p>
+              <p class="copy-justified-center mt-2 text-[0.8rem] text-ink sm:text-sm">Tratamiento de conductos, alivio del dolor y preservación de los dientes naturales.</p>
             </div>
           </article>
         </div>
@@ -757,49 +756,7 @@
             <h2 class="mt-4 text-3xl font-bold text-white sm:text-4xl 2xl:text-5xl">Comience con una consulta virtual gratuita</h2>
             <p class="copy-justified-flush mt-3 text-white/80">Cuéntenos sobre sus necesidades dentales y metas de sonrisa. Nuestro equipo le contactará para programar su consulta virtual gratuita y guiarle en los siguientes pasos—sin compromiso.</p>
           </div>
-          <form class="grid grid-cols-2 items-end gap-x-3 gap-y-4 rounded-2xl bg-white p-4 text-ink sm:gap-x-4 sm:p-6" action="#" method="post" enctype="multipart/form-data">
-            <p class="col-span-2 text-xs text-ink/60">Campo requerido <span class="text-red-600">*</span></p>
-            <div>
-              <label for="name" class="mb-1 block text-[0.8rem] font-semibold text-navy sm:text-sm">Nombre completo <span class="text-red-600">*</span></label>
-              <input id="name" name="name" type="text" required class="w-full rounded-lg border border-navy/15 px-3 py-2.5 text-sm focus:border-blue focus:outline-none sm:px-4">
-            </div>
-            <div>
-              <label for="email" class="mb-1 block text-[0.8rem] font-semibold text-navy sm:text-sm">Correo electrónico <span class="text-red-600">*</span></label>
-              <input id="email" name="email" type="email" required class="w-full rounded-lg border border-navy/15 px-3 py-2.5 text-sm focus:border-blue focus:outline-none sm:px-4">
-            </div>
-            <div>
-              <label for="phone" class="mb-1 block text-[0.8rem] font-semibold text-navy sm:text-sm"><span class="sm:hidden">Teléfono / WhatsApp</span><span class="hidden sm:inline">Teléfono o WhatsApp</span></label>
-              <input id="phone" name="phone" type="tel" required class="w-full rounded-lg border border-navy/15 px-3 py-2.5 text-sm focus:border-blue focus:outline-none sm:px-4">
-            </div>
-            <div>
-              <label for="country" class="mb-1 block text-[0.8rem] font-semibold text-navy sm:text-sm">País</label>
-              <input id="country" name="country" type="text" required class="w-full rounded-lg border border-navy/15 px-3 py-2.5 text-sm focus:border-blue focus:outline-none sm:px-4">
-            </div>
-            <div class="col-span-2">
-              <label for="treatment" class="mb-1 block text-[0.8rem] font-semibold text-navy sm:text-sm">Tratamiento de su interés</label>
-              <select id="treatment" name="treatment" required class="w-full rounded-lg border border-navy/15 px-3 py-2.5 text-sm focus:border-blue focus:outline-none sm:px-4">
-                <option value="" disabled selected>Seleccione un tratamiento</option>
-                <option>Diseño de Sonrisa</option>
-                <option>Carillas de Porcelana</option>
-                <option>All-on-4 y Más</option>
-                <option>Implantes Dentales</option>
-                <option>Coronas y Puentes</option>
-                <option>Otro / Aún no estoy seguro</option>
-              </select>
-            </div>
-            <div class="col-span-2">
-              <label for="message" class="mb-1 block text-[0.8rem] font-semibold text-navy sm:text-sm">Cuéntenos sobre sus necesidades dentales o metas de sonrisa (opcional)</label>
-              <textarea id="message" name="message" rows="3" class="w-full rounded-lg border border-navy/15 px-3 py-2.5 text-sm focus:border-blue focus:outline-none sm:px-4"></textarea>
-            </div>
-            <div class="col-span-2">
-              <label for="files" class="mb-1 block text-[0.8rem] font-semibold text-navy sm:text-sm">Suba Fotos o Radiografías (Opcional)</label>
-              <p class="copy-justified-flush mb-2 max-w-xl text-[0.8rem] leading-snug text-ink/70">Si las tiene disponibles, suba radiografías dentales recientes y fotos claras de su sonrisa.<span class="hidden sm:inline"> Estos archivos ayudan a nuestro equipo dental a comprender mejor su caso antes de su consulta virtual.</span> ¿Aún no tiene radiografías o fotos? Aun así puede solicitar su consulta gratuita.</p>
-              <input id="files" name="files" type="file" accept=".jpg,.jpeg,.png,.pdf" multiple class="w-full rounded-lg border border-navy/15 px-3 py-2.5 text-sm text-ink/80 file:mr-3 file:rounded-md file:border-0 file:bg-sky-pale/50 file:px-3 file:py-1.5 file:text-[0.8rem] file:font-semibold file:text-navy focus:border-blue focus:outline-none">
-              <p class="copy-justified-flush mt-1 text-[0.8rem] text-ink/50">Formatos aceptados: JPG, PNG o PDF · Hasta 5 archivos</p>
-            </div>
-            <button type="submit" class="btn-primary col-span-2 w-full whitespace-nowrap px-4 text-[0.8rem] sm:px-6 sm:text-sm">Solicitar Mi Consulta Gratuita</button>
-            <p class="copy-justified col-span-2 text-center text-[0.8rem] leading-snug text-ink/60">Al enviar este formulario, usted acepta nuestra <a href="legal/politica-de-privacidad.html" class="underline hover:text-blue">Política de Privacidad</a>. Su información y los archivos adjuntos se mantendrán confidenciales. Cumplimos con las pautas de HIPAA para los registros de pacientes.</p>
-          </form>
+          <div data-hubspot-form class="rounded-2xl bg-white p-4 text-ink sm:p-6"><p data-hubspot-form-fallback class="text-sm text-ink/80">Cargando el formulario de consulta… Si no aparece, escríbanos a <a href="mailto:contacto@estheticdent.com" class="font-semibold text-blue underline">contacto@estheticdent.com</a> o envíenos un mensaje por <a href="https://wa.me/50683061191" class="font-semibold text-blue underline">WhatsApp</a>.</p></div>
         </div>
       </div>
     </section>
@@ -814,7 +771,7 @@
         <!-- Brand + Follow Us -->
         <div class="col-span-2 border-b border-white/10 pb-8 sm:col-span-3 lg:col-span-1 lg:border-b-0 lg:pb-0">
           <div class="flex items-center justify-center gap-4 sm:justify-start sm:gap-6 lg:block">
-            <img loading="lazy" decoding="async" width="1672" height="941" src="../assets/img/logo-w-es.webp" alt="Esthetic Dent" class="h-16 w-auto">
+            <img loading="lazy" decoding="async" width="1672" height="941" src="../assets/img/esthetic-dent/logo-w-es.webp" alt="Esthetic Dent" class="h-16 w-auto">
 
             <div>
               <h3 class="font-display text-sm font-semibold uppercase tracking-wide text-white lg:mt-6">Síganos</h3>
@@ -890,9 +847,10 @@
           <a href="garantia-de-por-vida/index.html" class="hover:text-mint">Garantía de por Vida</a>
           <a href="legal/politicas-de-pago.html" class="hover:text-mint">Políticas de Pago</a>
           <a href="legal/politica-de-cookies.html" class="hover:text-mint">Política de Cookies</a>
+          <button type="button" data-cookie-settings class="text-left hover:text-mint">Configuración de Cookies</button>
         </nav>
         <div class="flex flex-col gap-1 text-white/55">
-          <p>Cumplimos con las pautas de HIPAA para los registros de pacientes.</p>
+          <p>Seguimos prácticas de privacidad y seguridad de datos alineadas con los principios de HIPAA para ayudar a proteger su información personal y de salud.</p>
           <p>© <span data-current-year>2026</span> Esthetic Dent. Todos los derechos reservados.</p>
         </div>
       </div>
@@ -900,29 +858,14 @@
   </footer>
 </div>
 
-<!-- Floating chat launcher: opens a WhatsApp / Live chat menu. -->
-<div class="fixed bottom-4 right-4 z-40 flex flex-col items-center gap-1.5 sm:bottom-5 sm:right-5" data-chat-launcher>
-  <!-- Absolutely positioned so opening the menu never resizes the launcher and
-       shifts the button sideways. -->
-  <div class="chat-menu absolute bottom-full right-0 mb-2" data-chat-menu hidden>
-    <a href="https://wa.me/50683061191" target="_blank" rel="noopener" class="chat-menu-item">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-whatsapp"/></svg>WhatsApp
-    </a>
-    <a href="contacto/index.html" class="chat-menu-item" data-chat-live>
-      <span class="chat-menu-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-chat"/></svg></span>Chat en vivo
-    </a>
-  </div>
-  <button type="button" data-chat-toggle aria-haspopup="true" aria-expanded="false" aria-label="Chatear con nosotros"
-     class="chat-glow flex h-12 items-center gap-2 rounded-full px-4 text-white transition-transform hover:scale-105 sm:h-14 sm:gap-2.5 sm:px-5">
-    <svg viewBox="0 0 24 24" class="h-6 w-6 sm:h-7 sm:w-7"><use href="#icon-whatsapp"/></svg>
-    <span class="h-4 w-px bg-white/25 sm:h-5" aria-hidden="true"></span>
-    <svg viewBox="0 0 24 24" class="h-7 w-7 sm:h-8 sm:w-8"><use href="#icon-chat"/></svg>
-  </button>
-  <!-- Same action as the button above it. Hidden from assistive tech and taken
-       out of the tab order so it is not a second stop doing the same thing. -->
-  <button type="button" data-chat-toggle tabindex="-1" aria-hidden="true"
-     class="chat-launcher-label text-[0.8rem]">Chatea con nosotros</button>
-</div>
+<!-- Floating WhatsApp button. It sits ABOVE HubSpot's chat launcher,
+     which pins itself to the bottom-right corner inside a box 96px tall.
+     The 6rem offset in .wa-launcher clears that box whatever padding
+     HubSpot uses within it. -->
+<a href="https://wa.me/50683061191" target="_blank" rel="noopener"
+   class="wa-launcher" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
+</a>
 
 <script src="../assets/js/main.js"></script>
 </body>

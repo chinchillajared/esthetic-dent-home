@@ -127,6 +127,9 @@
         <svg viewBox="0 0 24 24" class="h-6 w-6"><use href="#icon-close"/></svg>
       </button>
     </div>
+    <div class="border-b border-sky-pale/60 px-5 py-3">
+      <a href="../../cr/index.html" class="site-switch" hreflang="es" lang="es" data-site-switch="cr">¿Paciente Nacional (Costa Rica)?</a>
+    </div>
     <div class="divide-y divide-sky-pale/50 px-2">
       <div>
         <a href="../index.html" class="flex w-full items-center gap-3 px-3 py-4 text-left font-display font-semibold text-navy">
@@ -239,23 +242,23 @@
 
   <!-- Topbar -->
   <header data-topbar class="bg-white transition-shadow">
-    <div class="header-row flex items-center justify-between gap-4 px-4 py-2 sm:px-6 lg:px-8">
-      <div class="flex items-center gap-3">
+    <div class="header-row flex flex-wrap items-center sm:flex-nowrap gap-4 gap-y-1.5 sm:gap-y-4 px-4 py-2 sm:px-6 lg:px-8">
+      <div class="mr-auto flex items-center gap-3">
         <button type="button" data-drawer-toggle aria-expanded="false" aria-label="Abrir menú" class="flex h-10 w-10 items-center justify-center rounded-full border border-navy/10 text-navy xl:hidden">
           <svg viewBox="0 0 24 24" class="h-5 w-5"><use href="#icon-menu"/></svg>
         </button>
         <a href="../index.html" class="flex items-center">
-          <img loading="eager" decoding="async" width="928" height="465" fetchpriority="high" src="../../assets/img/logo-es.webp" alt="Esthetic Dent" class="header-logo h-16 w-auto">
+          <img loading="eager" decoding="async" width="928" height="465" fetchpriority="high" src="../../assets/img/esthetic-dent/logo-es.webp" alt="Esthetic Dent" class="header-logo h-16 w-auto">
         </a>
       </div>
 
-      <div class="flex items-center gap-3">
-        <div class="flex overflow-hidden rounded-full border border-navy/15 text-[0.8rem] font-display font-semibold">
-          <a href="../../en/legal/cookie-policy.html" class="px-3 py-1.5 text-navy hover:bg-sky-pale/40">EN</a>
-          <span class="bg-navy px-3 py-1.5 text-white">ES</span>
-        </div>
-        <a href="../contacto/index.html" class="header-cta btn-primary hidden xl:inline-flex">Iniciar Consulta Gratuita</a>
+      <div class="lang-switch flex overflow-hidden rounded-full border border-navy/15 text-[0.8rem] font-display font-semibold">
+        <a href="../../en/legal/cookie-policy.html" class="px-3 py-1.5 text-navy hover:bg-sky-pale/40">EN</a>
+        <span class="bg-navy px-3 py-1.5 text-white">ES</span>
       </div>
+      <!-- Selector de sitio. El sitio nacional de Costa Rica es un sitio aparte en este dominio; ninguno está bloqueado por región. -->
+      <a href="../../cr/index.html" class="site-switch ml-auto sm:ml-0" hreflang="es" lang="es" data-site-switch="cr">¿Paciente Nacional (Costa Rica)?</a>
+      <a href="../contacto/index.html" class="header-cta btn-primary hidden xl:inline-flex">Iniciar Consulta Gratuita</a>
     </div>
 
     <!-- Horizontal desktop nav with dropdowns -->
@@ -423,6 +426,20 @@
         <h3 class="mt-8 text-base font-bold text-navy sm:text-lg">3.3 Google Tag Manager</h3>
         <p class="copy-justified mt-3 text-ink">Google Tag Manager es un contenedor que carga las etiquetas de medici&oacute;n descritas anteriormente. No coloca cookies anal&iacute;ticas propias ni recopila informaci&oacute;n personal por s&iacute; mismo; lo que recopila depende de las etiquetas que carga, que son las enumeradas en esta pol&iacute;tica. Cuando Google Analytics se carga a trav&eacute;s de &eacute;l, puede colocarse una cookie t&eacute;cnica de corta duraci&oacute;n llamada <span class="whitespace-nowrap">_dc_gtm_&lt;id-de-propiedad&gt;</span> para limitar la frecuencia de las solicitudes. Expira aproximadamente en un minuto.</p>
 
+
+        <h3 class="mt-8 text-base font-bold text-navy sm:text-lg">3.4 Esthetic Dent</h3>
+        <p class="copy-justified mt-3 text-ink">Este sitio web publica dos sitios distintos en una misma direcci&oacute;n: uno para pacientes que se encuentran en Costa Rica y otro para pacientes internacionales que viajan hasta aqu&iacute;. El selector que aparece en el encabezado de todas las p&aacute;ginas permite pasar de uno a otro, y la cookie que se describe a continuaci&oacute;n es la &uacute;nica que instalamos nosotros mismos.</p>
+        <div class="mt-4 min-w-0 overflow-hidden rounded-2xl border border-navy/10 bg-white">
+          <table class="price-table w-full text-left text-sm">
+            <thead class="bg-navy text-white">
+              <tr><th class="px-5 py-3 font-display">Cookie</th><th class="px-5 py-3 font-display">Finalidad</th><th class="whitespace-nowrap px-5 py-3 font-display">Duraci&oacute;n</th><th class="whitespace-nowrap px-5 py-3 font-display">Categor&iacute;a</th></tr>
+            </thead>
+            <tbody class="divide-y divide-navy/10">
+              <tr><td class="px-5 py-3 font-bold text-navy" data-label="Cookie">ed_site</td><td class="px-5 py-3" data-label="Finalidad">Registra cu&aacute;l de los dos sitios eligi&oacute; usted en el selector del encabezado, de modo que al volver a nuestra direcci&oacute;n web llegue directamente a &eacute;l. Su valor es &uacute;nicamente la palabra &laquo;cr&raquo; o &laquo;intl&raquo;. No contiene ning&uacute;n identificador ni dato que lo describa a usted, y no se comparte con nadie.</td><td class="whitespace-nowrap px-5 py-3" data-label="Duraci&oacute;n">1 a&ntilde;o</td><td class="whitespace-nowrap px-5 py-3" data-label="Categor&iacute;a">Estrictamente necesaria</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="copy-justified mt-4 text-ink">Mientras usted no haya hecho esa elecci&oacute;n, y &uacute;nicamente cuando abre nuestra direcci&oacute;n web sin ninguna p&aacute;gina a continuaci&oacute;n, nuestro propio servidor compara su direcci&oacute;n IP con listas p&uacute;blicas de redes que se usan en Costa Rica para decidir cu&aacute;l de los dos sitios abrir primero. Esas listas son las de los registros regionales de internet, para las redes inscritas en el pa&iacute;s, y las que publican Starlink y el servicio iCloud Private Relay de Apple sobre las redes que utilizan aqu&iacute;. Las listas se guardan en nuestro servidor, por lo que no se env&iacute;a ninguna informaci&oacute;n sobre usted a esas organizaciones. La comparaci&oacute;n se hace mientras se entrega la p&aacute;gina y su resultado no queda registrado en ninguna parte. No decide nada m&aacute;s: todas las p&aacute;ginas de ambos sitios est&aacute;n disponibles desde cualquier pa&iacute;s, y el selector est&aacute; en todas ellas.</p>
         <h2 class="mt-10 text-xl font-bold text-navy sm:text-2xl">4. Qu&eacute; Recopilan Estas Cookies</h2>
         <p class="copy-justified mt-4 text-ink">Mediante las cookies descritas anteriormente puede recopilarse la siguiente informaci&oacute;n sobre su visita:</p>
         <ol class="mt-4 space-y-2.5">
@@ -477,7 +494,7 @@
         <address class="mt-4 not-italic text-ink">
           Esthetic Dent<br>
           Santa Teresa, C&oacute;bano, Puntarenas, Costa Rica<br>
-          Correo electr&oacute;nico: [Insertar Correo Electr&oacute;nico]<br>
+          Correo electr&oacute;nico: <a href="mailto:contacto@estheticdentcr.com" class="text-blue hover:underline">contacto@estheticdentcr.com</a><br>
           Tel&eacute;fono: [Insertar N&uacute;mero de Tel&eacute;fono]
         </address>
 
@@ -494,7 +511,7 @@
         <!-- Brand + Follow Us -->
         <div class="col-span-2 border-b border-white/10 pb-8 sm:col-span-3 lg:col-span-1 lg:border-b-0 lg:pb-0">
           <div class="flex items-center justify-center gap-4 sm:justify-start sm:gap-6 lg:block">
-            <img loading="lazy" decoding="async" width="1672" height="941" src="../../assets/img/logo-w-es.webp" alt="Esthetic Dent" class="h-16 w-auto">
+            <img loading="lazy" decoding="async" width="1672" height="941" src="../../assets/img/esthetic-dent/logo-w-es.webp" alt="Esthetic Dent" class="h-16 w-auto">
 
             <div>
               <h3 class="font-display text-sm font-semibold uppercase tracking-wide text-white lg:mt-6">Síganos</h3>
@@ -570,9 +587,10 @@
           <a href="../garantia-de-por-vida/index.html" class="hover:text-mint">Garantía de por Vida</a>
           <a href="politicas-de-pago.html" class="hover:text-mint">Políticas de Pago</a>
           <a href="politica-de-cookies.html" class="hover:text-mint" aria-current="page">Política de Cookies</a>
+          <button type="button" data-cookie-settings class="text-left hover:text-mint">Configuración de Cookies</button>
         </nav>
         <div class="flex flex-col gap-1 text-white/55">
-          <p>Cumplimos con las pautas de HIPAA para los registros de pacientes.</p>
+          <p>Seguimos prácticas de privacidad y seguridad de datos alineadas con los principios de HIPAA para ayudar a proteger su información personal y de salud.</p>
           <p>© <span data-current-year>2026</span> Esthetic Dent. Todos los derechos reservados.</p>
         </div>
       </div>
@@ -580,29 +598,14 @@
   </footer>
 </div>
 
-<!-- Floating chat launcher: opens a WhatsApp / Live chat menu. -->
-<div class="fixed bottom-4 right-4 z-40 flex flex-col items-center gap-1.5 sm:bottom-5 sm:right-5" data-chat-launcher>
-  <!-- Absolutely positioned so opening the menu never resizes the launcher and
-       shifts the button sideways. -->
-  <div class="chat-menu absolute bottom-full right-0 mb-2" data-chat-menu hidden>
-    <a href="https://wa.me/50683061191" target="_blank" rel="noopener" class="chat-menu-item">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-whatsapp"/></svg>WhatsApp
-    </a>
-    <a href="../contacto/index.html" class="chat-menu-item" data-chat-live>
-      <span class="chat-menu-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-chat"/></svg></span>Chat en vivo
-    </a>
-  </div>
-  <button type="button" data-chat-toggle aria-haspopup="true" aria-expanded="false" aria-label="Chatear con nosotros"
-     class="chat-glow flex h-12 items-center gap-2 rounded-full px-4 text-white transition-transform hover:scale-105 sm:h-14 sm:gap-2.5 sm:px-5">
-    <svg viewBox="0 0 24 24" class="h-6 w-6 sm:h-7 sm:w-7"><use href="#icon-whatsapp"/></svg>
-    <span class="h-4 w-px bg-white/25 sm:h-5" aria-hidden="true"></span>
-    <svg viewBox="0 0 24 24" class="h-7 w-7 sm:h-8 sm:w-8"><use href="#icon-chat"/></svg>
-  </button>
-  <!-- Same action as the button above it. Hidden from assistive tech and taken
-       out of the tab order so it is not a second stop doing the same thing. -->
-  <button type="button" data-chat-toggle tabindex="-1" aria-hidden="true"
-     class="chat-launcher-label text-[0.8rem]">Chatea con nosotros</button>
-</div>
+<!-- Floating WhatsApp button. It sits ABOVE HubSpot's chat launcher,
+     which pins itself to the bottom-right corner inside a box 96px tall.
+     The 6rem offset in .wa-launcher clears that box whatever padding
+     HubSpot uses within it. -->
+<a href="https://wa.me/50683061191" target="_blank" rel="noopener"
+   class="wa-launcher" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
+</a>
 
 <script src="../../assets/js/main.js"></script>
 </body>

@@ -7,6 +7,7 @@
 <meta name="description" content="Special offers from Esthetic Dent Costa Rica are coming soon. Check back shortly or contact our team for current pricing and promotions.">
 <link rel="canonical" href="https://www.estheticdent.com/en/packages/special-offers.html">
 <link rel="alternate" hreflang="en" href="https://www.estheticdent.com/en/packages/special-offers.html">
+<link rel="alternate" hreflang="es" href="https://www.estheticdent.com/es/paquetes/ofertas-especiales.html">
 <link rel="alternate" hreflang="x-default" href="https://www.estheticdent.com/en/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Special Offers | Esthetic Dent">
@@ -126,6 +127,9 @@
         <svg viewBox="0 0 24 24" class="h-6 w-6"><use href="#icon-close"/></svg>
       </button>
     </div>
+    <div class="border-b border-sky-pale/60 px-5 py-3">
+      <a href="../../cr/index.html" class="site-switch" hreflang="es" lang="es" data-site-switch="cr">¿Paciente Nacional (Costa Rica)?</a>
+    </div>
     <div class="divide-y divide-sky-pale/50 px-2">
       <div>
         <a href="../index.html" class="flex w-full items-center gap-3 px-3 py-4 text-left font-display font-semibold text-navy">
@@ -238,23 +242,23 @@
 
   <!-- Topbar -->
   <header data-topbar class="bg-white transition-shadow">
-    <div class="header-row flex items-center justify-between gap-4 px-4 py-2 sm:px-6 lg:px-8">
-      <div class="flex items-center gap-3">
+    <div class="header-row flex flex-wrap items-center sm:flex-nowrap gap-4 gap-y-1.5 sm:gap-y-4 px-4 py-2 sm:px-6 lg:px-8">
+      <div class="mr-auto flex items-center gap-3">
         <button type="button" data-drawer-toggle aria-expanded="false" aria-label="Open menu" class="flex h-10 w-10 items-center justify-center rounded-full border border-navy/10 text-navy xl:hidden">
           <svg viewBox="0 0 24 24" class="h-5 w-5"><use href="#icon-menu"/></svg>
         </button>
         <a href="../index.html" class="flex items-center">
-          <img loading="eager" decoding="async" width="928" height="465" fetchpriority="high" src="../../assets/img/logo-en.webp" alt="Esthetic Dent" class="header-logo h-16 w-auto">
+          <img loading="eager" decoding="async" width="928" height="465" fetchpriority="high" src="../../assets/img/esthetic-dent/logo-en.webp" alt="Esthetic Dent" class="header-logo h-16 w-auto">
         </a>
       </div>
 
-      <div class="flex items-center gap-3">
-        <div class="flex overflow-hidden rounded-full border border-navy/15 text-[0.8rem] font-display font-semibold">
-          <span class="bg-navy px-3 py-1.5 text-white">EN</span>
-          <a href="../../es/index.html" class="px-3 py-1.5 text-navy hover:bg-sky-pale/40">ES</a>
-        </div>
-        <a href="../contact/index.html" class="header-cta btn-primary hidden xl:inline-flex">Start Free Consultation</a>
+      <div class="lang-switch flex overflow-hidden rounded-full border border-navy/15 text-[0.8rem] font-display font-semibold">
+        <span class="bg-navy px-3 py-1.5 text-white">EN</span>
+        <a href="../../es/paquetes/ofertas-especiales.html" class="px-3 py-1.5 text-navy hover:bg-sky-pale/40">ES</a>
       </div>
+      <!-- Site switcher. The Costa Rica site is a separate site on this domain; neither site is region-locked. -->
+      <a href="../../cr/index.html" class="site-switch ml-auto sm:ml-0" hreflang="es" lang="es" data-site-switch="cr">¿Paciente Nacional (Costa Rica)?</a>
+      <a href="../contact/index.html" class="header-cta btn-primary hidden xl:inline-flex">Start Free Consultation</a>
     </div>
 
     <!-- Horizontal desktop nav with dropdowns -->
@@ -372,7 +376,7 @@
         <!-- Brand + Follow Us -->
         <div class="col-span-2 border-b border-white/10 pb-8 sm:col-span-3 lg:col-span-1 lg:border-b-0 lg:pb-0">
           <div class="flex items-center justify-center gap-4 sm:justify-start sm:gap-6 lg:block">
-            <img loading="lazy" decoding="async" width="1672" height="941" src="../../assets/img/logo-w-en.webp" alt="Esthetic Dent" class="h-16 w-auto">
+            <img loading="lazy" decoding="async" width="1672" height="941" src="../../assets/img/esthetic-dent/logo-w-en.webp" alt="Esthetic Dent" class="h-16 w-auto">
 
             <div>
               <h3 class="font-display text-sm font-semibold uppercase tracking-wide text-white lg:mt-6">Follow Us</h3>
@@ -448,9 +452,10 @@
           <a href="../lifetime-warranty/index.html" class="hover:text-mint">Lifetime Warranty</a>
           <a href="../legal/payment-policies.html" class="hover:text-mint">Payment Policies</a>
           <a href="../legal/cookie-policy.html" class="hover:text-mint">Cookie Policy</a>
+          <button type="button" data-cookie-settings class="text-left hover:text-mint">Cookie Settings</button>
         </nav>
         <div class="flex flex-col gap-1 text-white/55">
-          <p>We follow HIPAA guidelines for patient records.</p>
+          <p>We follow privacy and data security practices aligned with HIPAA principles to help protect your personal and health information.</p>
           <p>© <span data-current-year>2026</span> Esthetic Dent. All rights reserved.</p>
         </div>
       </div>
@@ -458,29 +463,14 @@
   </footer>
 </div>
 
-<!-- Floating chat launcher: opens a WhatsApp / Live chat menu. -->
-<div class="fixed bottom-4 right-4 z-40 flex flex-col items-center gap-1.5 sm:bottom-5 sm:right-5" data-chat-launcher>
-  <!-- Absolutely positioned so opening the menu never resizes the launcher and
-       shifts the button sideways. -->
-  <div class="chat-menu absolute bottom-full right-0 mb-2" data-chat-menu hidden>
-    <a href="https://wa.me/50683061191" target="_blank" rel="noopener" class="chat-menu-item">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-whatsapp"/></svg>WhatsApp
-    </a>
-    <a href="../contact/index.html" class="chat-menu-item" data-chat-live>
-      <span class="chat-menu-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-chat"/></svg></span>Live chat
-    </a>
-  </div>
-  <button type="button" data-chat-toggle aria-haspopup="true" aria-expanded="false" aria-label="Chat with us"
-     class="chat-glow flex h-12 items-center gap-2 rounded-full px-4 text-white transition-transform hover:scale-105 sm:h-14 sm:gap-2.5 sm:px-5">
-    <svg viewBox="0 0 24 24" class="h-6 w-6 sm:h-7 sm:w-7"><use href="#icon-whatsapp"/></svg>
-    <span class="h-4 w-px bg-white/25 sm:h-5" aria-hidden="true"></span>
-    <svg viewBox="0 0 24 24" class="h-7 w-7 sm:h-8 sm:w-8"><use href="#icon-chat"/></svg>
-  </button>
-  <!-- Same action as the button above it. Hidden from assistive tech and taken
-       out of the tab order so it is not a second stop doing the same thing. -->
-  <button type="button" data-chat-toggle tabindex="-1" aria-hidden="true"
-     class="chat-launcher-label text-[0.8rem]">Chat with us</button>
-</div>
+<!-- Floating WhatsApp button. It sits ABOVE HubSpot's chat launcher,
+     which pins itself to the bottom-right corner inside a box 96px tall.
+     The 6rem offset in .wa-launcher clears that box whatever padding
+     HubSpot uses within it. -->
+<a href="https://wa.me/50683061191" target="_blank" rel="noopener"
+   class="wa-launcher" aria-label="Chat with us on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#icon-whatsapp"/></svg>
+</a>
 
 <script src="../../assets/js/main.js"></script>
 </body>

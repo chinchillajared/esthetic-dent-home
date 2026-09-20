@@ -247,14 +247,30 @@
         photoCarousel.querySelectorAll("[data-photo-dot]")
       );
       var photoIndex = 0;
+      /* Some galleries (the hotel cards) are only a carousel on narrow
+       * screens and fall back to a static grid above the width named in
+       * data-photo-static-above, where every photo is on show. There the
+       * track must not be moved and no slide may be hidden. */
+      var staticAbove = photoCarousel.getAttribute("data-photo-static-above");
+      var staticQuery = staticAbove
+        ? window.matchMedia("(min-width: " + staticAbove + ")")
+        : null;
 
       if (!track || !photoSlides.length) return;
 
       function showPhoto(index) {
         photoIndex = (index + photoSlides.length) % photoSlides.length;
-        track.style.transform = "translateX(-" + photoIndex * 100 + "%)";
+        var isStatic = !!(staticQuery && staticQuery.matches);
+        track.style.transform = isStatic
+          ? ""
+          : "translateX(-" + photoIndex * 100 + "%)";
         Array.prototype.slice.call(photoSlides).forEach(function (slide, i) {
-          slide.setAttribute("aria-hidden", i === photoIndex ? "false" : "true");
+          if (isStatic) slide.removeAttribute("aria-hidden");
+          else
+            slide.setAttribute(
+              "aria-hidden",
+              i === photoIndex ? "false" : "true"
+            );
         });
         if (photoCount)
           photoCount.textContent =
@@ -280,9 +296,121 @@
           showPhoto(index);
         });
       });
+      if (staticQuery) {
+        var onLayoutChange = function () {
+          showPhoto(photoIndex);
+        };
+        if (staticQuery.addEventListener)
+          staticQuery.addEventListener("change", onLayoutChange);
+        else if (staticQuery.addListener) staticQuery.addListener(onLayoutChange);
+      }
 
       showPhoto(0);
     });
+
+  /* ---------------------------------------------------------------------
+   * Photo lightbox: clicking a photo button opens the page's <dialog> with
+   * that photo full size. The set the arrows walk through is whatever other
+   * photo buttons share its [data-lightbox-group] container, so each gallery
+   * on the page steps through its own photos and nothing else.
+   *
+   * A native <dialog> brings Esc, the focus trap and returning focus to the
+   * photo that was clicked; where showModal is missing the buttons are left
+   * unwired and the photos stay exactly as they render without JS.
+   * ------------------------------------------------------------------- */
+  var lightbox = document.querySelector("[data-lightbox]");
+  if (lightbox && typeof lightbox.showModal === "function") {
+    var lightboxImg = lightbox.querySelector("[data-lightbox-img]");
+    var lightboxCaption = lightbox.querySelector("[data-lightbox-caption]");
+    var lightboxCount = lightbox.querySelector("[data-lightbox-count]");
+    var lightboxPrev = lightbox.querySelector("[data-lightbox-prev]");
+    var lightboxNext = lightbox.querySelector("[data-lightbox-next]");
+    var lightboxClose = lightbox.querySelector("[data-lightbox-close]");
+    var lightboxStage = lightbox.querySelector("[data-lightbox-stage]");
+    var lightboxGroup = [];
+    var lightboxIndex = 0;
+
+    function showLightboxPhoto(index) {
+      if (!lightboxGroup.length || !lightboxImg) return;
+      lightboxIndex = (index + lightboxGroup.length) % lightboxGroup.length;
+      var photo = lightboxGroup[lightboxIndex].querySelector("img");
+      if (!photo) return;
+      /* currentSrc, so a photo the browser picked from a srcset opens as the
+         file it actually downloaded rather than as a second request. */
+      lightboxImg.src = photo.currentSrc || photo.src;
+      lightboxImg.alt = photo.alt;
+      if (lightboxCaption) lightboxCaption.textContent = photo.alt;
+      /* One photo on its own needs no arrows and no counter. */
+      var alone = lightboxGroup.length < 2;
+      if (lightboxCount) {
+        lightboxCount.textContent =
+          lightboxIndex + 1 + " / " + lightboxGroup.length;
+        lightboxCount.classList.toggle("hidden", alone);
+      }
+      if (lightboxPrev) lightboxPrev.classList.toggle("hidden", alone);
+      if (lightboxNext) lightboxNext.classList.toggle("hidden", alone);
+    }
+
+    /* Delegated: galleries that only exist on some pages, and any photo added
+       to one later, are covered by this single listener. */
+    document.addEventListener("click", function (event) {
+      var trigger =
+        event.target && event.target.closest
+          ? event.target.closest("[data-lightbox-open]")
+          : null;
+      if (!trigger) return;
+      var group = trigger.closest("[data-lightbox-group]");
+      lightboxGroup = Array.prototype.slice.call(
+        (group || document).querySelectorAll("[data-lightbox-open]")
+      );
+      showLightboxPhoto(lightboxGroup.indexOf(trigger));
+      lightbox.showModal();
+      document.body.classList.add("overflow-hidden");
+    });
+
+    if (lightboxPrev) {
+      lightboxPrev.addEventListener("click", function () {
+        showLightboxPhoto(lightboxIndex - 1);
+      });
+    }
+    if (lightboxNext) {
+      lightboxNext.addEventListener("click", function () {
+        showLightboxPhoto(lightboxIndex + 1);
+      });
+    }
+    /* Every way out goes through here, Esc included, rather than through the
+       dialog's close event: the page scroll has to be given back exactly
+       once, whichever control the visitor used. */
+    function closeLightbox() {
+      document.body.classList.remove("overflow-hidden");
+      lightbox.close();
+    }
+
+    if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
+    /* Only a click on the stage itself, never one that landed on the photo or
+       on a control sitting over it. */
+    if (lightboxStage) {
+      lightboxStage.addEventListener("click", function (event) {
+        if (event.target === lightboxStage) closeLightbox();
+      });
+    }
+    lightbox.addEventListener("keydown", function (event) {
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        showLightboxPhoto(lightboxIndex - 1);
+      } else if (event.key === "ArrowRight") {
+        event.preventDefault();
+        showLightboxPhoto(lightboxIndex + 1);
+      } else if (event.key === "Escape") {
+        event.preventDefault();
+        closeLightbox();
+      }
+    });
+    /* Belt and braces for any close the browser performs on its own. */
+    lightbox.addEventListener("close", function () {
+      document.body.classList.remove("overflow-hidden");
+    });
+  }
 
   /* ---------------------------------------------------------------------
    * Before/after compare sliders: the range input's value is written to
@@ -553,54 +681,51 @@
   }
 
   /* ---------------------------------------------------------------------
-   * Floating chat launcher: the button used to go straight to WhatsApp, so
-   * the live-chat option was unreachable. It now opens a two-item menu.
-   *
-   * BOTH the icon pill and the "Chat with us" label carry
-   * [data-chat-toggle] — clicking either one has to do the same thing, so
-   * the handler is bound to every toggle rather than to one element.
+   * Deep links to an anchor on another page (e.g. "Compare Prices" ->
+   * prices-and-financing#comparison): with html{scroll-behavior:smooth}
+   * set, Chrome's native jump-to-fragment on load is unreliable and often
+   * leaves the page scrolled to the top. Do it ourselves once the page
+   * has fully laid out, forcing an instant jump so it isn't cut off.
    * ------------------------------------------------------------------- */
-  var chatLauncher = document.querySelector("[data-chat-launcher]");
-  if (chatLauncher) {
-    var chatMenu = chatLauncher.querySelector("[data-chat-menu]");
-    var chatToggles = Array.prototype.slice.call(
-      chatLauncher.querySelectorAll("[data-chat-toggle]")
-    );
-
-    if (chatMenu && chatToggles.length) {
-      var setChatMenu = function (open) {
-        chatMenu.hidden = !open;
-        chatToggles.forEach(function (t) {
-          t.setAttribute("aria-expanded", open ? "true" : "false");
-        });
+  if (location.hash) {
+    var deepLinkTarget = document.getElementById(location.hash.slice(1));
+    if (deepLinkTarget) {
+      var jumpToDeepLink = function () {
+        var root = document.documentElement;
+        var prevBehavior = root.style.scrollBehavior;
+        root.style.scrollBehavior = "auto";
+        deepLinkTarget.scrollIntoView({ block: "start" });
+        root.style.scrollBehavior = prevBehavior;
       };
-
-      chatToggles.forEach(function (toggle) {
-        toggle.addEventListener("click", function (event) {
-          event.preventDefault();
-          event.stopPropagation();
-          setChatMenu(chatMenu.hidden);
-        });
-      });
-
-      // A click anywhere else closes it. Clicks inside the launcher are
-      // excluded so choosing an option still follows its link.
-      document.addEventListener("click", function (event) {
-        if (!chatMenu.hidden && !chatLauncher.contains(event.target)) {
-          setChatMenu(false);
-        }
-      });
-
-      // Escape closes and returns focus to the control that opened it,
-      // otherwise keyboard users are stranded at the end of the document.
-      document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape" && !chatMenu.hidden) {
-          setChatMenu(false);
-          chatToggles[0].focus();
-        }
-      });
-
-      setChatMenu(false);
+      if (document.readyState === "complete") {
+        jumpToDeepLink();
+      } else {
+        window.addEventListener("load", jumpToDeepLink);
+      }
     }
   }
+
+  /* ---------------------------------------------------------------------
+   * "Cookie settings": reopens HubSpot's consent banner so a visitor can
+   * change what they previously agreed to.
+   *
+   * HubSpot hands this out as a <button onclick="..."> to paste in, and that
+   * snippet cannot work on this site: the CSP carries script-src-attr 'none',
+   * which is the directive that blocks inline event handlers specifically.
+   * Same _hsp call, bound as a real listener instead.
+   *
+   * Delegated from the document so the one handler covers the footer of every
+   * page, static or blog-rendered, with no per-page wiring.
+   * ------------------------------------------------------------------- */
+  document.addEventListener("click", function (event) {
+    var trigger =
+      event.target && event.target.closest
+        ? event.target.closest("[data-cookie-settings]")
+        : null;
+    if (!trigger) return;
+    /* Created here if the banner script has not run yet, exactly as HubSpot's
+       own snippet does: the queue is drained once that script loads. */
+    var hsp = (window._hsp = window._hsp || []);
+    hsp.push(["showBanner"]);
+  });
 })();

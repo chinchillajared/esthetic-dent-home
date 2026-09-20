@@ -2,15 +2,55 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="refresh" content="0; url=./en/index.html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="canonical" href="https://www.estheticdent.com/en/">
+<link rel="alternate" hreflang="en" href="https://www.estheticdent.com/en/">
+<link rel="alternate" hreflang="es" href="https://www.estheticdent.com/es/">
+<link rel="alternate" hreflang="es-CR" href="https://www.estheticdent.com/cr/">
+<link rel="alternate" hreflang="x-default" href="https://www.estheticdent.com/en/">
 <title>Esthetic Dent</title>
+<!--
+  A fallback, not the front door.
+
+  In production the edge answers `/` itself with a 302, choosing between the
+  nacional site (/cr/) and the international one (/en/, /es/) from the visitor's
+  ed_site cookie, then their address, then Accept-Language — see
+  nginx/templates/site-routing.conf.template. This page is what remains
+  reachable at /index.html, and what serves the site if it is ever published as
+  plain files with no edge in front of it.
+
+  It can do two of the edge's three steps: it can read the cookie, and it can
+  read the browser's language. It cannot see an address, so a first-time
+  visitor in Costa Rica lands on the international site here and switches with
+  one click. That is the same bargain the rest of the site makes — a guess,
+  never a gate.
+
+  One inline <script>, deliberately: the edge stamps a CSP nonce on the first
+  one it sees and no more.
+-->
 <script>
-  var lang = (navigator.language || "en").toLowerCase().indexOf("es") === 0 ? "es" : "en";
-  window.location.replace("./" + lang + "/index.html");
+  (function () {
+    var chosen = (function () {
+      var match = / ed_site=(cr|intl)/.exec("; " + document.cookie);
+      return match ? match[1] : "";
+    })();
+
+    var spanish = (navigator.language || "en").toLowerCase().indexOf("es") === 0;
+
+    var target = chosen === "cr" ? "./cr/index.html"
+      : chosen === "intl" ? (spanish ? "./es/index.html" : "./en/index.html")
+      : spanish ? "./es/index.html"
+      : "./en/index.html";
+
+    window.location.replace(target);
+  })();
 </script>
 </head>
 <body>
-<p><a href="./en/index.html">English</a> · <a href="./es/index.html">Español</a></p>
+<p>
+  <a href="./en/index.html">International Patients — English</a> ·
+  <a href="./es/index.html">Pacientes internacionales — Español</a> ·
+  <a href="./cr/index.html">Costa Rica — sitio nacional</a>
+</p>
 </body>
 </html>
