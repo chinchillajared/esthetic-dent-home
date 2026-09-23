@@ -728,4 +728,39 @@
     var hsp = (window._hsp = window._hsp || []);
     hsp.push(["showBanner"]);
   });
+
+  /* ---------------------------------------------------------------------
+   * Hero videos (data-hero-video): plays only while on screen, only from
+   * tablet width up, and never for visitors who asked for reduced motion or
+   * reduced data — same rationale as the landing pages' data-lp-video.
+   * ------------------------------------------------------------------- */
+  var heroVideos = Array.prototype.slice.call(document.querySelectorAll("[data-hero-video]"));
+  if (heroVideos.length) {
+    var heroWide = window.matchMedia("(min-width: 768px)");
+    var heroCalm = window.matchMedia("(prefers-reduced-motion: reduce)");
+    var heroSaveData = !!(navigator.connection && navigator.connection.saveData);
+
+    heroVideos.forEach(function (video) {
+      var visible = false;
+      function sync() {
+        if (visible && heroWide.matches && !heroCalm.matches && !heroSaveData) {
+          var attempt = video.play();
+          if (attempt && typeof attempt.catch === "function") attempt.catch(function () {});
+        } else if (!video.paused) {
+          video.pause();
+        }
+      }
+      if ("IntersectionObserver" in window) {
+        new IntersectionObserver(function (entries) {
+          visible = entries[0].isIntersecting;
+          sync();
+        }, { threshold: 0.15 }).observe(video);
+      } else {
+        visible = true;
+        sync();
+      }
+      heroWide.addEventListener("change", sync);
+      heroCalm.addEventListener("change", sync);
+    });
+  }
 })();

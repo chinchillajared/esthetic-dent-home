@@ -368,11 +368,13 @@
         </div>
       </div>
 
-      <!-- Split hero: coast and nature on the left, the finished restoration beside its digital design on the right, feathered into each other. -->
-      <div class="hero-stage-media">
-        <img loading="eager" decoding="async" width="1600" height="898" fetchpriority="high" src="../../assets/img/esthetic-dent/all%20treatments%20and%20prices/costa-rica-pacific-coast-beach.webp" alt="Aerial view of a quiet Pacific beach and lush tropical coast in Costa Rica" class="hero-stage-photo">
-        <img loading="eager" decoding="async" width="830" height="572" src="../../assets/img/esthetic-dent/all%20treatments%20and%20prices/digital-smile-design-result.webp" alt="Finished dental restoration shown beside its digital smile design" class="hero-stage-photo-split">
-        <div class="hero-stage-scrim" aria-hidden="true"></div>
+      <!-- Clinic reception video, feathered into the copy panel. Positioned to
+           start at the copy column's edge (not the section edge) so the video
+           isn't upscaled across the full section width on wide screens. -->
+      <div class="hero-stage-media hero-stage-media--video">
+        <video class="hero-stage-photo hero-stage-photo--feather" data-hero-video muted loop playsinline preload="metadata" width="1280" height="720" poster="../../assets/img/esthetic-dent/all%20treatments%20and%20prices/cobano-clinic-reception-poster.webp" aria-label="Patient checking in at the Esthetic Dent reception desk in Cóbano, Costa Rica">
+          <source src="../../assets/img/esthetic-dent/all%20treatments%20and%20prices/cobano-clinic-reception.mp4#t=0.1" type="video/mp4">
+        </video>
       </div>
 
       <div class="hero-stage-panel">
@@ -399,9 +401,8 @@
             <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">The Lab Is Down the Hall, Not Overseas</h2>
             <p class="copy-justified mt-6 text-base text-ink 2xl:text-lg">Scanning, design and milling all happen in the same building as your appointments, so a shade or a bite can be adjusted the same day instead of waiting on a courier.</p>
           </div>
-          <!-- Placeholder photo: swap empty.webp for the technology photograph. -->
           <div class="split-media">
-            <img loading="lazy" decoding="async" width="625" height="408" src="../../assets/img/esthetic-dent/empty.webp" alt="Advanced dental technology at Esthetic Dent in Costa Rica" class="aspect-[831/490] w-full object-cover">
+            <img loading="lazy" decoding="async" width="1536" height="1024" src="../../assets/img/esthetic-dent/all%20treatments%20and%20prices/in-house-dental-lab-milling-machine.webp" alt="Dental lab technician at Esthetic Dent operating an in-house milling machine to craft a dental restoration" class="aspect-[831/490] w-full object-cover">
           </div>
         </div>
       </div>
@@ -415,11 +416,12 @@
         <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 
           <article class="flex flex-col rounded-2xl border border-navy/10 bg-white p-6 shadow-card">
-            <h3 class="text-xl font-bold">Dental Implants in Costa Rica</h3>
-            <p class="copy-justified-flush mt-1 text-sm text-ink">Replace a missing tooth with a strong, long-lasting solution that restores function, stability, and confidence.</p>
-            <!-- Placeholder photo: swap empty.webp for a medium image below the subtitle. -->
+            <h3 class="text-xl font-bold min-h-[3.5rem]">Dental Implants in Costa Rica</h3>
+            <p class="copy-justified-flush mt-1 min-h-[5rem] text-sm text-ink">Replace a missing tooth with a strong, long-lasting solution that restores function, stability, and confidence.</p>
             <div class="mt-3 overflow-hidden rounded-xl shadow-card">
-              <img loading="lazy" decoding="async" width="625" height="408" src="../../assets/img/esthetic-dent/empty.webp" alt="Dental implants at Esthetic Dent in Costa Rica" class="aspect-[831/490] w-full object-cover">
+              <video class="aspect-[831/490] w-full object-cover" controls preload="metadata" poster="../../assets/img/esthetic-dent/all%20treatments%20and%20prices/dental-implant-placement-crown-restoration-poster.webp" aria-label="Animation of dental implant placement and crown restoration">
+                <source src="../../assets/img/esthetic-dent/all%20treatments%20and%20prices/dental-implant-placement-crown-restoration.mp4" type="video/mp4">
+              </video>
             </div>
             <ul class="mt-4 space-y-2 text-sm text-ink">
               <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Premium implant systems</li>
@@ -427,21 +429,17 @@
               <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Custom restoration crafted in our in-house dental lab</li>
               <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Written lifetime guarantee</li>
             </ul>
-            <p class="mt-4 font-display font-semibold text-navy">Already have an implant? Restorations from $275</p>
-            <!-- Video placeholder: swap for the implant placement + crown restoration (single unit) video. -->
-            <div class="mt-auto flex flex-col items-center justify-center gap-2 rounded-xl bg-sky-pale/40 p-6 text-center">
-              <svg viewBox="0 0 24 24" class="h-12 w-12 text-navy" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
-              <p class="text-sm font-semibold text-navy">Video: Implant placement and crown restoration</p>
-            </div>
+            <p class="mb-auto mt-4 font-display font-semibold text-navy">Already have an implant? Restorations from $275</p>
             <a href="dental-implants.html" class="btn-primary mt-4 w-full">Learn More</a>
           </article>
 
           <article class="flex flex-col rounded-2xl border border-navy/10 bg-white p-6 shadow-card">
-            <h3 class="text-xl font-bold">All-on-4, All-on-6 &amp; All-on-8 Dental Implants</h3>
-            <p class="copy-justified-flush mt-1 text-sm text-ink">Replace a complete arch of missing or failing teeth with fixed teeth supported by four, six, or eight dental implants.</p>
-            <!-- Placeholder photo: swap empty.webp for a medium image below the subtitle. -->
+            <h3 class="text-xl font-bold min-h-[3.5rem]">All-on-4, All-on-6 &amp; All-on-8 Dental Implants</h3>
+            <p class="copy-justified-flush mt-1 min-h-[5rem] text-sm text-ink">Replace a complete arch of missing or failing teeth with fixed teeth supported by four, six, or eight dental implants.</p>
             <div class="mt-3 overflow-hidden rounded-xl shadow-card">
-              <img loading="lazy" decoding="async" width="625" height="408" src="../../assets/img/esthetic-dent/empty.webp" alt="All-on-4 dental implants at Esthetic Dent in Costa Rica" class="aspect-[831/490] w-full object-cover">
+              <video class="aspect-[831/490] w-full object-cover" controls preload="metadata" poster="../../assets/img/esthetic-dent/all%20treatments%20and%20prices/all-on-4-implant-placement-crown-restoration-poster.webp" aria-label="Animation of All-on-4 dental implant placement and crown restoration">
+                <source src="../../assets/img/esthetic-dent/all%20treatments%20and%20prices/all-on-4-implant-placement-crown-restoration.mp4" type="video/mp4">
+              </video>
             </div>
             <ul class="mt-4 space-y-2 text-sm text-ink">
               <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Fixed provisional teeth within days, when clinically appropriate</li>
@@ -452,21 +450,17 @@
             </ul>
             <p class="mt-4 font-display font-semibold text-navy">One arch packages from $9,780</p>
             <p class="mt-2 font-display font-semibold text-navy">Upper and lower arch packages from $17,775</p>
-            <p class="copy-justified-flush mt-2 text-sm text-ink/75">Final pricing depends on the treatment selected and the complexity of your case.</p>
-            <!-- Video placeholder: swap for the implant placement + crown restoration video. -->
-            <div class="mt-auto flex flex-col items-center justify-center gap-2 rounded-xl bg-sky-pale/40 p-6 text-center">
-              <svg viewBox="0 0 24 24" class="h-12 w-12 text-navy" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
-              <p class="text-sm font-semibold text-navy">Video: Implant placement and crown restoration</p>
-            </div>
+            <p class="copy-justified-flush mb-auto mt-2 text-sm text-ink/75">Final pricing depends on the treatment selected and the complexity of your case.</p>
             <a href="all-on-4-costa-rica-package.html" class="btn-primary mt-4 w-full">Learn More</a>
           </article>
 
           <article class="flex flex-col rounded-2xl border border-navy/10 bg-white p-6 shadow-card">
-            <h3 class="text-xl font-bold">Smile Makeover in Costa Rica</h3>
-            <p class="copy-justified-flush mt-1 text-sm text-ink">Transform the shape, color, and symmetry of your smile with a personalized combination of porcelain veneers and dental crowns.</p>
-            <!-- Placeholder photo: swap empty.webp for a medium image below the subtitle. -->
+            <h3 class="text-xl font-bold min-h-[3.5rem]">Smile Makeover in Costa Rica</h3>
+            <p class="copy-justified-flush mt-1 min-h-[5rem] text-sm text-ink">Transform the shape, color, and symmetry of your smile with a personalized combination of porcelain veneers and dental crowns.</p>
             <div class="mt-3 overflow-hidden rounded-xl shadow-card">
-              <img loading="lazy" decoding="async" width="625" height="408" src="../../assets/img/esthetic-dent/empty.webp" alt="Smile makeover results at Esthetic Dent in Costa Rica" class="aspect-[831/490] w-full object-cover">
+              <video class="aspect-[831/490] w-full object-cover" controls preload="metadata" poster="../../assets/img/esthetic-dent/all%20treatments%20and%20prices/crown-preparation-smile-makeover-poster.webp" aria-label="Animation of crown preparation for a smile makeover">
+                <source src="../../assets/img/esthetic-dent/all%20treatments%20and%20prices/crown-preparation-smile-makeover.mp4" type="video/mp4">
+              </video>
             </div>
             <ul class="mt-4 space-y-2 text-sm text-ink">
               <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Digital smile design approved before treatment begins</li>
@@ -476,21 +470,17 @@
               <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Written lifetime guarantee</li>
             </ul>
             <p class="mt-4 font-display font-semibold text-navy">Upper or lower smile makeover from $7,550</p>
-            <p class="mt-2 font-display font-semibold text-navy">Upper and lower smile makeover from $12,750</p>
-            <!-- Video placeholder: swap for the crown preparation video. -->
-            <div class="mt-auto flex flex-col items-center justify-center gap-2 rounded-xl bg-sky-pale/40 p-6 text-center">
-              <svg viewBox="0 0 24 24" class="h-12 w-12 text-navy" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
-              <p class="text-sm font-semibold text-navy">Video: Crown preparation</p>
-            </div>
+            <p class="mb-auto mt-2 font-display font-semibold text-navy">Upper and lower smile makeover from $12,750</p>
             <a href="costa-rica-smile-makeover-package.html" class="btn-primary mt-4 w-full">Learn More</a>
           </article>
 
           <article class="flex flex-col rounded-2xl border border-navy/10 bg-white p-6 shadow-card">
-            <h3 class="text-xl font-bold">Porcelain Veneers in Costa Rica</h3>
-            <p class="copy-justified-flush mt-1 text-sm text-ink">Custom porcelain veneers designed to enhance the shape, color, proportion, and symmetry of your smile—while preserving as much natural tooth structure as possible.</p>
-            <!-- Placeholder photo: swap empty.webp for a medium image below the subtitle. -->
+            <h3 class="text-xl font-bold min-h-[3.5rem]">Porcelain Veneers in Costa Rica</h3>
+            <p class="copy-justified-flush mt-1 min-h-[5rem] text-sm text-ink">Custom porcelain veneers designed to enhance the shape, color, proportion, and symmetry of your smile—while preserving as much natural tooth structure as possible.</p>
             <div class="mt-3 overflow-hidden rounded-xl shadow-card">
-              <img loading="lazy" decoding="async" width="625" height="408" src="../../assets/img/esthetic-dent/empty.webp" alt="Porcelain veneers at Esthetic Dent in Costa Rica" class="aspect-[831/490] w-full object-cover">
+              <video class="aspect-[831/490] w-full object-cover" controls preload="metadata" poster="../../assets/img/esthetic-dent/all%20treatments%20and%20prices/crown-preparation-veneers-poster.webp" aria-label="Animation of crown preparation for porcelain veneers">
+                <source src="../../assets/img/esthetic-dent/all%20treatments%20and%20prices/crown-preparation-veneers.mp4" type="video/mp4">
+              </video>
             </div>
             <ul class="mt-4 space-y-2 text-sm text-ink">
               <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Digitally designed and hand-finished in our in-house dental lab</li>
@@ -499,21 +489,17 @@
               <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Completed in one trip of approximately 5 to 8 days</li>
               <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Written lifetime guarantee</li>
             </ul>
-            <p class="mt-4 font-display font-semibold text-navy">Porcelain veneer sets from $2,995</p>
-            <!-- Video placeholder: swap for the crown preparation for veneers video. -->
-            <div class="mt-auto flex flex-col items-center justify-center gap-2 rounded-xl bg-sky-pale/40 p-6 text-center">
-              <svg viewBox="0 0 24 24" class="h-12 w-12 text-navy" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
-              <p class="text-sm font-semibold text-navy">Video: Crown preparation for veneers</p>
-            </div>
+            <p class="mb-auto mt-4 font-display font-semibold text-navy">Porcelain veneer sets from $2,995</p>
             <a href="porcelain-veneers-costa-rica-package.html" class="btn-primary mt-4 w-full">Learn More</a>
           </article>
 
           <article class="flex flex-col rounded-2xl border border-navy/10 bg-white p-6 shadow-card">
-            <h3 class="text-xl font-bold">Crowns &amp; Bridges</h3>
-            <p class="copy-justified-flush mt-1 text-sm text-ink">Zirconia and Emax restorations milled in-house, often placed within days.</p>
-            <!-- Placeholder photo: swap empty.webp for a medium image below the subtitle. -->
+            <h3 class="text-xl font-bold min-h-[3.5rem]">Crowns &amp; Bridges</h3>
+            <p class="copy-justified-flush mt-1 min-h-[5rem] text-sm text-ink">Zirconia and Emax restorations milled in-house, often placed within days.</p>
             <div class="mt-3 overflow-hidden rounded-xl shadow-card">
-              <img loading="lazy" decoding="async" width="625" height="408" src="../../assets/img/esthetic-dent/empty.webp" alt="Crowns and bridges at Esthetic Dent in Costa Rica" class="aspect-[831/490] w-full object-cover">
+              <video class="aspect-[831/490] w-full object-cover" controls preload="metadata" poster="../../assets/img/esthetic-dent/all%20treatments%20and%20prices/three-unit-bridge-placement-poster.webp" aria-label="Animation of the placement of a three-unit bridge">
+                <source src="../../assets/img/esthetic-dent/all%20treatments%20and%20prices/three-unit-bridge-placement.mp4" type="video/mp4">
+              </video>
             </div>
             <ul class="mt-4 space-y-2 text-sm text-ink">
               <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Lifetime warranty</li>
@@ -521,12 +507,7 @@
               <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Root canals on site if needed</li>
               <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Written lifetime guarantee</li>
             </ul>
-            <p class="mt-4 font-display font-semibold text-navy">From $450 per crown</p>
-            <!-- Video placeholder: swap for the three-unit bridge placement video. -->
-            <div class="mt-auto flex flex-col items-center justify-center gap-2 rounded-xl bg-sky-pale/40 p-6 text-center">
-              <svg viewBox="0 0 24 24" class="h-12 w-12 text-navy" aria-hidden="true"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>
-              <p class="text-sm font-semibold text-navy">Video: Placement of a three-unit bridge</p>
-            </div>
+            <p class="mb-auto mt-4 font-display font-semibold text-navy">From $450 per crown</p>
             <a href="crowns-bridges.html" class="btn-primary mt-4 w-full">Learn More</a>
           </article>
 
