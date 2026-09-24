@@ -71,6 +71,7 @@
       var u;
       try { u = new URL(a.getAttribute("href"), base); } catch (e) { return; }
       if (u.origin !== location.origin) return;
+      if (u.href.indexOf(SITE_ROOT) !== 0) return;
       if (/\/(maintenance|cr)\//.test(u.pathname)) return;
       if (!/(\/|\.html)$/.test(u.pathname)) return;
       u.hash = ""; u.search = "";
@@ -81,7 +82,10 @@
 
   var DATA_URL = document.currentScript.src.replace(/image-progress\.js.*$/, "image-progress-data.js");
   var CACHE_KEY = "img-progress-total";
-  var ROOTS = ["/en/", "/es/", "/landing-pages/"];
+  var ROOTS = ["en/", "es/", "landing-pages/"];
+  // Raiz del sitio segun donde vive este script (assets/js/): sirve tambien en
+  // GitHub Pages de proyecto (usuario.github.io/repo/), donde "/" no es la raiz.
+  var SITE_ROOT = new URL("../../", DATA_URL).href;
 
   function scan() {
     var seen = {}, queue = [], real = 0, empty = 0, active = 0, pages = 0;
@@ -94,7 +98,7 @@
       seen[k] = 1;
       queue.push(u);
     }
-    ROOTS.forEach(function (r) { enqueue(new URL(r, location.origin)); });
+    ROOTS.forEach(function (r) { enqueue(new URL(r, SITE_ROOT)); });
 
     return new Promise(function (resolve) {
       function pump() {
