@@ -763,4 +763,51 @@
       heroCalm.addEventListener("change", sync);
     });
   }
+
+  /* ---------------------------------------------------------------------
+   * Click-to-play card videos (.card-video): silent, no native controls. The
+   * overlay button toggles play/pause, and only one clip plays at a time.
+   * ------------------------------------------------------------------- */
+  var cardVideos = Array.prototype.slice.call(document.querySelectorAll(".card-video"));
+  cardVideos.forEach(function (box) {
+    var video = box.querySelector("video");
+    var toggle = box.querySelector(".card-video-toggle");
+    if (!video || !toggle) return;
+
+    function label(playing) {
+      toggle.setAttribute("aria-label", toggle.getAttribute(playing ? "data-label-pause" : "data-label-play"));
+    }
+    video.muted = true;
+    video.addEventListener("play", function () {
+      box.classList.add("is-playing");
+      label(true);
+      cardVideos.forEach(function (other) {
+        var v = other.querySelector("video");
+        if (v && v !== video && !v.paused) v.pause();
+      });
+    });
+    function stopped() {
+      box.classList.remove("is-playing");
+      label(false);
+    }
+    video.addEventListener("pause", stopped);
+    video.addEventListener("ended", stopped);
+    toggle.addEventListener("click", function () {
+      if (video.paused) {
+        var attempt = video.play();
+        if (attempt && typeof attempt.catch === "function") attempt.catch(function () {});
+      } else {
+        video.pause();
+      }
+    });
+  });
+})();
+
+/* image-progress (PROVISIONAL): eliminar este bloque junto con image-progress.js */
+(function () {
+  var cs = document.currentScript;
+  if (!cs || !cs.src) return;
+  var s = document.createElement("script");
+  s.src = cs.src.replace(/main\.js.*$/, "image-progress.js");
+  document.body.appendChild(s);
 })();

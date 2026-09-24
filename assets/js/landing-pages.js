@@ -50,3 +50,12 @@
     else if (query.addListener) query.addListener(sync);
   });
 })();
+
+/* image-progress (PROVISIONAL): eliminar este bloque junto con image-progress.js */
+(function () {
+  var cs = document.currentScript;
+  if (!cs || !cs.src) return;
+  var s = document.createElement("script");
+  s.src = cs.src.replace(/landing-pages\.js.*$/, "image-progress.js");
+  document.body.appendChild(s);
+})();

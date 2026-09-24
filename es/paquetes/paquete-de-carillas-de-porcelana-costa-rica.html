@@ -370,12 +370,11 @@
         </div>
       </div>
 
-      <!-- Placeholder photo: swap empty.webp for the dentist and ceramist at work.
-           From lg it is the section background, so favour a wide shot with quiet
-           space on the left where the copy sits. -->
-      <div class="hero-stage-media">
-        <img loading="eager" decoding="async" width="625" height="408" fetchpriority="high" src="../../assets/img/esthetic-dent/empty.webp" alt="Dentista y ceramista trabajando juntos en carillas de porcelana en Esthetic Dent en Costa Rica" class="hero-stage-photo">
-        <div class="hero-stage-scrim" aria-hidden="true"></div>
+      <!-- Dentist and ceramist video, feathered into the copy panel. -->
+      <div class="hero-stage-media hero-stage-media--video">
+        <video class="hero-stage-photo hero-stage-photo--feather" data-hero-video muted loop playsinline preload="metadata" width="1280" height="720" poster="../../assets/img/esthetic-dent/packages/porcelain-veneers-dentist-ceramist-poster.webp" aria-label="Dentista y ceramista trabajando juntos en carillas de porcelana en Esthetic Dent en Costa Rica">
+          <source src="../../assets/img/esthetic-dent/packages/porcelain-veneers-dentist-ceramist.mp4#t=0.1" type="video/mp4">
+        </video>
       </div>
 
       <div class="hero-stage-panel">
@@ -417,9 +416,8 @@
             <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">¿Por qué completar su sonrisa en una ciudad concurrida cuando puede hacerlo junto a la playa?</h2>
             <p class="copy-justified mt-6 text-ink">Reciba atención dental personalizada en Cóbano, Santa Teresa, Costa Rica, y disfrute el tiempo entre citas rodeado del océano, la naturaleza y la calma del paraíso.</p>
           </div>
-          <!-- Placeholder photo: swap empty.webp for the destination photograph. -->
-          <div class="split-media">
-            <img loading="lazy" decoding="async" width="625" height="408" src="../../assets/img/esthetic-dent/empty.webp" alt="Playa de Cóbano, Santa Teresa, cerca de la clínica de Esthetic Dent en Costa Rica" class="aspect-[831/490] w-full object-cover">
+          <div class="split-media split-media--portrait">
+            <img loading="lazy" decoding="async" width="480" height="640" src="../../assets/img/esthetic-dent/packages/cobano-santa-teresa-beach.webp" alt="Playa de Cóbano, Santa Teresa, cerca de la clínica de Esthetic Dent en Costa Rica" class="aspect-[3/4] w-full object-cover">
           </div>
         </div>
       </div>
@@ -521,24 +519,24 @@
           <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Resultados reales</h2>
           <p class="mt-3 text-ink">Antes y después</p>
         </div>
-        <!-- Placeholder photos: swap empty.webp for the real before/after pairs. -->
+        <!-- Before above, after below, per case. -->
         <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
-          <a href="../por-que-esthetic-dent/casos-reales-de-pacientes.html" class="group min-w-0 overflow-hidden rounded-2xl border border-navy/10 shadow-card transition-colors hover:border-blue/30">
-            <img loading="lazy" decoding="async" width="625" height="408" src="../../assets/img/esthetic-dent/empty.webp" alt="Antes y después de carillas de porcelana en Esthetic Dent en Costa Rica" class="aspect-[4/3] w-full object-cover 2xl:aspect-[16/10]">
-            <div class="p-5 text-center">
-              <h3 class="font-display font-bold text-navy transition-colors group-hover:text-blue">Carillas de Porcelana</h3>
+          <a href="../por-que-esthetic-dent/casos-reales-de-pacientes.html" aria-label="Carillas de Porcelana" class="group min-w-0 overflow-hidden rounded-2xl border border-navy/10 shadow-card transition-colors hover:border-blue/30">
+            <div class="flex flex-col">
+              <div class="relative"><img loading="lazy" decoding="async" width="900" height="506" src="../../assets/img/esthetic-dent/packages/veneers-results-porcelain-veneers-before.webp" alt="Antes y después de carillas de porcelana en Esthetic Dent en Costa Rica — antes" class="aspect-video w-full object-cover"><span class="compare-slider-label compare-slider-label--before">Antes</span></div>
+              <div class="relative"><img loading="lazy" decoding="async" width="900" height="506" src="../../assets/img/esthetic-dent/packages/veneers-results-porcelain-veneers-after.webp" alt="Antes y después de carillas de porcelana en Esthetic Dent en Costa Rica — después" class="aspect-video w-full object-cover"><span class="compare-slider-label compare-slider-label--before">Después</span></div>
             </div>
           </a>
-          <a href="../por-que-esthetic-dent/casos-reales-de-pacientes.html" class="group min-w-0 overflow-hidden rounded-2xl border border-navy/10 shadow-card transition-colors hover:border-blue/30">
-            <img loading="lazy" decoding="async" width="625" height="408" src="../../assets/img/esthetic-dent/empty.webp" alt="Antes y después de un diseño de sonrisa completo con carillas en Esthetic Dent en Costa Rica" class="aspect-[4/3] w-full object-cover 2xl:aspect-[16/10]">
-            <div class="p-5 text-center">
-              <h3 class="font-display font-bold text-navy transition-colors group-hover:text-blue">Diseño de Sonrisa</h3>
+          <a href="../por-que-esthetic-dent/casos-reales-de-pacientes.html" aria-label="Diseño de Sonrisa" class="group min-w-0 overflow-hidden rounded-2xl border border-navy/10 shadow-card transition-colors hover:border-blue/30">
+            <div class="flex flex-col">
+              <div class="relative"><img loading="lazy" decoding="async" width="900" height="506" src="../../assets/img/esthetic-dent/packages/veneers-results-smile-makeover-before.webp" alt="Antes y después de un diseño de sonrisa completo con carillas en Esthetic Dent en Costa Rica — antes" class="aspect-video w-full object-cover"><span class="compare-slider-label compare-slider-label--before">Antes</span></div>
+              <div class="relative"><img loading="lazy" decoding="async" width="900" height="506" src="../../assets/img/esthetic-dent/packages/veneers-results-smile-makeover-after.webp" alt="Antes y después de un diseño de sonrisa completo con carillas en Esthetic Dent en Costa Rica — después" class="aspect-video w-full object-cover"><span class="compare-slider-label compare-slider-label--before">Después</span></div>
             </div>
           </a>
-          <a href="../por-que-esthetic-dent/casos-reales-de-pacientes.html" class="group min-w-0 overflow-hidden rounded-2xl border border-navy/10 shadow-card transition-colors hover:border-blue/30">
-            <img loading="lazy" decoding="async" width="625" height="408" src="../../assets/img/esthetic-dent/empty.webp" alt="Antes y después de carillas cerámicas estratificadas en Esthetic Dent en Costa Rica" class="aspect-[4/3] w-full object-cover 2xl:aspect-[16/10]">
-            <div class="p-5 text-center">
-              <h3 class="font-display font-bold text-navy transition-colors group-hover:text-blue">Carillas Cerámicas Estratificadas</h3>
+          <a href="../por-que-esthetic-dent/casos-reales-de-pacientes.html" aria-label="Carillas Cerámicas Estratificadas" class="group min-w-0 overflow-hidden rounded-2xl border border-navy/10 shadow-card transition-colors hover:border-blue/30">
+            <div class="flex flex-col">
+              <div class="relative"><img loading="lazy" decoding="async" width="900" height="506" src="../../assets/img/esthetic-dent/packages/veneers-results-layered-ceramic-veneers-before.webp" alt="Antes y después de carillas cerámicas estratificadas en Esthetic Dent en Costa Rica — antes" class="aspect-video w-full object-cover"><span class="compare-slider-label compare-slider-label--before">Antes</span></div>
+              <div class="relative"><img loading="lazy" decoding="async" width="900" height="506" src="../../assets/img/esthetic-dent/packages/veneers-results-layered-ceramic-veneers-after.webp" alt="Antes y después de carillas cerámicas estratificadas en Esthetic Dent en Costa Rica — después" class="aspect-video w-full object-cover"><span class="compare-slider-label compare-slider-label--before">Después</span></div>
             </div>
           </a>
         </div>
@@ -730,9 +728,8 @@
                 <li class="flex gap-2"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Traslado al aeropuerto a su salida: usted se va con una nueva sonrisa, nosotros nos encargamos del resto</li>
               </ul>
             </div>
-            <!-- Placeholder photo: swap empty.webp for the image beside the copy. -->
             <div class="split-media">
-              <img loading="lazy" decoding="async" width="625" height="408" src="../../assets/img/esthetic-dent/empty.webp" alt="Transporte privado para pacientes de Esthetic Dent en Costa Rica" class="aspect-[831/490] w-full object-cover">
+              <img loading="lazy" decoding="async" width="1200" height="708" src="../../assets/img/esthetic-dent/packages/private-transportation.webp" alt="Transporte privado para pacientes de Esthetic Dent en Costa Rica" class="aspect-[831/490] w-full object-cover">
             </div>
           </div>
           <div class="split">
@@ -745,9 +742,8 @@
                 <li class="flex gap-2"><svg viewBox="0 0 24 24" class="mt-0.5 h-4 w-4 shrink-0 text-mint-dark"><use href="#icon-shield-check"/></svg>Le recibe en el aeropuerto a su llegada y coordina el registro en su hotel</li>
               </ul>
             </div>
-            <!-- Placeholder photo: swap empty.webp for the image beside the copy. -->
-            <div class="split-media">
-              <img loading="lazy" decoding="async" width="625" height="408" src="../../assets/img/esthetic-dent/empty.webp" alt="Soporte de conserjería bilingüe para pacientes de Esthetic Dent en Costa Rica" class="aspect-[831/490] w-full object-cover">
+            <div class="split-media split-media--portrait">
+              <img loading="lazy" decoding="async" width="600" height="794" src="../../assets/img/esthetic-dent/packages/bilingual-concierge-reception.webp" alt="Soporte de conserjería bilingüe para pacientes de Esthetic Dent en Costa Rica" class="aspect-[3/4] w-full object-cover">
             </div>
           </div>
         </div>
@@ -791,7 +787,7 @@
                leaves room for the corner it hangs into. -->
           <div class="relative mb-8 min-w-0">
             <div class="overflow-hidden rounded-2xl shadow-card">
-              <img loading="lazy" decoding="async" width="625" height="408" src="../../assets/img/esthetic-dent/empty.webp" alt="Carillas de porcelana premium en Esthetic Dent en Costa Rica" class="aspect-[831/490] w-full object-cover">
+              <img loading="lazy" decoding="async" width="1200" height="708" src="../../assets/img/esthetic-dent/packages/porcelain-veneers-lifetime-warranty.webp" alt="Carillas de porcelana premium en Esthetic Dent en Costa Rica" class="aspect-[831/490] w-full object-cover">
             </div>
             <!-- Decorative: the badge and heading beside it already say "Lifetime Warranty". -->
             <img loading="lazy" decoding="async" width="1254" height="1254" src="../../assets/img/esthetic-dent/lifetime_warranty.webp" alt="" aria-hidden="true" class="absolute -bottom-6 -right-6 h-24 w-24 -rotate-[30deg] drop-shadow-lg sm:h-28 sm:w-28">
@@ -940,9 +936,8 @@
             </tbody>
           </table>
         </div>
-        <!-- Placeholder photo: swap empty.webp for the image below the table. -->
         <div class="mx-auto mt-8 max-w-[900px] overflow-hidden rounded-2xl shadow-card">
-          <img loading="lazy" decoding="async" width="625" height="408" src="../../assets/img/esthetic-dent/empty.webp" alt="Comparación de costos de carillas de porcelana en Esthetic Dent en Costa Rica" class="h-48 w-full object-cover sm:h-60 lg:h-72">
+          <img loading="lazy" decoding="async" width="1400" height="582" src="../../assets/img/esthetic-dent/packages/veneers-cost-comparison-map.webp" alt="Comparación de costos de carillas de porcelana en Esthetic Dent en Costa Rica" class="aspect-[1600/665] w-full object-cover">
         </div>
       </div>
     </section>
