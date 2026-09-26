@@ -369,12 +369,11 @@
         </div>
       </div>
 
-      <!-- Placeholder photo: swap empty.webp for the hero photograph. From lg it
-           is the section background, so favour a wide shot with quiet space on
-           the left where the copy sits. -->
-      <div class="hero-stage-media">
-        <img loading="eager" decoding="async" width="625" height="408" fetchpriority="high" src="../../assets/img/esthetic-dent/empty.webp" alt="Dental implants crafted in-house at Esthetic Dent in Costa Rica" class="hero-stage-photo">
-        <div class="hero-stage-scrim" aria-hidden="true"></div>
+      <!-- Hero video, feathered into the copy panel. -->
+      <div class="hero-stage-media hero-stage-media--video">
+        <video class="hero-stage-photo hero-stage-photo--feather" data-hero-video muted loop playsinline preload="metadata" width="1280" height="720" poster="../../assets/img/esthetic-dent/packages/dental-implants-hero-poster.webp" aria-label="Dental implants crafted in-house at Esthetic Dent in Costa Rica">
+          <source src="../../assets/img/esthetic-dent/packages/dental-implants-hero.mp4#t=0.1" type="video/mp4">
+        </video>
       </div>
 
       <div class="hero-stage-panel">
@@ -403,9 +402,8 @@
             <p class="copy-justified mt-4 text-ink">Unlike removable dentures, dental implants do not shift, click, or require adhesives. They look, feel, and function more like natural teeth—helping you smile, speak, and eat with confidence.</p>
             <p class="copy-justified mt-4 text-ink">At Esthetic Dent, your dental implant treatment in Costa Rica is coordinated under one roof—from 3D CBCT imaging and digital treatment planning to the creation of your final restoration in our in-house dental lab.</p>
           </div>
-          <!-- Placeholder photo: swap empty.webp for the illustration. -->
           <div class="split-media">
-            <img loading="lazy" decoding="async" width="625" height="408" src="../../assets/img/esthetic-dent/empty.webp" alt="Dental implant illustration at Esthetic Dent in Costa Rica" class="aspect-[831/490] w-full object-cover">
+            <img loading="lazy" decoding="async" width="1200" height="675" src="../../assets/img/esthetic-dent/packages/dental-implant-anatomy.webp" alt="Dental implant anatomy: crown, abutment and implant" class="aspect-[16/9] w-full rounded-2xl object-cover">
           </div>
         </div>
         <ul class="fit-list mx-auto mt-10 max-w-[1100px] gap-3">
@@ -443,9 +441,8 @@
             <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Who Is a Candidate for Dental Implants?</h2>
             <p class="copy-justified mt-6 text-ink">Dental implants may be right for you if you:</p>
           </div>
-          <!-- Placeholder photo: swap empty.webp for the image beside the copy. -->
           <div class="split-media">
-            <img loading="lazy" decoding="async" width="625" height="408" src="../../assets/img/esthetic-dent/empty.webp" alt="Dental implant candidate evaluation at Esthetic Dent in Costa Rica" class="aspect-[831/490] w-full object-cover">
+            <img loading="lazy" decoding="async" width="1200" height="675" src="../../assets/img/esthetic-dent/packages/dental-implants-candidate.webp" alt="Dental implant candidate evaluation at Esthetic Dent in Costa Rica" class="aspect-[831/490] w-full object-cover">
           </div>
         </div>
         <ul class="mx-auto mt-10 flex max-w-2xl flex-col gap-3">
@@ -627,22 +624,24 @@
           <h2 class="mt-4 text-3xl font-bold sm:text-4xl 2xl:text-5xl">Real results</h2>
           <p class="mt-3 text-ink">Before &amp; after</p>
         </div>
-        <!-- Placeholder photos: swap empty.webp for the real before/after pairs. -->
         <div class="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
           <a href="../why-esthetic-dent/real-patient-cases.html" class="group min-w-0 overflow-hidden rounded-2xl border border-navy/10 shadow-card transition-colors hover:border-blue/30">
-            <img loading="lazy" decoding="async" width="625" height="408" src="../../assets/img/esthetic-dent/empty.webp" alt="Before and after a single dental implant restoration at Esthetic Dent in Costa Rica" class="aspect-[4/3] w-full object-cover 2xl:aspect-[16/10]">
+            <div class="relative"><img loading="lazy" decoding="async" width="900" height="506" src="../../assets/img/esthetic-dent/cases/all-on-x-04-before.webp" alt="Before and after a single dental implant restoration at Esthetic Dent in Costa Rica — before" class="aspect-[2/1] w-full object-cover"><span class="compare-slider-label compare-slider-label--before">Before</span></div>
+            <div class="relative"><img loading="lazy" decoding="async" width="900" height="506" src="../../assets/img/esthetic-dent/cases/all-on-x-04-after.webp" alt="Before and after a single dental implant restoration at Esthetic Dent in Costa Rica — after" class="aspect-[2/1] w-full object-cover"><span class="compare-slider-label compare-slider-label--before">After</span></div>
             <div class="p-5 text-center">
               <h3 class="font-display font-bold text-navy transition-colors group-hover:text-blue">Dental Implants</h3>
             </div>
           </a>
           <a href="../why-esthetic-dent/real-patient-cases.html" class="group min-w-0 overflow-hidden rounded-2xl border border-navy/10 shadow-card transition-colors hover:border-blue/30">
-            <img loading="lazy" decoding="async" width="625" height="408" src="../../assets/img/esthetic-dent/empty.webp" alt="Before and after an implant crown at Esthetic Dent in Costa Rica" class="aspect-[4/3] w-full object-cover 2xl:aspect-[16/10]">
+            <div class="relative"><img loading="lazy" decoding="async" width="900" height="506" src="../../assets/img/esthetic-dent/cases/all-on-x-11-before.webp" alt="Before and after an implant crown at Esthetic Dent in Costa Rica — before" class="aspect-[2/1] w-full object-cover"><span class="compare-slider-label compare-slider-label--before">Before</span></div>
+            <div class="relative"><img loading="lazy" decoding="async" width="900" height="506" src="../../assets/img/esthetic-dent/cases/all-on-x-11-after.webp" alt="Before and after an implant crown at Esthetic Dent in Costa Rica — after" class="aspect-[2/1] w-full object-cover"><span class="compare-slider-label compare-slider-label--before">After</span></div>
             <div class="p-5 text-center">
               <h3 class="font-display font-bold text-navy transition-colors group-hover:text-blue">Implant Crown</h3>
             </div>
           </a>
           <a href="../why-esthetic-dent/real-patient-cases.html" class="group min-w-0 overflow-hidden rounded-2xl border border-navy/10 shadow-card transition-colors hover:border-blue/30">
-            <img loading="lazy" decoding="async" width="625" height="408" src="../../assets/img/esthetic-dent/empty.webp" alt="Before and after an All-on-4 full-arch restoration at Esthetic Dent in Costa Rica" class="aspect-[4/3] w-full object-cover 2xl:aspect-[16/10]">
+            <div class="relative"><img loading="lazy" decoding="async" width="900" height="506" src="../../assets/img/esthetic-dent/cases/all-on-x-06-before.webp" alt="Before and after an All-on-4 full-arch restoration at Esthetic Dent in Costa Rica — before" class="aspect-[2/1] w-full object-cover"><span class="compare-slider-label compare-slider-label--before">Before</span></div>
+            <div class="relative"><img loading="lazy" decoding="async" width="900" height="506" src="../../assets/img/esthetic-dent/cases/all-on-x-06-after.webp" alt="Before and after an All-on-4 full-arch restoration at Esthetic Dent in Costa Rica — after" class="aspect-[2/1] w-full object-cover"><span class="compare-slider-label compare-slider-label--before">After</span></div>
             <div class="p-5 text-center">
               <h3 class="font-display font-bold text-navy transition-colors group-hover:text-blue">All-on-4 Full Arch</h3>
             </div>
