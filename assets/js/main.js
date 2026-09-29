@@ -196,6 +196,120 @@
   }
 
   /* ---------------------------------------------------------------------
+   * Google reviews strip: filled from /api/v1/reviews (Google Business
+   * Profile, cached server-side). The section stays hidden when the API has
+   * nothing to show. Arrows scroll one card; auto-advances and loops,
+   * pausing while hovered/focused/touched.
+   * ------------------------------------------------------------------- */
+  var gReviews = document.querySelector("[data-g-reviews]");
+  if (gReviews && window.fetch) {
+    var gLang = gReviews.getAttribute("data-lang") === "es" ? "es" : "en";
+    var gText = {
+      en: { s: "stars out of 5", r: "reviews", labels: ["Excellent", "Very good"] },
+      es: { s: "estrellas de 5", r: "reseñas", labels: ["Excelente", "Muy bueno"] }
+    }[gLang];
+
+    var gSetStars = function (el, rating) {
+      var icons = el.querySelectorAll("svg");
+      for (var i = 0; i < icons.length; i++) {
+        icons[i].style.opacity = i < Math.round(rating) ? "1" : "0.25";
+      }
+      el.setAttribute("aria-label", rating + " " + gText.s);
+    };
+
+    var gRelative = function (iso) {
+      var days = Math.round((Date.parse(iso) - Date.now()) / 86400000);
+      var rtf = new Intl.RelativeTimeFormat(gLang, { numeric: "auto" });
+      var abs = Math.abs(days);
+      if (abs < 30) return rtf.format(days, "day");
+      if (abs < 365) return rtf.format(Math.round(days / 30), "month");
+      return rtf.format(Math.round(days / 365), "year");
+    };
+
+    var gInit = function () {
+      var gTrack = gReviews.querySelector("[data-g-reviews-track]");
+      var gPrev = gReviews.querySelector("[data-g-reviews-prev]");
+      var gNext = gReviews.querySelector("[data-g-reviews-next]");
+      var gTimer = null;
+      var gReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      var gStep = function (dir) {
+        var card = gTrack.firstElementChild;
+        if (!card) return;
+        var w = card.getBoundingClientRect().width + 16;
+        var max = gTrack.scrollWidth - gTrack.clientWidth;
+        if (max <= 4) return;
+        if (dir > 0 && gTrack.scrollLeft >= max - 4) {
+          gTrack.scrollTo({ left: 0 });
+        } else if (dir < 0 && gTrack.scrollLeft <= 4) {
+          gTrack.scrollTo({ left: max });
+        } else {
+          gTrack.scrollBy({ left: dir * w });
+        }
+      };
+      var gStart = function () {
+        if (gReduced || gTimer) return;
+        gTimer = window.setInterval(function () {
+          gStep(1);
+        }, 6000);
+      };
+      var gStop = function () {
+        window.clearInterval(gTimer);
+        gTimer = null;
+      };
+      gPrev.addEventListener("click", function () {
+        gStep(-1);
+      });
+      gNext.addEventListener("click", function () {
+        gStep(1);
+      });
+      gReviews.addEventListener("mouseenter", gStop);
+      gReviews.addEventListener("mouseleave", gStart);
+      gReviews.addEventListener("touchstart", gStop, { passive: true });
+      gReviews.addEventListener("touchend", gStart);
+      gReviews.addEventListener("focusin", gStop);
+      gReviews.addEventListener("focusout", function () {
+        if (!gReviews.contains(document.activeElement)) gStart();
+      });
+      gStart();
+    };
+
+    fetch("/api/v1/reviews", { headers: { Accept: "application/json" } })
+      .then(function (res) {
+        return res.status === 200 ? res.json() : null;
+      })
+      .then(function (data) {
+        var tpl = gReviews.querySelector("[data-g-card]");
+        var track = gReviews.querySelector("[data-g-reviews-track]");
+        if (!data || !data.items || !data.items.length || !tpl || !track) return;
+
+        data.items.forEach(function (item) {
+          var card = tpl.content.cloneNode(true);
+          card.querySelector("[data-g-initial]").textContent = (item.name || "?").charAt(0).toUpperCase();
+          card.querySelector("[data-g-name]").textContent = item.name;
+          card.querySelector("[data-g-date]").textContent = gRelative(item.created);
+          card.querySelector("[data-g-text]").textContent = item.text;
+          gSetStars(card.querySelector("[data-g-stars]"), item.rating);
+          track.appendChild(card);
+        });
+
+        if (data.rating) {
+          gSetStars(gReviews.querySelector("[data-g-summary-stars]"), data.rating);
+          gReviews.querySelector("[data-g-label]").textContent =
+            gText.labels[data.rating >= 4.5 ? 0 : 1];
+        }
+        var total = gReviews.querySelector("[data-g-total]");
+        if (total && data.total) total.textContent = data.total + " " + gText.r;
+
+        gReviews.classList.remove("hidden");
+        gInit();
+      })
+      .catch(function () {
+        /* Section stays hidden. */
+      });
+  }
+
+  /* ---------------------------------------------------------------------
    * Step carousel (The Process...): one slide at a time, moved by arrows
    * ------------------------------------------------------------------- */
   var stepCarousel = document.querySelector("[data-process-carousel]");
@@ -800,6 +914,44 @@
         video.pause();
       }
     });
+
+    // Seek bar: keep the fill, the round handle, and the range input in sync
+    // with playback, and let dragging the input scrub the clip. Updates pause
+    // only for the length of a drag, tracked by pointer state rather than by
+    // focus: the input keeps focus after a drag ends, so a focus test would
+    // freeze the bar from the first scrub onwards. The release is watched on
+    // the document because a drag often ends with the pointer off the strip.
+    var progressInput = box.querySelector(".card-video-progress-input");
+    var progressFill = box.querySelector(".card-video-progress-fill");
+    var progressHandle = box.querySelector(".card-video-progress-handle");
+    function setProgress(pct) {
+      progressFill.style.width = pct + "%";
+      if (progressHandle) progressHandle.style.left = pct + "%";
+    }
+    if (progressInput && progressFill) {
+      var scrubbing = false;
+      ["pointerdown", "mousedown", "touchstart"].forEach(function (name) {
+        progressInput.addEventListener(name, function () {
+          scrubbing = true;
+        });
+      });
+      ["pointerup", "mouseup", "touchend", "touchcancel"].forEach(function (name) {
+        document.addEventListener(name, function () {
+          scrubbing = false;
+        });
+      });
+      video.addEventListener("timeupdate", function () {
+        if (!video.duration || scrubbing) return;
+        var pct = (video.currentTime / video.duration) * 100;
+        setProgress(pct);
+        progressInput.value = pct;
+      });
+      progressInput.addEventListener("input", function () {
+        if (!video.duration) return;
+        video.currentTime = (progressInput.value / 100) * video.duration;
+        setProgress(progressInput.value);
+      });
+    }
   });
 })();
 
