@@ -52,7 +52,7 @@
      deployment renders the fallback instead of a broken form. Shape:
 
        { portalId, formId, region,                      <- the default form
-         forms: { cr: { portalId, formId, region } } }  <- the named ones
+         forms: { cr: {...}, es: {...} } }              <- the named ones
 
      A named form carries its own portalId because the two forms are not
      necessarily in the same HubSpot account; when they are, the edge writes the
@@ -61,8 +61,9 @@
   var namedForms = config.forms || {};
 
   /* Which form a container is asking for. `data-hubspot-form` carries the name
-     ("cr" for the domestic site); an empty attribute means the default form,
-     which is the international one. Names rather than ids live in the markup:
+     ("cr" for the domestic site, "es" for the international site's Spanish
+     pages); an empty attribute means the default form, the international
+     English one. Names rather than ids live in the markup:
      the page says which audience it serves, and swapping the HubSpot form
      behind that name stays a deployment setting.
 

@@ -205,9 +205,41 @@
   if (gReviews && window.fetch) {
     var gLang = gReviews.getAttribute("data-lang") === "es" ? "es" : "en";
     var gText = {
-      en: { s: "stars out of 5", r: "reviews", labels: ["Excellent", "Very good"] },
-      es: { s: "estrellas de 5", r: "reseñas", labels: ["Excelente", "Muy bueno"] }
+      en: {
+        s: "stars out of 5", r: "reviews", labels: ["Excellent", "Very good"],
+        more: "Read more", less: "Read less"
+      },
+      es: {
+        s: "estrellas de 5", r: "reseñas", labels: ["Excelente", "Muy bueno"],
+        more: "Leer más", less: "Leer menos"
+      }
     }[gLang];
+
+    /* The "read more" chevron, on the cards that need one. A review clipped by
+       the CSS line-clamp has a scrollHeight taller than the box it is shown in;
+       one that fits does not, and its chevron stays hidden — an affordance that
+       opens nothing is worse than no affordance.
+
+       This has to run AFTER the strip is un-hidden: inside a display:none
+       section every element measures 0 and no card would ever get a chevron. */
+    var gSetupMore = function () {
+      var cards = gReviews.querySelectorAll(".g-review-card");
+      for (var i = 0; i < cards.length; i++) {
+        (function (card) {
+          var text = card.querySelector("[data-g-text]");
+          var btn = card.querySelector("[data-g-more]");
+          var label = btn && btn.querySelector("[data-g-more-label]");
+          if (!text || !btn || !label) return;
+          if (text.scrollHeight <= text.clientHeight + 1) return;
+          btn.classList.remove("hidden");
+          btn.addEventListener("click", function () {
+            var open = card.classList.toggle("is-expanded");
+            btn.setAttribute("aria-expanded", open ? "true" : "false");
+            label.textContent = open ? gText.less : gText.more;
+          });
+        })(cards[i]);
+      }
+    };
 
     var gSetStars = function (el, rating) {
       var icons = el.querySelectorAll("svg");
@@ -286,6 +318,19 @@
         data.items.forEach(function (item) {
           var card = tpl.content.cloneNode(true);
           card.querySelector("[data-g-initial]").textContent = (item.name || "?").charAt(0).toUpperCase();
+          // The avatar is revealed only once it has actually loaded, so a
+          // blocked, broken or missing photo leaves the initial showing
+          // instead of a torn image icon. That is also why the <img> carries no
+          // loading="lazy": it starts out display:none, and a lazy image with no
+          // layout box is not reliably fetched. These are twelve 96 px squares
+          // requested after the API answers, so eager costs nothing here.
+          var gPic = card.querySelector("[data-g-photo]");
+          if (gPic && item.photo) {
+            gPic.addEventListener("load", function () {
+              this.classList.remove("hidden");
+            });
+            gPic.src = item.photo;
+          }
           card.querySelector("[data-g-name]").textContent = item.name;
           card.querySelector("[data-g-date]").textContent = gRelative(item.created);
           card.querySelector("[data-g-text]").textContent = item.text;
@@ -302,6 +347,7 @@
         if (total && data.total) total.textContent = data.total + " " + gText.r;
 
         gReviews.classList.remove("hidden");
+        gSetupMore();
         gInit();
       })
       .catch(function () {
@@ -953,13 +999,4 @@
       });
     }
   });
-})();
-
-/* image-progress (PROVISIONAL): eliminar este bloque junto con image-progress.js */
-(function () {
-  var cs = document.currentScript;
-  if (!cs || !cs.src) return;
-  var s = document.createElement("script");
-  s.src = cs.src.replace(/main\.js.*$/, "image-progress.js");
-  document.body.appendChild(s);
 })();

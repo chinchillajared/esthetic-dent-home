@@ -17,6 +17,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../../../assets/css/normalize.css">
 <link rel="stylesheet" href="../../../assets/css/main.css">
+<style>
+#intraoral-scan-photo{max-height:340px;width:auto;max-width:100%;object-fit:contain}
+</style>
 </head>
 <body class="bg-white">
 <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-navy focus:px-4 focus:py-2 focus:text-white">Saltar al contenido principal</a>
@@ -336,27 +339,23 @@
     <!-- Hero + form                                                   -->
     <!-- ============================================================ -->
     <section id="formulario" class="relative isolate scroll-mt-24 overflow-hidden">
-      <div class="absolute inset-0">
-        <img loading="eager" decoding="async" width="625" height="408" fetchpriority="high" src="../../../assets/img/esthetic-dent/empty.webp" alt="Paciente sonriendo con un puente dental bien integrado a su sonrisa" class="h-full w-full object-cover">
-        <div class="absolute inset-0 bg-navy/85" aria-hidden="true"></div>
-      </div>
       <div class="relative z-10 mx-auto grid max-w-[1920px] items-center gap-10 px-4 py-10 sm:px-6 lg:grid-cols-[1fr_1.15fr] lg:gap-14 lg:px-8 lg:py-12 xl:grid-cols-[1.15fr_1fr]">
         <div class="text-center lg:self-start lg:text-left">
-          <span class="inline-flex items-center rounded-full bg-white/15 px-3.5 py-1.5 font-display text-[0.8rem] font-semibold uppercase tracking-wide text-white">Puentes Dentales · Costa Rica</span>
-          <h1 class="mt-4 text-3xl font-extrabold leading-[1.08] text-white sm:text-5xl 2xl:text-6xl">Puentes dentales en Costa Rica para reemplazar dientes <span class="text-sky">perdidos</span></h1>
-          <p class="copy-justified mt-4 text-base text-white/85 sm:text-lg 2xl:text-xl">¿Le falta uno o varios dientes? Un puente dental puede cerrar el espacio, devolverle estabilidad al masticar y ayudarle a recuperar la apariencia de su sonrisa. En Esthetic Dent diseñamos puentes dentales en Costa Rica que se adaptan a su mordida, sus dientes y sus necesidades. Dependiendo del caso, el puente puede apoyarse sobre dientes naturales o implantes dentales.</p>
-          <ul class="copy-justified-flush mt-6 space-y-2 text-sm text-white/85">
-            <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-sky"><use href="#icon-shield-check"/></svg>Una alternativa fija para reemplazar dientes ausentes</li>
-            <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-sky"><use href="#icon-shield-check"/></svg>Puentes de zirconio y otros materiales dentales</li>
-            <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-sky"><use href="#icon-shield-check"/></svg>Diseño digital y elaboración en nuestro laboratorio</li>
-            <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-sky"><use href="#icon-shield-check"/></svg>Tratamiento planificado de acuerdo con su sonrisa</li>
+          <span class="badge-accent">Puentes Dentales · Costa Rica</span>
+          <h1 class="mt-4 text-3xl font-extrabold leading-[1.08] text-navy sm:text-5xl 2xl:text-6xl">Puentes dentales en Costa Rica para reemplazar dientes <span class="text-blue">perdidos</span></h1>
+          <p class="copy-justified mt-4 text-base text-ink sm:text-lg 2xl:text-xl">¿Le falta uno o varios dientes? Un puente dental puede cerrar el espacio, devolverle estabilidad al masticar y ayudarle a recuperar la apariencia de su sonrisa. En Esthetic Dent diseñamos puentes dentales en Costa Rica que se adaptan a su mordida, sus dientes y sus necesidades. Dependiendo del caso, el puente puede apoyarse sobre dientes naturales o implantes dentales.</p>
+          <ul class="copy-justified-flush mt-6 space-y-2 text-sm text-ink">
+            <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-blue"><use href="#icon-shield-check"/></svg>Una alternativa fija para reemplazar dientes ausentes</li>
+            <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-blue"><use href="#icon-shield-check"/></svg>Puentes de zirconio y otros materiales dentales</li>
+            <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-blue"><use href="#icon-shield-check"/></svg>Diseño digital y elaboración en nuestro laboratorio</li>
+            <li class="flex gap-2"><svg viewBox="0 0 24 24" class="h-4 w-4 shrink-0 text-blue"><use href="#icon-shield-check"/></svg>Tratamiento planificado de acuerdo con su sonrisa</li>
           </ul>
           <div class="mt-8 flex flex-wrap justify-center gap-3 lg:justify-start">
             <a href="#formulario-card" class="btn-accent">Solicitar una cita</a>
-            <a href="tel:+50688329311" class="btn-outline">Llamar: +506 8832-9311</a>
+            <a href="tel:+50688329311" class="btn-ghost">Llamar: +506 8832-9311</a>
           </div>
         </div>
-        <div id="formulario-card" class="mx-auto w-full max-w-xl scroll-mt-24 rounded-2xl bg-white p-6 text-ink shadow-card lg:max-w-none">
+        <div id="formulario-card" class="mx-auto w-full max-w-xl scroll-mt-24 rounded-2xl border border-navy/10 bg-white p-6 text-ink shadow-card lg:max-w-none">
           <div class="mt-4" data-hubspot-form="cr"><p data-hubspot-form-fallback class="text-sm text-ink/80">Cargando el formulario… Si no aparece, escríbanos a <a href="mailto:contacto@estheticdentcr.com" class="font-semibold text-blue underline">contacto@estheticdentcr.com</a> o por <a href="https://wa.me/50688329311" class="font-semibold text-blue underline">WhatsApp</a>.</p></div>
         </div>
       </div>
@@ -386,7 +385,7 @@
             </div>
           </div>
           <div class="split-media">
-            <img loading="lazy" decoding="async" width="625" height="408" src="../../../assets/img/esthetic-dent/empty.webp" alt="Ilustración de cómo un puente dental reemplaza el diente ausente apoyándose en los dientes vecinos" class="aspect-[831/490] w-full object-cover">
+            <img loading="lazy" decoding="async" width="1600" height="900" src="../../../assets/img/esthetic-dent/bridges/bridge-placement-procedure-collage.webp" alt="Secuencia clínica de la colocación de un puente dental, desde el diente ausente hasta la restauración final" class="aspect-[831/490] w-full object-cover">
           </div>
         </div>
       </div>
@@ -533,9 +532,26 @@
               <a href="../../tecnología/laboratorio-dental.html" class="btn-ghost">Conozca nuestra tecnología</a>
             </div>
           </div>
-          <div class="split-media">
-            <img loading="lazy" decoding="async" width="625" height="408" src="../../../assets/img/esthetic-dent/empty.webp" alt="Diseño digital de un puente dental y técnico dental trabajando con el modelo de la restauración" class="aspect-[831/490] w-full object-cover">
+          <div class="min-w-0 flex items-center justify-center">
+            <img id="intraoral-scan-photo" loading="lazy" decoding="async" width="720" height="1598" src="../../../assets/img/esthetic-dent/bridges/intraoral-scan-technology.webp" alt="Profesional realizando un escaneo digital intraoral al paciente para diseñar el puente dental" class="w-auto max-w-full rounded-lg object-contain">
           </div>
+          <script>
+          (function(){
+            var img = document.getElementById('intraoral-scan-photo');
+            var copy = img.closest('.split').querySelector('.split-copy');
+            function sync(){
+              if (window.innerWidth >= 1024) {
+                img.style.height = copy.offsetHeight + 'px';
+                img.style.maxHeight = 'none';
+              } else {
+                img.style.height = '';
+                img.style.maxHeight = '';
+              }
+            }
+            if (img.complete) { sync(); } else { img.addEventListener('load', sync); }
+            window.addEventListener('resize', sync);
+          })();
+          </script>
         </div>
       </div>
     </section>
@@ -564,7 +580,7 @@
             </div>
           </div>
           <div class="split-media">
-            <img loading="lazy" decoding="async" width="625" height="408" src="../../../assets/img/esthetic-dent/empty.webp" alt="Persona sonriendo con confianza tras evaluar sus opciones de tratamiento dental" class="aspect-[831/490] w-full object-cover">
+            <img loading="lazy" decoding="async" width="1479" height="1063" src="../../../assets/img/esthetic-dent/bridges/bridge-model-mirror.webp" alt="Modelos de puentes dentales de cerámica junto a un espejo dental de mano" class="aspect-[831/490] w-full object-cover">
           </div>
         </div>
       </div>
